@@ -1,16 +1,14 @@
 #!/bin/bash
-# AI Daily News 部署脚本
+# AI Daily News 部署脚本（本地测试用）
+# 生产环境请使用 GitHub Actions 自动部署
 
 set -e
 
 SITE_DIR="/root/.openclaw/workspace/ai-daily-news"
-GITHUB_USER="${GITHUB_USER:-Zaynxxii}"
-GITHUB_TOKEN="${GITHUB_TOKEN}"  # 从环境变量读取
-REPO_NAME="ai-daily-news"
 
 cd "$SITE_DIR"
 
-echo "🚀 开始部署到 GitHub Pages..."
+echo "🚀 开始本地部署..."
 
 # 配置 git
 git config user.email "openclaw@local"
@@ -29,9 +27,19 @@ fi
 DATE=$(date +"%Y-%m-%d %H:%M")
 git commit -m "📰 更新 AI Daily News - $DATE"
 
-# 推送到 GitHub
-REMOTE_URL="https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${REPO_NAME}.git"
-git push "$REMOTE_URL" main
-
-echo "✅ 部署完成！"
-echo "🌐 访问：https://${GITHUB_USER}.github.io/${REPO_NAME}/"
+echo "✅ 本地提交完成！"
+echo ""
+echo "⚠️  推送到 GitHub 需要 Token，请选择以下方式之一："
+echo ""
+echo "1️⃣  手动推送（推荐）："
+echo "   cd $SITE_DIR"
+echo "   git push"
+echo ""
+echo "2️⃣  使用环境变量："
+echo "   export GITHUB_TOKEN=\"你的 token\""
+echo "   ./deploy.sh"
+echo ""
+echo "3️⃣  使用 GitHub Actions（已配置）："
+echo "   推送后会自动部署到 GitHub Pages"
+echo ""
+echo "🌐 GitHub Pages 地址：https://Zaynxxii.github.io/ai-daily-news/"
