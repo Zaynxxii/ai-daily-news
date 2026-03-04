@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Daily News - 每日 AI 新闻精选，来自全球顶级技术博客">
+    <meta name="keywords" content="AI,人工智能，机器学习，深度学习，LLM，大模型，技术新闻">
+    <title>AI Daily News - 2026-03-04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .card .meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .card .summary {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .card a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .card a:hover {
+            text-decoration: underline;
+        }
+        
+        .top-3 {
+            border: 3px solid #667eea;
+        }
+        
+        .top-3::before {
+            content: '🏆 必读';
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stats div {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .stats .number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stats .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .seo-tags {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .seo-tags h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        
+        .category {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .article-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item h4 {
+            margin-bottom: 8px;
+        }
+        
+        .article-item h4 a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .article-item h4 a:hover {
+            color: #667eea;
+        }
+        
+        .article-item .meta {
+            color: #888;
+            font-size: 0.85em;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Daily News</h1>
+            <div class="date">2026-03-04</div>
+        </header>
+        
+        <div class="stats">
+            <div>
+                <div class="number">88</div>
+                <div class="label">扫描源</div>
+            </div>
+            <div>
+                <div class="number">2496</div>
+                <div class="label">抓取文章</div>
+            </div>
+            <div>
+                <div class="number">47</div>
+                <div class="label">48h 内</div>
+            </div>
+            <div>
+                <div class="number">15</div>
+                <div class="label">精选</div>
+            </div>
+        </div>
+        
+        <div class="seo-tags">
+            <h3>🔥 今日热点 SEO 关键词</h3>
+            <div class="tags">
+                <span class="tag">AI 新闻</span><span class="tag">人工智能</span><span class="tag">机器学习</span><span class="tag">大模型</span><span class="tag">LLM</span><span class="tag">深度学习</span><span class="tag">技术前沿</span><span class="tag">Simon Willison</span><span class="tag">Gemini</span><span class="tag">Apple M5</span>
+            </div>
+        </div>
+        
+        <div class="trend-summary">
+            <h2>📝 今日趋势</h2>
+            <p>今日 AI 领域热点：1) Apple 发布 M5 系列芯片，更新 MacBook 产品线；2) Google 推出轻量级 Gemini 3.1 Flash-Lite 模型；3) 社区讨论 AI 编程边界与 LLM 人格化设计。</p>
+        </div>
+        
+        <h2 style="color: white; margin: 30px 0 20px;">🏆 Top 3 必读</h2>
+        
+                <div class="card top-3">
+            <h2>🥇 Quoting Donald Knuth</h2>
+            <div class="meta">simonwillison.net · 7 小时前</div>
+            <div class="summary">
+                <p>计算机传奇人物 Donald Knuth 谈 AI 编程："AI 可以写代码，但程序员必须理解每一行"。Simon Willison 引用 Knuth 最近的访谈，讨论 AI 辅助编程的边界。</p>
+                <p><strong>推荐理由：</strong>在 AI 编程工具泛滥的今天，这是难得的冷静思考。</p>
+            </div>
+            <p style="margin-top: 15px;"><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">阅读全文 →</a></p>
+        </div>
+        
+        <div class="card top-3">
+            <h2>🥈 Gemini 3.1 Flash-Lite</h2>
+            <div class="meta">simonwillison.net · 9 小时前</div>
+            <div class="summary">
+                <p>Google 发布轻量级 Gemini 模型，专为低成本高频场景设计。在保持合理性能的同时大幅降低成本，适合需要大量 API 调用的应用场景。</p>
+                <p><strong>推荐理由：</strong>对于想大规模使用 AI API 的开发者，这是重要选项。</p>
+            </div>
+            <p style="margin-top: 15px;"><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">阅读全文 →</a></p>
+        </div>
+        
+        <div class="card top-3">
+            <h2>🥉 GIF Optimization with WebAssembly</h2>
+            <div class="meta">simonwillison.net · 1 天前</div>
+            <div class="summary">
+                <p>用 WebAssembly + Gifsicle 在浏览器里优化 GIF，速度提升 10 倍。将 Gifsicle 编译为 WebAssembly，可在浏览器端直接优化 GIF 文件。</p>
+                <p><strong>推荐理由：</strong>WebAssembly 实战案例，前端开发者可以借鉴。</p>
+            </div>
+            <p style="margin-top: 15px;"><a href="https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/" target="_blank">阅读全文 →</a></p>
+        </div>
+        
+        <h2 style="color: white; margin: 30px 0 20px;">📚 完整文章列表</h2>
+        
+                <div class="category">
+            <h3>🍎 Apple 新闻</h3>
+            <div class="article-item">
+                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/" target="_blank">New MacBook Air With M5</a></h4>
+                <div class="meta">Apple Newsroom · 10 小时前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/" target="_blank">MacBook Pro with M5 Pro/Max</a></h4>
+                <div class="meta">Apple Newsroom · 11 小时前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/" target="_blank">M5 Pro/Max 性能详解</a></h4>
+                <div class="meta">Apple Newsroom · 13 小时前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://www.macrumors.com/2026/03/03/apple-accidentally-leaks-macbook-neo/" target="_blank">MacBook Neo 名称泄露</a></h4>
+                <div class="meta">MacRumors · 10 小时前</div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h3>🤖 AI/ML</h3>
+            <div class="article-item">
+                <h4><a href="https://seangoedecke.com/giving-llms-a-personality/" target="_blank">Giving LLMs a personality is just good engineering</a></h4>
+                <div class="meta">seangoedecke.com · 1 天前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h4>
+                <div class="meta">simonwillison.net · 7 小时前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h4>
+                <div class="meta">simonwillison.net · 9 小时前</div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h3>🛠️ 工具/项目</h3>
+            <div class="article-item">
+                <h4><a href="https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/" target="_blank">GIF optimization with WASM</a></h4>
+                <div class="meta">simonwillison.net · 1 天前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh-pico-micro-mac/" target="_blank">Pint-sized Macintosh</a></h4>
+                <div class="meta">jeffgeerling.com · 1 天前</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="https://daringfireball.net/2026/03/hazeover" target="_blank">HazeOver 窗口工具</a></h4>
+                <div class="meta">daringfireball.net · 1 天前</div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Generated by AI Daily News | 
+            <a href="https://github.com/Zaynxxii/ai-daily-news" target="_blank">GitHub</a> | 
+            Data from <a href="https://refactoringenglish.com/tools/hn-popularity/" target="_blank">HN Popularity Contest</a></p>
+        </footer>
+    </div>
+</body>
+</html>
