@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Daily News - 每日 AI 新闻精选，来自全球顶级技术博客">
-    <meta name="keywords" content="AI,人工智能，机器学习，深度学习，LLM，大模型，技术新闻">
+    <meta name="description" content="AI Daily News - Curated AI news from top tech blogs">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Deep Learning, LLM, Tech News">
     <title>AI Daily News - {{DATE}}</title>
     <style>
         * {
@@ -88,7 +88,7 @@
         }
         
         .top-3::before {
-            content: '🏆 必读';
+            content: '🏆 Must Read';
             display: inline-block;
             background: #667eea;
             color: white;
@@ -221,39 +221,39 @@
         <div class="stats">
             <div>
                 <div class="number">{{TOTAL_SOURCES}}</div>
-                <div class="label">扫描源</div>
+                <div class="label">Sources</div>
             </div>
             <div>
                 <div class="number">{{TOTAL_ARTICLES}}</div>
-                <div class="label">抓取文章</div>
+                <div class="label">Articles</div>
             </div>
             <div>
                 <div class="number">{{RECENT_ARTICLES}}</div>
-                <div class="label">48h 内</div>
+                <div class="label">48h</div>
             </div>
             <div>
                 <div class="number">{{TOP_N}}</div>
-                <div class="label">精选</div>
+                <div class="label">Top Picks</div>
             </div>
         </div>
         
         <div class="seo-tags">
-            <h3>🔥 今日热点 SEO 关键词</h3>
+            <h3>🔥 Trending Topics</h3>
             <div class="tags">
                 {{SEO_TAGS}}
             </div>
         </div>
         
         <div class="trend-summary">
-            <h2>📝 今日趋势</h2>
+            <h2>📝 Today's Trends</h2>
             <p>{{TREND_SUMMARY}}</p>
         </div>
         
-        <h2 style="color: white; margin: 30px 0 20px;">🏆 Top 3 必读</h2>
+        <h2 style="color: white; margin: 30px 0 20px;">🏆 Top 3 Must Read</h2>
         
         {{TOP3_CARDS}}
         
-        <h2 style="color: white; margin: 30px 0 20px;">📚 完整文章列表</h2>
+        <h2 style="color: white; margin: 30px 0 20px;">📚 All Articles</h2>
         
         {{FULL_LIST}}
         
