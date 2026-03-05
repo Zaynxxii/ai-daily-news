@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Daily News - Curated AI news from top tech blogs">
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Deep Learning, LLM, Tech News">
     <title>AI Daily News - 2026-03-05</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -20,75 +13,35 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            text-align: center;
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; color: white; margin-bottom: 40px; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .date { font-size: 1.2em; opacity: 0.9; }
+        .nav { text-align: center; margin-bottom: 30px; }
+        .nav a {
+            background: rgba(255,255,255,0.2);
             color: white;
-            margin-bottom: 40px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 0 10px;
+            backdrop-filter: blur(10px);
         }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        header .date {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
+        .nav a:hover { background: rgba(255,255,255,0.3); }
         .card {
             background: white;
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
         }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .card .meta {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-        
-        .card .summary {
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .card a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .card a:hover {
-            text-decoration: underline;
-        }
-        
-        .top-3 {
-            border: 3px solid #667eea;
-        }
-        
+        .card h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
+        .card .meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        .card a { color: #667eea; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+        .top-3 { border: 3px solid #667eea; }
         .top-3::before {
-            content: '🏆 Must Read';
+            content: '🏆 今日必读';
             display: inline-block;
             background: #667eea;
             color: white;
@@ -97,248 +50,98 @@
             font-size: 0.8em;
             margin-bottom: 15px;
         }
-        
         .stats {
             background: rgba(255,255,255,0.1);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        
-        .stats div {
-            text-align: center;
-            margin: 10px;
-        }
-        
-        .stats .number {
-            font-size: 2em;
-            font-weight: bold;
-        }
-        
-        .stats .label {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-        
-        .seo-tags {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .seo-tags h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9em;
-        }
-        
-        .category {
-            background: #f0f0f0;
-            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
         }
-        
-        .category h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
+        .stats span { margin: 0 15px; font-size: 1.1em; }
+        footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
+        .article-list { margin-top: 30px; }
         .article-item {
             padding: 15px 0;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #eee;
         }
-        
-        .article-item:last-child {
-            border-bottom: none;
-        }
-        
-        .article-item h4 {
-            margin-bottom: 8px;
-        }
-        
-        .article-item h4 a {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .article-item h4 a:hover {
-            color: #667eea;
-        }
-        
-        .article-item .meta {
-            color: #888;
-            font-size: 0.85em;
-        }
-        
-        footer {
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            padding: 20px;
-            opacity: 0.8;
-        }
-        
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            
-            .stats {
-                flex-direction: column;
-            }
-        }
+        .article-item:last-child { border-bottom: none; }
+        .article-item h3 { font-size: 1.1em; margin-bottom: 5px; }
+        .article-item .meta { font-size: 0.85em; color: #888; }
+        .rank { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #667eea; color: white; margin-right: 10px; font-weight: bold; }
+        .rank.gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
+        .rank.silver { background: linear-gradient(135deg, #C0C0C0, #808080); }
+        .rank.bronze { background: linear-gradient(135deg, #CD7F32, #8B4513); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🤖 AI Daily News</h1>
+            <h1>📰 AI Daily News</h1>
             <div class="date">2026-03-05</div>
         </header>
         
+        <div class="nav">
+            <a href="../index.html">🏠 首页</a>
+            <a href="archives.html">📚 历史归档</a>
+        </div>
+        
         <div class="stats">
-            <div>
-                <div class="number">87</div>
-                <div class="label">Sources</div>
-            </div>
-            <div>
-                <div class="number">2486</div>
-                <div class="label">Articles</div>
-            </div>
-            <div>
-                <div class="number">33</div>
-                <div class="label">48h</div>
-            </div>
-            <div>
-                <div class="number">15</div>
-                <div class="label">Top Picks</div>
-            </div>
+            <span>📊  源</span>
+            <span>→ 28 篇</span>
+            <span>→ 精选 15</span>
         </div>
-        
-        <div class="seo-tags">
-            <h3>🔥 Trending Topics</h3>
-            <div class="tags">
-                <span class="tag">AI News</span><span class="tag">Artificial Intelligence</span><span class="tag">Machine Learning</span><span class="tag">LLM</span><span class="tag">Deep Learning</span><span class="tag">Tech News</span><span class="tag">Simon Willison</span><span class="tag">Gemini</span><span class="tag">Apple M5</span><span class="tag">Open Source</span>
-            </div>
-        </div>
-        
-        <div class="trend-summary">
-            <h2>📝 Today's Trends</h2>
-            <p>Today's AI highlights: 1) Apple unveils M5 chip family with updated MacBook lineup; 2) Google releases lightweight Gemini 3.1 Flash-Lite model; 3) Community discusses AI programming boundaries and LLM personality design.</p>
-        </div>
-        
-        <h2 style="color: white; margin: 30px 0 20px;">🏆 Top 3 Must Read</h2>
-        
-                <div class="card top-3">
-            <h2>🥇 Quoting Donald Knuth</h2>
-            <div class="meta">simonwillison.net · 7 hours ago</div>
-            <div class="summary">
-                <p>Computing legend Donald Knuth discusses AI programming: "AI can write code, but programmers must understand every line." Simon Willison shares insights from Knuth's recent interview on the boundaries of AI-assisted programming.</p>
-                <p><strong>Why read:</strong> A rare sober perspective in today's AI programming tool frenzy.</p>
-            </div>
-            <p style="margin-top: 15px;"><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Read More →</a></p>
-        </div>
-        
+
         <div class="card top-3">
-            <h2>🥈 Gemini 3.1 Flash-Lite</h2>
-            <div class="meta">simonwillison.net · 9 hours ago</div>
-            <div class="summary">
-                <p>Google releases lightweight Gemini model designed for low-cost, high-frequency scenarios. Significantly reduces costs while maintaining reasonable performance, ideal for applications requiring大量 API calls.</p>
-                <p><strong>Why read:</strong> Important option for developers looking to scale AI API usage.</p>
-            </div>
-            <p style="margin-top: 15px;"><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Read More →</a></p>
-        </div>
-        
-        <div class="card top-3">
-            <h2>🥉 GIF Optimization with WebAssembly</h2>
-            <div class="meta">simonwillison.net · 1 day ago</div>
-            <div class="summary">
-                <p>Optimize GIFs in the browser using WebAssembly + Gifsicle, 10x faster. Compile Gifsicle to WebAssembly for client-side GIF optimization without server uploads.</p>
-                <p><strong>Why read:</strong> Practical WebAssembly case study for frontend developers.</p>
-            </div>
-            <p style="margin-top: 15px;"><a href="https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/" target="_blank">Read More →</a></p>
-        </div>
-        
-        <h2 style="color: white; margin: 30px 0 20px;">📚 All Articles</h2>
-        
-                <div class="category">
-            <h3>🍎 Apple News</h3>
-            <div class="article-item">
-                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/" target="_blank">New MacBook Air With M5</a></h4>
-                <div class="meta">Apple Newsroom · 10 hours ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/" target="_blank">MacBook Pro with M5 Pro/Max</a></h4>
-                <div class="meta">Apple Newsroom · 11 hours ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/" target="_blank">M5 Pro/Max Performance Details</a></h4>
-                <div class="meta">Apple Newsroom · 13 hours ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://www.macrumors.com/2026/03/03/apple-accidentally-leaks-macbook-neo/" target="_blank">MacBook Neo Name Leak</a></h4>
-                <div class="meta">MacRumors · 10 hours ago</div>
+            <h2>🏆 今日必读 Top 3</h2>
+            <div class="article-list">
+                <div class="article-item">
+                    <span class="rank gold">1</span>
+                    <h3><a href="https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/" target="_blank">Anti-patterns: things to avoid</a></h3>
+                    <div class="meta">simonwillison.net · 8 小时前</div>
+                </div>
+                <div class="article-item">
+                    <span class="rank silver">2</span>
+                    <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h3>
+                    <div class="meta">simonwillison.net · 10 小时前</div>
+                </div>
+                <div class="article-item">
+                    <span class="rank bronze">3</span>
+                    <h3><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h3>
+                    <div class="meta">simonwillison.net · 1 天前</div>
+                </div>
             </div>
         </div>
-        
-        <div class="category">
-            <h3>🤖 AI/ML</h3>
-            <div class="article-item">
-                <h4><a href="https://seangoedecke.com/giving-llms-a-personality/" target="_blank">Giving LLMs a personality is just good engineering</a></h4>
-                <div class="meta">seangoedecke.com · 1 day ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h4>
-                <div class="meta">simonwillison.net · 7 hours ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h4>
-                <div class="meta">simonwillison.net · 9 hours ago</div>
-            </div>
-        </div>
-        
-        <div class="category">
-            <h3>🛠️ Tools {{FULL_LIST}} Projects</h3>
-            <div class="article-item">
-                <h4><a href="https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/" target="_blank">GIF optimization with WASM</a></h4>
-                <div class="meta">simonwillison.net · 1 day ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh-pico-micro-mac/" target="_blank">Pint-sized Macintosh</a></h4>
-                <div class="meta">jeffgeerling.com · 1 day ago</div>
-            </div>
-            <div class="article-item">
-                <h4><a href="https://daringfireball.net/2026/03/hazeover" target="_blank">HazeOver Window Tool</a></h4>
-                <div class="meta">daringfireball.net · 1 day ago</div>
+
+        <div class="card">
+            <h2>📝 完整列表</h2>
+            <div class="article-list">
+                <div class="article-item">
+                    <h3><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h3>
+                    <div class="meta">simonwillison.net · 1 天前</div>
+                </div>
+                <div class="article-item">
+                    <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">★ Thoughts on MacBook Neo</a></h3>
+                    <div class="meta">daringfireball.net · 5 小时前</div>
+                </div>
+                <div class="article-item">
+                    <h3><a href="https://www.apple.com/displays/" target="_blank">Studio Display vs. Studio Display XDR</a></h3>
+                    <div class="meta">Apple · 7 小时前</div>
+                </div>
+                <div class="article-item">
+                    <h3><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h3>
+                    <div class="meta">idiallo.com · 13 小时前</div>
+                </div>
+                <div class="article-item">
+                    <h3><a href="https://pluralistic.net/2026/03/03/its-a-trap-2/" target="_blank">Supreme Court saves artists from AI</a></h3>
+                    <div class="meta">pluralistic.net · 1 天前</div>
+                </div>
             </div>
         </div>
-        
+
         <footer>
-            <p>Generated by AI Daily News | 
-            <a href="https://github.com/Zaynxxii/ai-daily-news" target="_blank">GitHub</a> | 
-            Data from <a href="https://refactoringenglish.com/tools/hn-popularity/" target="_blank">HN Popularity Contest</a></p>
+            <p>Generated by OpenClaw | 数据保留 7 天</p>
+            <p><a href="https://github.com/Zaynxxii/ai-daily-news" style="color: rgba(255,255,255,0.7);">GitHub</a></p>
         </footer>
     </div>
 </body>
