@@ -35,43 +35,13 @@
             margin-bottom: 25px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
-        .card h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
-        .card .meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
-        .card a { color: #667eea; text-decoration: none; }
-        .card a:hover { text-decoration: underline; }
-        .top-3 { border: 3px solid #667eea; }
-        .top-3::before {
-            content: '🏆 今日必读';
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-bottom: 15px;
-        }
-        .stats {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-        }
-        .stats span { margin: 0 15px; font-size: 1.1em; }
+        .card h2 { color: #667eea; margin-bottom: 20px; font-size: 1.5em; }
+        .card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.2em; }
+        .card p { margin-bottom: 10px; }
+        .card ul { margin-left: 20px; margin-bottom: 15px; }
+        .card li { margin-bottom: 8px; }
+        .card strong { color: #667eea; }
         footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
-        .article-list { margin-top: 30px; }
-        .article-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .article-item:last-child { border-bottom: none; }
-        .article-item h3 { font-size: 1.1em; margin-bottom: 5px; }
-        .article-item .meta { font-size: 0.85em; color: #888; }
-        .rank { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #667eea; color: white; margin-right: 10px; font-weight: bold; }
-        .rank.gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
-        .rank.silver { background: linear-gradient(135deg, #C0C0C0, #808080); }
-        .rank.bronze { background: linear-gradient(135deg, #CD7F32, #8B4513); }
     </style>
 </head>
 <body>
@@ -85,58 +55,63 @@
             <a href="../index.html">🏠 首页</a>
             <a href="archives.html">📚 历史归档</a>
         </div>
-        
-        <div class="stats">
-            <span>📊  源</span>
-            <span>→  篇</span>
-            <span>→ 精选 15</span>
+
+        <div class="card">
+            <h2>🏆 今日必读 Top 3</h2>
+            
+<p><h3>1. <strong>MacBook Neo: Apple's $599 Laptop Revolution</strong></h3></p>
+<p>Daring Fireball reports on Apple's new MacBook Neo, a compelling $599 laptop that marks Apple's serious entry into the sub-$1,000 market. Unlike previous approaches of selling older models at lower prices, the Neo is an all-new design built from the ground up with an A18 Pro chip, solid aluminum construction, and features that make it vastly superior to similarly priced PC laptops. The article notes this is "not a piece of junk" and represents Apple's commitment to making Macs accessible to a broader audience.</p>
+
+<p><h3>2. <strong>Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?</strong></h3></p>
+<p>Simon Willison explores the fascinating question of whether coding agents can effectively relicense open source code through what amounts to a "clean room" implementation. This has become increasingly relevant as AI coding assistants demonstrate remarkable ability to build functional equivalents of existing code without directly copying it, raising important questions about copyright and licensing in the AI era.</p>
+
+<p><h3>3. <strong>The Kimwolf Botnet Crisis</strong></h3></p>
+<p>Krebs on Security reveals the identity behind the Kimwolf botnet, which has infected over 2 million devices and disrupted networks including the anonymity network I2P. The investigation points to individuals using the handles "Dort" and "Snow," with evidence suggesting connections to Canada. The botnet has been used for DDoS attacks, doxing, and even swatting attempts against security researchers who exposed its vulnerabilities.</p>
         </div>
 
-        <div class="card top-3">
-            <h2>🏆 今日必读 Top 3</h2>
-            <div class="article-list">
-                <div class="article-item">
-                    <span class="rank gold">1</span>
-                    <h3><a href="https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/" target="_blank">Anti-patterns: things to avoid</a></h3>
-                    <div class="meta">simonwillison.net · 8 小时前</div>
-                </div>
-                <div class="article-item">
-                    <span class="rank silver">2</span>
-                    <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h3>
-                    <div class="meta">simonwillison.net · 10 小时前</div>
-                </div>
-                <div class="article-item">
-                    <span class="rank bronze">3</span>
-                    <h3><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h3>
-                    <div class="meta">simonwillison.net · 1 天前</div>
-                </div>
-            </div>
+        <div class="card">
+            <h2>📊 数据概览</h2>
+            
+<p><li><strong>Sources analyzed:</strong> 6 major tech blogs</p>
+<p><li><strong>Key topics:</strong> AI development, Apple product launches, cybersecurity threats, social media platform changes</p>
+<p><li><strong>Notable trend:</strong> Increasing focus on practical AI applications and ethical concerns around AI-generated content</p>
+<p><li><strong>Security alert:</strong> Multiple zero-day vulnerabilities patched in Microsoft's February 2026 update</p>
         </div>
 
         <div class="card">
             <h2>📝 完整列表</h2>
-            <div class="article-list">
-                <div class="article-item">
-                    <h3><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h3>
-                    <div class="meta">simonwillison.net · 1 天前</div>
-                </div>
-                <div class="article-item">
-                    <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">★ Thoughts on MacBook Neo</a></h3>
-                    <div class="meta">daringfireball.net · 5 小时前</div>
-                </div>
-                <div class="article-item">
-                    <h3><a href="https://www.apple.com/displays/" target="_blank">Studio Display vs. Studio Display XDR</a></h3>
-                    <div class="meta">Apple · 7 小时前</div>
-                </div>
-                <div class="article-item">
-                    <h3><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h3>
-                    <div class="meta">idiallo.com · 13 小时前</div>
-                </div>
-                <div class="article-item">
-                    <h3><a href="https://pluralistic.net/2026/03/03/its-a-trap-2/" target="_blank">Supreme Court saves artists from AI</a></h3>
-                    <div class="meta">pluralistic.net · 1 天前</div>
-                </div>
-            </div>
+            
+<p><h3>AI/LLM</h3></p>
+<p><li><strong>Simon Willison:</strong> Discussion of Qwen 3.5 model family and potential team departures at Alibaba</p>
+<p><li><strong>iDiallo.com:</strong> Reflection on the problems with LLM-generated content and the "Mo Samuels" effect where AI writing lacks authentic voice</p>
+<p><li><strong>Pluralistic:</strong> Commentary on the AI bubble as an information war</p>
+<p><li><strong>Jeff Geerling:</strong> Article on "Expert Beginners and Lone Wolves" dominating the early LLM era</p>
+
+<p><h3>Apple</h3></p>
+<p><li><strong>Daring Fireball:</strong> Comprehensive coverage of the new MacBook Neo, M5 MacBook Air, and Studio Display updates</p>
+<p><li><strong>Daring Fireball:</strong> Analysis of Apple's new CPU core naming convention (efficiency, performance, and super cores)</p>
+
+<p><h3>Projects</h3></p>
+<p><li><strong>Simon Willison:</strong> New tools including MP3 Inspector and GIF Optimizer using WebAssembly</p>
+<p><li><strong>Jeff Geerling:</strong> Building a pint-sized Macintosh and upgrading Pi surveillance server with Frigate</p>
+<p><li><strong>iDiallo.com:</strong> Reflection on interruption-driven development and its impact on productivity</p>
+
+<p><h3>Other</h3></p>
+<p><li><strong>Krebs on Security:</strong> Detailed investigation into the Kimwolf botnet operators and the Starkiller phishing service</p>
+<p><li><strong>Pluralistic:</strong> Cory Doctorow announces departure from Twitter after Elon Musk's management changes</p>
+<p><li><strong>iDiallo.com:</strong> Analysis of notification psychology and the "little red dot" phenomenon</p>
+        </div>
+
+        <div class="card">
+            <h2>🔥 趋势观察</h2>
+            
+<p>1. <strong>AI Ethics Maturation</strong>: There's a growing awareness of the limitations and ethical concerns around AI-generated content, with writers like Ibrahim Diallo noting the homogenizing effect of LLM writing styles.</p>
+
+<p>2. <strong>Apple's Market Expansion</strong>: Apple is making significant moves to capture the budget laptop market with the MacBook Neo, potentially disrupting the Windows-dominated sub-$1000 segment.</p>
+
+<p>3. <strong>Cybersecurity Escalation</strong>: Botnets like Kimwolf are becoming more sophisticated, using anonymity networks like I2P for command and control, while phishing services like Starkiller are bypassing traditional security measures including MFA.</p>
+
+<p>4. <strong>Platform Exodus</strong>: High-profile users like Cory Doctorow are leaving centralized platforms like Twitter in favor of federated alternatives like Bluesky and Mastodon, signaling a potential shift toward more resilient social media architectures.</p>
         </div>
 
         <footer>
