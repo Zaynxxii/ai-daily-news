@@ -1,675 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - March 6, 2026</title>
-    <meta name="description" content="Daily AI news curated from 99 top tech blogs and media - MacBook Neo, Qwen 3.5, AI Ethics, Tech Hardware, Cybersecurity">
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, MacBook Neo, Qwen 3.5, Tech Hardware, Cybersecurity, 99 Sources">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="AI Daily News - March 6, 2026">
-    <meta property="og:description" content="Daily AI news curated from 99 top tech blogs and media">
-    <meta property="og:type" content="website">
+    <title>AI Daily News - 2026-03-07</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #1a1a2e;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        
-        /* Header */
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; color: white; margin-bottom: 40px; }
-        header h1 { 
-            font-size: 2.8em; 
-            margin-bottom: 10px; 
-            font-weight: 700;
-            letter-spacing: -0.5px;
+        header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .date { font-size: 1.2em; opacity: 0.9; }
+        .nav { text-align: center; margin-bottom: 30px; }
+        .nav a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 0 10px;
+            backdrop-filter: blur(10px);
         }
-        header .date { 
-            font-size: 1.1em; 
-            opacity: 0.9;
-            font-weight: 400;
-        }
-        
-        /* Date Selector */
-        .date-selector {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 20px 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        .date-selector label {
-            color: #667eea;
-            margin-right: 15px;
-            font-weight: 600;
-            font-size: 1em;
-        }
-        .date-selector select {
-            padding: 12px 25px;
-            font-size: 1em;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
+        .nav a:hover { background: rgba(255,255,255,0.3); }
+        .card {
             background: white;
-            color: #333;
-            cursor: pointer;
-            outline: none;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        .date-selector select:hover { 
-            border-color: #667eea;
-            transform: translateY(-1px);
-        }
-        .date-selector select:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
-        }
-        
-        /* Trending Keywords */
-        .trending-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        .trending-section h3 {
-            text-align: center;
             margin-bottom: 25px;
-            font-size: 1.4em;
-            color: #667eea;
-            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
-        .trending-note {
-            text-align: center;
-            font-size: 0.85em;
-            color: #888;
-            margin-bottom: 20px;
-            font-style: italic;
+        .card h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
+        .card .meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        .card a { color: #667eea; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+        .top-3 { border: 3px solid #667eea; }
+        .top-3::before {
+            content: '🏆 今日必读';
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
         }
-        .keywords-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .keyword-card {
-            background: linear-gradient(135deg, #f8f9ff, #ffffff);
-            border-radius: 16px;
+        .stats {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .keyword-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(102,126,234,0.15);
-        }
-        .keyword-card.hot {
-            background: linear-gradient(135deg, #fff5f5, #ffffff);
-            border-color: #ff6b6b;
-        }
-        .keyword-card.breaking {
-            background: linear-gradient(135deg, #fff9e6, #ffffff);
-            border-color: #ffd93d;
-        }
-        .keyword-name {
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 12px;
-            color: #1a1a2e;
-        }
-        .keyword-stats {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        .trend-score {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(102,126,234,0.1);
-            padding: 6px 12px;
-            border-radius: 20px;
-        }
-        .trend-score .value {
-            font-weight: 700;
-            font-size: 1.1em;
-            color: #667eea;
-        }
-        .trend-score .change {
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        .trend-score .change.up { color: #06d6a0; }
-        .trend-score .change.new { color: #ffd93d; }
-        .trend-label {
-            font-size: 0.75em;
-            color: #888;
-            margin-top: 8px;
-        }
-        
-        /* Hot Topics */
-        .hot-topics {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        .hot-topics h2 { 
-            color: #667eea; 
-            margin-bottom: 20px; 
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-        .hot-topics ul { list-style: none; }
-        .hot-topics li {
-            padding: 14px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        .hot-topics li:last-child { border-bottom: none; }
-        .hot-topics .trend { 
-            font-weight: 700; 
-            font-size: 1.2em;
-        }
-        .hot-topics .trend.up { color: #ef476f; }
-        .hot-topics .trend.stable { color: #667eea; }
-        .hot-topics strong { color: #1a1a2e; }
-        
-        /* Stats */
-        .stats {
-            background: rgba(255,255,255,0.95);
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        .stats span { 
-            margin: 0 20px; 
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #667eea;
-        }
-        
-        /* Cards */
-        .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        .card h2 { 
-            color: #667eea; 
-            margin-bottom: 25px; 
-            font-size: 1.6em;
-            font-weight: 600;
-        }
-        .card a { 
-            color: #667eea; 
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .card a:hover { 
-            color: #764ba2;
-            text-decoration: underline;
-        }
-        
-        /* Top 3 */
-        .top-3 { 
-            border: 3px solid #667eea;
-            background: linear-gradient(135deg, #f8f9ff, #ffffff);
-        }
-        .top-3::before {
-            content: '🏆 Top Stories';
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 8px 18px;
-            border-radius: 25px;
-            font-size: 0.85em;
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 30px;
         }
+        .stats span { margin: 0 15px; font-size: 1.1em; }
+        footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
+        .article-list { margin-top: 30px; }
         .article-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
         }
         .article-item:last-child { border-bottom: none; }
-        .article-item h3 { 
-            font-size: 1.15em; 
-            margin-bottom: 8px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .article-item .meta { 
-            font-size: 0.85em; 
-            color: #888;
-            margin-bottom: 10px;
-        }
-        .article-item p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .rank {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
-            border-radius: 50%;
-            color: white;
-            margin-right: 12px;
-            font-weight: 700;
-            font-size: 0.95em;
-        }
-        .rank.gold { 
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            box-shadow: 0 2px 8px rgba(255,215,0,0.4);
-        }
-        .rank.silver { 
-            background: linear-gradient(135deg, #C0C0C0, #808080);
-            box-shadow: 0 2px 8px rgba(192,192,192,0.4);
-        }
-        .rank.bronze { 
-            background: linear-gradient(135deg, #CD7F32, #8B4513);
-            box-shadow: 0 2px 8px rgba(205,127,50,0.4);
-        }
-        .source-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-        .source-badge.premium {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-        .source-badge.blog {
-            background: #f0f0f0;
-            color: #666;
-        }
-        
-        /* Category */
-        .category { margin-top: 25px; }
-        .category h3 {
-            color: #764ba2;
-            font-size: 1.25em;
-            margin: 30px 0 15px 0;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #f0f0f0;
-            font-weight: 600;
-        }
-        .category .article-item h4 {
-            font-size: 1.05em;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-        
-        /* Footer */
-        footer { 
-            text-align: center; 
-            color: rgba(255,255,255,0.8); 
-            margin-top: 50px; 
-            padding: 30px;
-            font-size: 0.9em;
-        }
-        footer a { 
-            color: white;
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container { padding: 20px 15px; }
-            header h1 { font-size: 2.2em; }
-            .keywords-grid { grid-template-columns: 1fr; }
-            .stats span { display: block; margin: 10px 0; }
-            .card { padding: 25px 20px; }
-        }
+        .article-item h3 { font-size: 1.1em; margin-bottom: 5px; }
+        .article-item .meta { font-size: 0.85em; color: #888; }
+        .rank { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #667eea; color: white; margin-right: 10px; font-weight: bold; }
+        .rank.gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
+        .rank.silver { background: linear-gradient(135deg, #C0C0C0, #808080); }
+        .rank.bronze { background: linear-gradient(135deg, #CD7F32, #8B4513); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>📰 AI Daily News</h1>
-            <div class="date" id="current-date">March 6, 2026</div>
+            <div class="date">2026-03-07</div>
         </header>
         
-        <!-- Date Selector -->
-        <div class="date-selector">
-            <label for="date-select">📅 Select Date:</label>
-            <select id="date-select" onchange="location.href=this.value">
-                <option value="index.html" selected>March 6, 2026 (Today)</option>
-                <option value="2026-03-05.html">March 5, 2026</option>
-                <option value="2026-03-04.html">March 4, 2026</option>
-                <option value="2026-03-03.html">March 3, 2026</option>
-                <option value="2026-03-02.html">March 2, 2026</option>
-                <option value="2026-03-01.html">March 1, 2026</option>
-                <option value="2026-02-29.html">February 29, 2026</option>
-            </select>
+        <div class="nav">
+            <a href="../index.html">🏠 首页</a>
+            <a href="archives.html">📚 历史归档</a>
         </div>
         
-        <!-- Trending Keywords -->
-        <div class="trending-section">
-            <h3>🔥 Trending Topics</h3>
-            <p class="trending-note">
-                📊 热度值基于 99 个源的出现频率计算（90 博客 + 9 主流媒体）<br>
-                增长率 = 今日提及次数 vs 过去 7 日平均
-            </p>
-            <div class="keywords-grid">
-                <div class="keyword-card hot">
-                    <div class="keyword-name">MacBook Neo</div>
-                    <div class="keyword-stats">
-                        <span class="trend-score">
-                            <span class="value">🔥 89</span>
-                            <span class="change up">↑ +420%</span>
-                        </span>
-                    </div>
-                    <div class="trend-label">📈 99 源中 67 次提及 · 权威媒体首发</div>
-                </div>
-                
-                <div class="keyword-card hot">
-                    <div class="keyword-name">Apple M5</div>
-                    <div class="keyword-stats">
-                        <span class="trend-score">
-                            <span class="value">🔥 72</span>
-                            <span class="change up">↑ +215%</span>
-                        </span>
-                    </div>
-                    <div class="trend-label">📈 99 源中 54 次提及 · Apple Newsroom</div>
-                </div>
-                
-                <div class="keyword-card hot">
-                    <div class="keyword-name">Qwen 3.5</div>
-                    <div class="keyword-stats">
-                        <span class="trend-score">
-                            <span class="value">🔥 58</span>
-                            <span class="change up">↑ +125%</span>
-                        </span>
-                    </div>
-                    <div class="trend-label">📈 99 源中 41 次提及 · Simon Willison</div>
-                </div>
-                
-                <div class="keyword-card breaking">
-                    <div class="keyword-name">Kimwolf Botnet</div>
-                    <div class="keyword-stats">
-                        <span class="trend-score">
-                            <span class="value">⚡ NEW</span>
-                            <span class="change new">突发</span>
-                        </span>
-                    </div>
-                    <div class="trend-label">💥 99 源中 28 次提及 · Krebs 独家</div>
-                </div>
-                
-                <div class="keyword-card">
-                    <div class="keyword-name">AI Ethics</div>
-                    <div class="keyword-stats">
-                        <span class="trend-score">
-                            <span class="value">📊 45</span>
-                            <span class="change">→ +12%</span>
-                        </span>
-                    </div>
-                    <div class="trend-label">📊 99 源中 33 次提及 · 持续讨论</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Hot Topics -->
-        <div class="hot-topics">
-            <h2>🔥 Today's Hot Topics</h2>
-            <ul>
-                <li>
-                    <span class="trend up">↑</span>
-                    <div>
-                        <strong>MacBook Neo Launch</strong>
-                        <div style="color: #888; font-size: 0.9em; margin-top: 4px;">
-                            Apple's $599 laptop revolutionizes budget market — 首发：Daring Fireball, 转载：67 源
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="trend up">↑</span>
-                    <div>
-                        <strong>Apple M5 Chip Family</strong>
-                        <div style="color: #888; font-size: 0.9em; margin-top: 4px;">
-                            New MacBook Air and Pro with M5 chip — 首发：Apple Newsroom, 转载：54 源
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="trend stable">→</span>
-                    <div>
-                        <strong>Qwen 3.5 Developments</strong>
-                        <div style="color: #888; font-size: 0.9em; margin-top: 4px;">
-                            Alibaba's model family and team changes — 首发：Simon Willison, 转载：41 源
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="trend stable">→</span>
-                    <div>
-                        <strong>AI Ethics Maturation</strong>
-                        <div style="color: #888; font-size: 0.9em; margin-top: 4px;">
-                            Growing awareness of LLM content limitations — 多源讨论：33 源
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Stats -->
         <div class="stats">
-            <span>📊 99 Sources</span>
-            <span>→ 312 Articles</span>
-            <span>→ 15 Selected</span>
+            <span>📊  源</span>
+            <span>→  篇</span>
+            <span>→ 精选 15</span>
         </div>
 
-        <!-- Top 3 Stories -->
         <div class="card top-3">
-            <h2>🏆 Top Stories</h2>
-            <div class="article-item">
-                <span class="rank gold">1</span>
-                <h3>
-                    <a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">
-                        MacBook Neo: Apple's $599 Laptop Revolution
-                    </a>
-                </h3>
-                <div class="meta">
-                    Daring Fireball · 5 hours ago 
-                    <span class="source-badge premium">🏆 Premium</span>
+            <h2>🏆 今日必读 Top 3</h2>
+            <div class="article-list">
+                <div class="article-item">
+                    <span class="rank gold">1</span>
+                    <h3><a href="https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/" target="_blank">Anti-patterns: things to avoid</a></h3>
+                    <div class="meta">simonwillison.net · 8 小时前</div>
                 </div>
-                <p>Apple's new MacBook Neo marks serious entry into sub-$1,000 market with all-new A18 Pro design, vastly superior to similarly priced PC laptops. This is not a piece of junk — it represents Apple's commitment to making Macs accessible to a broader audience.</p>
-            </div>
-            <div class="article-item">
-                <span class="rank silver">2</span>
-                <h3>
-                    <a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">
-                        Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?
-                    </a>
-                </h3>
-                <div class="meta">
-                    Simon Willison · 10 hours ago
-                    <span class="source-badge blog">📝 Blog</span>
+                <div class="article-item">
+                    <span class="rank silver">2</span>
+                    <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h3>
+                    <div class="meta">simonwillison.net · 10 小时前</div>
                 </div>
-                <p>Exploration of whether AI coding assistants can effectively relicense open source code through clean room implementation, raising important copyright questions in the AI era.</p>
-            </div>
-            <div class="article-item">
-                <span class="rank bronze">3</span>
-                <h3>
-                    <a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">
-                        The Kimwolf Botnet Crisis
-                    </a>
-                </h3>
-                <div class="meta">
-                    Krebs on Security · 8 hours ago
-                    <span class="source-badge premium">🏆 Premium</span>
+                <div class="article-item">
+                    <span class="rank bronze">3</span>
+                    <h3><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h3>
+                    <div class="meta">simonwillison.net · 1 天前</div>
                 </div>
-                <p>Kimwolf botnet has infected over 2 million devices, disrupted I2P networks, and targeted security researchers with DDoS attacks and swatting attempts. Exclusive investigation by Krebs.</p>
             </div>
         </div>
 
-        <!-- Full List -->
         <div class="card">
-            <h2>📝 All Stories</h2>
-            
-            <div class="category">
-                <h3>🤖 AI & Machine Learning</h3>
+            <h2>📝 完整列表</h2>
+            <div class="article-list">
                 <div class="article-item">
-                    <h4>
-                        <a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">
-                            Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">Simon Willison · 10 hours ago</div>
+                    <h3><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h3>
+                    <div class="meta">simonwillison.net · 1 天前</div>
                 </div>
                 <div class="article-item">
-                    <h4>
-                        <a href="https://idiallo.com/blog/llm-generated-content-problems" target="_blank">
-                            Problems with LLM-Generated Content and the "Mo Samuels" Effect
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">iDiallo.com · 13 hours ago</div>
+                    <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">★ Thoughts on MacBook Neo</a></h3>
+                    <div class="meta">daringfireball.net · 5 小时前</div>
                 </div>
                 <div class="article-item">
-                    <h4>
-                        <a href="https://pluralistic.net/2026/03/03/ai-bubble-information-war" target="_blank">
-                            AI Bubble as an Information War
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">Pluralistic · 1 day ago</div>
-                </div>
-            </div>
-            
-            <div class="category">
-                <h3>📱 Tech & Hardware</h3>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">
-                            MacBook Neo: Apple's $599 Laptop Revolution
-                        </a>
-                        <span class="source-badge premium">🏆 Premium</span>
-                    </h4>
-                    <div class="meta">Daring Fireball · 5 hours ago</div>
+                    <h3><a href="https://www.apple.com/displays/" target="_blank">Studio Display vs. Studio Display XDR</a></h3>
+                    <div class="meta">Apple · 7 小时前</div>
                 </div>
                 <div class="article-item">
-                    <h4>
-                        <a href="https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-air-with-m5/" target="_blank">
-                            New MacBook Air With M5 Chip
-                        </a>
-                        <span class="source-badge premium">🏆 Official</span>
-                    </h4>
-                    <div class="meta">Apple Newsroom · 8 hours ago</div>
+                    <h3><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h3>
+                    <div class="meta">idiallo.com · 13 小时前</div>
                 </div>
                 <div class="article-item">
-                    <h4>
-                        <a href="https://daringfireball.net/2026/03/apple-cpu-core-naming" target="_blank">
-                            Apple's New CPU Core Naming Convention
-                        </a>
-                        <span class="source-badge premium">🏆 Premium</span>
-                    </h4>
-                    <div class="meta">Daring Fireball · 6 hours ago</div>
-                </div>
-            </div>
-            
-            <div class="category">
-                <h3>🔒 Security</h3>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">
-                            The Kimwolf Botnet Crisis
-                        </a>
-                        <span class="source-badge premium">🏆 Exclusive</span>
-                    </h4>
-                    <div class="meta">Krebs on Security · 8 hours ago</div>
-                </div>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://krebsonsecurity.com/2026/03/starkiller-phishing-service/" target="_blank">
-                            Starkiller Phishing Service Bypasses MFA
-                        </a>
-                        <span class="source-badge premium">🏆 Premium</span>
-                    </h4>
-                    <div class="meta">Krebs on Security · 8 hours ago</div>
-                </div>
-            </div>
-            
-            <div class="category">
-                <h3>🛠️ Tools & Open Source</h3>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://simonwillison.net/tools/mp3-inspector-webassembly" target="_blank">
-                            MP3 Inspector Using WebAssembly
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">Simon Willison · 11 hours ago</div>
-                </div>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://simonwillison.net/tools/gif-optimizer-webassembly" target="_blank">
-                            GIF Optimizer Using WebAssembly
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">Simon Willison · 11 hours ago</div>
-                </div>
-            </div>
-            
-            <div class="category">
-                <h3>📝 Opinion & Other</h3>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">
-                            Interruption-Driven Development
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">iDiallo.com · 13 hours ago</div>
-                </div>
-                <div class="article-item">
-                    <h4>
-                        <a href="https://pluralistic.net/2026/03/03/cory-doctorow-twitter-departure" target="_blank">
-                            Cory Doctorow Announces Departure from Twitter
-                        </a>
-                        <span class="source-badge blog">📝 Blog</span>
-                    </h4>
-                    <div class="meta">Pluralistic · 1 day ago</div>
+                    <h3><a href="https://pluralistic.net/2026/03/03/its-a-trap-2/" target="_blank">Supreme Court saves artists from AI</a></h3>
+                    <div class="meta">pluralistic.net · 1 天前</div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>Generated by OpenClaw · Data retained for 7 days</p>
-            <p>
-                <a href="https://github.com/Zaynxxii/ai-daily-news" target="_blank">GitHub</a> · 
-                <a href="https://github.com/vigorX777/ai-daily-digest" target="_blank">Inspired by</a>
-            </p>
+            <p>Generated by OpenClaw | 数据保留 7 天</p>
+            <p><a href="https://github.com/Zaynxxii/ai-daily-news" style="color: rgba(255,255,255,0.7);">GitHub</a></p>
         </footer>
     </div>
-    
-    <script>
-        const today = new Date('2026-03-06');
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', options);
-    </script>
 </body>
 </html>
