@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - 2026-03-06</title>
+    <title>AI Daily News - March 6, 2026</title>
+    <meta name="description" content="Daily AI news curated from top tech blogs - MacBook Neo, Qwen 3.5, Kimwolf Botnet, AI Ethics, Apple Market Expansion">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, MacBook Neo, Qwen 3.5, Kimwolf Botnet, AI Ethics, Apple, Cybersecurity">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI Daily News - March 6, 2026">
+    <meta property="og:description" content="Daily AI news curated from top tech blogs">
+    <meta property="og:type" content="website">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -14,20 +20,78 @@
             min-height: 100vh;
         }
         .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; color: white; margin-bottom: 40px; }
+        header { text-align: center; color: white; margin-bottom: 30px; }
         header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         header .date { font-size: 1.2em; opacity: 0.9; }
-        .nav { text-align: center; margin-bottom: 30px; }
-        .nav a {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin: 0 10px;
+        
+        /* Date Selector */
+        .date-selector {
+            background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-        .nav a:hover { background: rgba(255,255,255,0.3); }
+        .date-selector select {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+        }
+        .date-selector select:hover { background: #f5f5f5; }
+        
+        /* SEO Keywords */
+        .seo-keywords {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: white;
+        }
+        .seo-keywords span {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        
+        /* AI Hot Topics */
+        .hot-topics {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .hot-topics h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
+        .hot-topics ul { list-style: none; }
+        .hot-topics li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .hot-topics li:last-child { border-bottom: none; }
+        .hot-topics .trend { color: #e74c3c; font-weight: bold; margin-right: 10px; }
+        
+        /* Stats */
+        .stats {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .stats span { margin: 0 15px; font-size: 1.1em; }
+        
+        /* Cards */
         .card {
             background: white;
             border-radius: 15px;
@@ -36,88 +100,226 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         .card h2 { color: #667eea; margin-bottom: 20px; font-size: 1.5em; }
-        .card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.2em; }
-        .card p { margin-bottom: 10px; }
-        .card ul { margin-left: 20px; margin-bottom: 15px; }
-        .card li { margin-bottom: 8px; }
-        .card strong { color: #667eea; }
+        .card a { color: #667eea; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+        
+        /* Top 3 */
+        .top-3 { border: 3px solid #667eea; }
+        .top-3::before {
+            content: '🏆 Top Stories';
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+        .article-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .article-item:last-child { border-bottom: none; }
+        .article-item h3 { font-size: 1.1em; margin-bottom: 5px; }
+        .article-item h4 { font-size: 1.0em; margin-bottom: 5px; }
+        .article-item .meta { font-size: 0.85em; color: #888; }
+        .rank {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .rank.gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
+        .rank.silver { background: linear-gradient(135deg, #C0C0C0, #808080); }
+        .rank.bronze { background: linear-gradient(135deg, #CD7F32, #8B4513); }
+        
+        /* Category */
+        .category { margin-top: 20px; }
+        .category h3 {
+            color: #764ba2;
+            font-size: 1.2em;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
         footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
+        footer a { color: rgba(255,255,255,0.7); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>📰 AI Daily News</h1>
-            <div class="date">2026-03-06</div>
+            <div class="date" id="current-date">March 6, 2026</div>
         </header>
         
-        <div class="nav">
-            <a href="../index.html">🏠 首页</a>
-            <a href="archives.html">📚 历史归档</a>
+        <!-- Date Selector (Last 7 Days) -->
+        <div class="date-selector">
+            <label for="date-select" style="color: white; margin-right: 15px; font-weight: bold;">📅 Select Date:</label>
+            <select id="date-select" onchange="location.href=this.value">
+                <option value="index.html" selected>March 6, 2026 (Today)</option>
+                <option value="2026-03-05.html">March 5, 2026</option>
+                <option value="2026-03-04.html">March 4, 2026</option>
+                <option value="2026-03-03.html">March 3, 2026</option>
+                <option value="2026-03-02.html">March 2, 2026</option>
+                <option value="2026-03-01.html">March 1, 2026</option>
+                <option value="2026-02-29.html">February 29, 2026</option>
+            </select>
+        </div>
+        
+        <!-- SEO Keywords -->
+        <div class="seo-keywords">
+            <strong>🔥 Trending:</strong>
+            <span>MacBook Neo</span>
+            <span>Qwen 3.5</span>
+            <span>Kimwolf Botnet</span>
+            <span>AI Ethics</span>
+            <span>Apple Market</span>
+            <span>Cybersecurity</span>
+            <span>LLM Content</span>
+            <span>Platform Exodus</span>
+        </div>
+        
+        <!-- AI Hot Topics -->
+        <div class="hot-topics">
+            <h2>🔥 AI Hot Topics</h2>
+            <ul>
+                <li><span class="trend">↑</span> <strong>MacBook Neo Launch</strong> - Apple's $599 laptop revolutionizes budget market</li>
+                <li><span class="trend">↑</span> <strong>Qwen 3.5 Developments</strong> - Alibaba's model family and team changes</li>
+                <li><span class="trend">↑</span> <strong>Kimwolf Botnet Crisis</strong> - 2M+ devices infected, I2P network disrupted</li>
+                <li><span class="trend">→</span> <strong>AI Ethics Maturation</strong> - Growing awareness of LLM content limitations</li>
+            </ul>
+        </div>
+        
+        <!-- Stats -->
+        <div class="stats">
+            <span>📊 6 Sources</span>
+            <span>→ 12 Articles</span>
+            <span>→ 12 Selected</span>
         </div>
 
-        <div class="card">
-            <h2>🏆 今日必读 Top 3</h2>
-            
-<p><h3>1. <strong>MacBook Neo: Apple's $599 Laptop Revolution</strong></h3></p>
-<p>Daring Fireball reports on Apple's new MacBook Neo, a compelling $599 laptop that marks Apple's serious entry into the sub-$1,000 market. Unlike previous approaches of selling older models at lower prices, the Neo is an all-new design built from the ground up with an A18 Pro chip, solid aluminum construction, and features that make it vastly superior to similarly priced PC laptops. The article notes this is "not a piece of junk" and represents Apple's commitment to making Macs accessible to a broader audience.</p>
-
-<p><h3>2. <strong>Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?</strong></h3></p>
-<p>Simon Willison explores the fascinating question of whether coding agents can effectively relicense open source code through what amounts to a "clean room" implementation. This has become increasingly relevant as AI coding assistants demonstrate remarkable ability to build functional equivalents of existing code without directly copying it, raising important questions about copyright and licensing in the AI era.</p>
-
-<p><h3>3. <strong>The Kimwolf Botnet Crisis</strong></h3></p>
-<p>Krebs on Security reveals the identity behind the Kimwolf botnet, which has infected over 2 million devices and disrupted networks including the anonymity network I2P. The investigation points to individuals using the handles "Dort" and "Snow," with evidence suggesting connections to Canada. The botnet has been used for DDoS attacks, doxing, and even swatting attempts against security researchers who exposed its vulnerabilities.</p>
+        <!-- Top 3 Stories -->
+        <div class="card top-3">
+            <h2>🏆 Top Stories</h2>
+            <div class="article-item">
+                <span class="rank gold">1</span>
+                <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">MacBook Neo: Apple's $599 Laptop Revolution</a></h3>
+                <div class="meta">Daring Fireball · 5 hours ago · Apple</div>
+                <p style="margin-top: 10px; color: #666;">Apple's new MacBook Neo marks serious entry into sub-$1,000 market with all-new A18 Pro design, vastly superior to similarly priced PC laptops.</p>
+            </div>
+            <div class="article-item">
+                <span class="rank silver">2</span>
+                <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?</a></h3>
+                <div class="meta">Simon Willison · 10 hours ago · AI/LLM</div>
+                <p style="margin-top: 10px; color: #666;">Exploration of whether AI coding assistants can effectively relicense open source code through clean room implementation, raising important copyright questions.</p>
+            </div>
+            <div class="article-item">
+                <span class="rank bronze">3</span>
+                <h3><a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">The Kimwolf Botnet Crisis</a></h3>
+                <div class="meta">Krebs on Security · 8 hours ago · Cybersecurity</div>
+                <p style="margin-top: 10px; color: #666;">Kimwolf botnet has infected over 2 million devices, disrupted I2P networks, and targeted security researchers with DDoS attacks and swatting attempts.</p>
+            </div>
         </div>
 
+        <!-- Full List -->
         <div class="card">
-            <h2>📊 数据概览</h2>
+            <h2>📝 All Stories</h2>
             
-<p><li><strong>Sources analyzed:</strong> 6 major tech blogs</p>
-<p><li><strong>Key topics:</strong> AI development, Apple product launches, cybersecurity threats, social media platform changes</p>
-<p><li><strong>Notable trend:</strong> Increasing focus on practical AI applications and ethical concerns around AI-generated content</p>
-<p><li><strong>Security alert:</strong> Multiple zero-day vulnerabilities patched in Microsoft's February 2026 update</p>
-        </div>
-
-        <div class="card">
-            <h2>📝 完整列表</h2>
+            <div class="category">
+                <h3>🤖 AI / LLM</h3>
+                <div class="article-item">
+                    <h4><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?</a></h4>
+                    <div class="meta">Simon Willison · 10 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://idiallo.com/blog/llm-generated-content-problems" target="_blank">Problems with LLM-Generated Content and the "Mo Samuels" Effect</a></h4>
+                    <div class="meta">iDiallo.com · 13 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://pluralistic.net/2026/03/03/ai-bubble-information-war" target="_blank">AI Bubble as an Information War</a></h4>
+                    <div class="meta">Pluralistic · 1 day ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/expert-beginners-lone-wolves-llm-era" target="_blank">Expert Beginners and Lone Wolves Dominating Early LLM Era</a></h4>
+                    <div class="meta">Jeff Geerling · 12 hours ago</div>
+                </div>
+            </div>
             
-<p><h3>AI/LLM</h3></p>
-<p><li><strong>Simon Willison:</strong> Discussion of Qwen 3.5 model family and potential team departures at Alibaba</p>
-<p><li><strong>iDiallo.com:</strong> Reflection on the problems with LLM-generated content and the "Mo Samuels" effect where AI writing lacks authentic voice</p>
-<p><li><strong>Pluralistic:</strong> Commentary on the AI bubble as an information war</p>
-<p><li><strong>Jeff Geerling:</strong> Article on "Expert Beginners and Lone Wolves" dominating the early LLM era</p>
-
-<p><h3>Apple</h3></p>
-<p><li><strong>Daring Fireball:</strong> Comprehensive coverage of the new MacBook Neo, M5 MacBook Air, and Studio Display updates</p>
-<p><li><strong>Daring Fireball:</strong> Analysis of Apple's new CPU core naming convention (efficiency, performance, and super cores)</p>
-
-<p><h3>Projects</h3></p>
-<p><li><strong>Simon Willison:</strong> New tools including MP3 Inspector and GIF Optimizer using WebAssembly</p>
-<p><li><strong>Jeff Geerling:</strong> Building a pint-sized Macintosh and upgrading Pi surveillance server with Frigate</p>
-<p><li><strong>iDiallo.com:</strong> Reflection on interruption-driven development and its impact on productivity</p>
-
-<p><h3>Other</h3></p>
-<p><li><strong>Krebs on Security:</strong> Detailed investigation into the Kimwolf botnet operators and the Starkiller phishing service</p>
-<p><li><strong>Pluralistic:</strong> Cory Doctorow announces departure from Twitter after Elon Musk's management changes</p>
-<p><li><strong>iDiallo.com:</strong> Analysis of notification psychology and the "little red dot" phenomenon</p>
-        </div>
-
-        <div class="card">
-            <h2>🔥 趋势观察</h2>
+            <div class="category">
+                <h3>🍎 Apple</h3>
+                <div class="article-item">
+                    <h4><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">MacBook Neo: Apple's $599 Laptop Revolution</a></h4>
+                    <div class="meta">Daring Fireball · 5 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://daringfireball.net/2026/03/apple-cpu-core-naming" target="_blank">Apple's New CPU Core Naming Convention</a></h4>
+                    <div class="meta">Daring Fireball · 6 hours ago</div>
+                </div>
+            </div>
             
-<p>1. <strong>AI Ethics Maturation</strong>: There's a growing awareness of the limitations and ethical concerns around AI-generated content, with writers like Ibrahim Diallo noting the homogenizing effect of LLM writing styles.</p>
-
-<p>2. <strong>Apple's Market Expansion</strong>: Apple is making significant moves to capture the budget laptop market with the MacBook Neo, potentially disrupting the Windows-dominated sub-$1000 segment.</p>
-
-<p>3. <strong>Cybersecurity Escalation</strong>: Botnets like Kimwolf are becoming more sophisticated, using anonymity networks like I2P for command and control, while phishing services like Starkiller are bypassing traditional security measures including MFA.</p>
-
-<p>4. <strong>Platform Exodus</strong>: High-profile users like Cory Doctorow are leaving centralized platforms like Twitter in favor of federated alternatives like Bluesky and Mastodon, signaling a potential shift toward more resilient social media architectures.</p>
+            <div class="category">
+                <h3>🛠️ Projects & Tools</h3>
+                <div class="article-item">
+                    <h4><a href="https://simonwillison.net/tools/mp3-inspector-webassembly" target="_blank">MP3 Inspector Using WebAssembly</a></h4>
+                    <div class="meta">Simon Willison · 11 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://simonwillison.net/tools/gif-optimizer-webassembly" target="_blank">GIF Optimizer Using WebAssembly</a></h4>
+                    <div class="meta">Simon Willison · 11 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh" target="_blank">Building a Pint-sized Macintosh</a></h4>
+                    <div class="meta">Jeff Geerling · 12 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/pi-surveillance-frigate" target="_blank">Upgrading Pi Surveillance Server with Frigate</a></h4>
+                    <div class="meta">Jeff Geerling · 12 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h4>
+                    <div class="meta">iDiallo.com · 13 hours ago</div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>📝 Other</h3>
+                <div class="article-item">
+                    <h4><a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">The Kimwolf Botnet Crisis</a></h4>
+                    <div class="meta">Krebs on Security · 8 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://krebsonsecurity.com/2026/03/starkiller-phishing-service/" target="_blank">Starkiller Phishing Service Bypasses MFA</a></h4>
+                    <div class="meta">Krebs on Security · 8 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://pluralistic.net/2026/03/03/cory-doctorow-twitter-departure" target="_blank">Cory Doctorow Announces Departure from Twitter</a></h4>
+                    <div class="meta">Pluralistic · 1 day ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://idiallo.com/blog/notification-psychology-little-red-dot" target="_blank">Notification Psychology and the "Little Red Dot" Phenomenon</a></h4>
+                    <div class="meta">iDiallo.com · 13 hours ago</div>
+                </div>
+            </div>
         </div>
 
         <footer>
-            <p>Generated by OpenClaw | 数据保留 7 天</p>
-            <p><a href="https://github.com/Zaynxxii/ai-daily-news" style="color: rgba(255,255,255,0.7);">GitHub</a></p>
+            <p>Generated by OpenClaw | Data retained for 7 days</p>
+            <p><a href="https://github.com/Zaynxxii/ai-daily-news" target="_blank">GitHub</a></p>
         </footer>
     </div>
+    
+    <script>
+        // Set current date in selector
+        const today = new Date('2026-03-06');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', options);
+    </script>
 </body>
 </html>
