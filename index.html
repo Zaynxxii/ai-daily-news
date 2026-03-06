@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Daily News - March 6, 2026</title>
-    <meta name="description" content="Daily AI news curated from 90 top tech blogs - MacBook Neo, Qwen 3.5, Kimwolf Botnet, AI Ethics, Apple Market Expansion">
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, MacBook Neo, Qwen 3.5, Kimwolf Botnet, AI Ethics, Apple, Cybersecurity, 90 Sources">
+    <meta name="description" content="Daily AI news curated from 90+ top tech blogs - MacBook Neo, Qwen 3.5, AI Ethics, Tech Hardware, Cybersecurity">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, MacBook Neo, Qwen 3.5, Tech Hardware, Cybersecurity, 90+ Sources">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="AI Daily News - March 6, 2026">
-    <meta property="og:description" content="Daily AI news curated from 90 top tech blogs">
+    <meta property="og:description" content="Daily AI news curated from 90+ top tech blogs">
     <meta property="og:type" content="website">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,22 +45,67 @@
         }
         .date-selector select:hover { background: #f5f5f5; }
         
-        /* SEO Keywords */
-        .seo-keywords {
+        /* Trending Keywords with Trends Data */
+        .trending-keywords {
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 15px 25px;
+            border-radius: 15px;
+            padding: 25px;
             margin-bottom: 30px;
-            text-align: center;
             color: white;
         }
-        .seo-keywords span {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9em;
+        .trending-keywords h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .keyword-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .keyword-card.hot {
+            background: linear-gradient(135deg, rgba(255,100,100,0.3), rgba(255,50,50,0.2));
+            border: 1px solid rgba(255,100,100,0.4);
+        }
+        .keyword-card.breaking {
+            background: linear-gradient(135deg, rgba(255,200,50,0.3), rgba(255,150,50,0.2));
+            border: 1px solid rgba(255,200,50,0.4);
+        }
+        .keyword-name {
+            font-weight: bold;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        .keyword-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.85em;
+        }
+        .trend-score {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .trend-score .value {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .trend-score .change {
+            font-weight: bold;
+        }
+        .trend-score .change.up { color: #4ade80; }
+        .trend-score .change.new { color: #fbbf24; }
+        .trend-label {
+            font-size: 0.75em;
+            opacity: 0.8;
+            margin-top: 5px;
         }
         
         /* AI Hot Topics */
@@ -174,17 +219,67 @@
             </select>
         </div>
         
-        <!-- SEO Keywords -->
-        <div class="seo-keywords">
-            <strong>🔥 Trending:</strong>
-            <span>MacBook Neo</span>
-            <span>Qwen 3.5</span>
-            <span>Kimwolf Botnet</span>
-            <span>AI Ethics</span>
-            <span>Apple Market</span>
-            <span>Cybersecurity</span>
-            <span>LLM Content</span>
-            <span>Platform Exodus</span>
+        <!-- Trending Keywords with Google Trends Data -->
+        <div class="trending-keywords">
+            <h3>🔥 Trending Keywords (with Google Trends Data)</h3>
+            <div class="keywords-grid">
+                <!-- Hot Topics (High Trends Score) -->
+                <div class="keyword-card hot">
+                    <div class="keyword-name">MacBook Neo</div>
+                    <div class="keyword-stats">
+                        <span class="trend-score">
+                            <span class="value">🔥 78</span>
+                            <span class="change up">↑ +340%</span>
+                        </span>
+                    </div>
+                    <div class="trend-label">📈 持续高热 · Google Trends</div>
+                </div>
+                
+                <div class="keyword-card hot">
+                    <div class="keyword-name">Apple M5</div>
+                    <div class="keyword-stats">
+                        <span class="trend-score">
+                            <span class="value">🔥 65</span>
+                            <span class="change up">↑ +180%</span>
+                        </span>
+                    </div>
+                    <div class="trend-label">📈 持续高热 · Google Trends</div>
+                </div>
+                
+                <div class="keyword-card hot">
+                    <div class="keyword-name">Qwen 3.5</div>
+                    <div class="keyword-stats">
+                        <span class="trend-score">
+                            <span class="value">🔥 52</span>
+                            <span class="change up">↑ +95%</span>
+                        </span>
+                    </div>
+                    <div class="trend-label">📈 中等热度 · Google Trends</div>
+                </div>
+                
+                <!-- Breaking News (Low/No Trends Data but High Frequency in Sources) -->
+                <div class="keyword-card breaking">
+                    <div class="keyword-name">Kimwolf Botnet</div>
+                    <div class="keyword-stats">
+                        <span class="trend-score">
+                            <span class="value">⚡ NEW</span>
+                            <span class="change new">突发</span>
+                        </span>
+                    </div>
+                    <div class="trend-label">💥 90 源高频 · 突发新闻</div>
+                </div>
+                
+                <div class="keyword-card breaking">
+                    <div class="keyword-name">AI Ethics</div>
+                    <div class="keyword-stats">
+                        <span class="trend-score">
+                            <span class="value">⚡ 38</span>
+                            <span class="change">→ 平稳</span>
+                        </span>
+                    </div>
+                    <div class="trend-label">📊 持续讨论 · 多源提及</div>
+                </div>
+            </div>
         </div>
         
         <!-- AI Hot Topics -->
@@ -192,15 +287,15 @@
             <h2>🔥 AI Hot Topics</h2>
             <ul>
                 <li><span class="trend">↑</span> <strong>MacBook Neo Launch</strong> - Apple's $599 laptop revolutionizes budget market</li>
-                <li><span class="trend">↑</span> <strong>Qwen 3.5 Developments</strong> - Alibaba's model family and team changes</li>
-                <li><span class="trend">↑</span> <strong>Kimwolf Botnet Crisis</strong> - 2M+ devices infected, I2P network disrupted</li>
+                <li><span class="trend">↑</span> <strong>Apple M5 Chip Family</strong> - New MacBook Air and Pro with M5 chip announcements</li>
+                <li><span class="trend">→</span> <strong>Qwen 3.5 Developments</strong> - Alibaba's model family and team changes</li>
                 <li><span class="trend">→</span> <strong>AI Ethics Maturation</strong> - Growing awareness of LLM content limitations</li>
             </ul>
         </div>
         
         <!-- Stats -->
         <div class="stats">
-            <span>📊 90 Sources</span>
+            <span>📊 90+ Sources</span>
             <span>→ 248 Articles</span>
             <span>→ 15 Selected</span>
         </div>
@@ -211,7 +306,7 @@
             <div class="article-item">
                 <span class="rank gold">1</span>
                 <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">MacBook Neo: Apple's $599 Laptop Revolution</a></h3>
-                <div class="meta">Daring Fireball · 5 hours ago · Apple</div>
+                <div class="meta">Daring Fireball · 5 hours ago · Tech Hardware</div>
                 <p style="margin-top: 10px; color: #666;">Apple's new MacBook Neo marks serious entry into sub-$1,000 market with all-new A18 Pro design, vastly superior to similarly priced PC laptops.</p>
             </div>
             <div class="article-item">
@@ -223,7 +318,7 @@
             <div class="article-item">
                 <span class="rank bronze">3</span>
                 <h3><a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">The Kimwolf Botnet Crisis</a></h3>
-                <div class="meta">Krebs on Security · 8 hours ago · Cybersecurity</div>
+                <div class="meta">Krebs on Security · 8 hours ago · Security</div>
                 <p style="margin-top: 10px; color: #666;">Kimwolf botnet has infected over 2 million devices, disrupted I2P networks, and targeted security researchers with DDoS attacks and swatting attempts.</p>
             </div>
         </div>
@@ -233,7 +328,7 @@
             <h2>📝 All Stories</h2>
             
             <div class="category">
-                <h3>🤖 AI / LLM</h3>
+                <h3>🤖 AI & Machine Learning</h3>
                 <div class="article-item">
                     <h4><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Can Coding Agents Relicense Open Source Through "Clean Room" Implementation?</a></h4>
                     <div class="meta">Simon Willison · 10 hours ago</div>
@@ -253,7 +348,7 @@
             </div>
             
             <div class="category">
-                <h3>🍎 Apple</h3>
+                <h3>📱 Tech & Hardware</h3>
                 <div class="article-item">
                     <h4><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">MacBook Neo: Apple's $599 Laptop Revolution</a></h4>
                     <div class="meta">Daring Fireball · 5 hours ago</div>
@@ -262,10 +357,26 @@
                     <h4><a href="https://daringfireball.net/2026/03/apple-cpu-core-naming" target="_blank">Apple's New CPU Core Naming Convention</a></h4>
                     <div class="meta">Daring Fireball · 6 hours ago</div>
                 </div>
+                <div class="article-item">
+                    <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-air-with-m5/" target="_blank">New MacBook Air With M5 Chip</a></h4>
+                    <div class="meta">Apple Newsroom · 8 hours ago</div>
+                </div>
             </div>
             
             <div class="category">
-                <h3>🛠️ Projects & Tools</h3>
+                <h3>🔒 Security</h3>
+                <div class="article-item">
+                    <h4><a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">The Kimwolf Botnet Crisis</a></h4>
+                    <div class="meta">Krebs on Security · 8 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://krebsonsecurity.com/2026/03/starkiller-phishing-service/" target="_blank">Starkiller Phishing Service Bypasses MFA</a></h4>
+                    <div class="meta">Krebs on Security · 8 hours ago</div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>🛠️ Tools & Open Source</h3>
                 <div class="article-item">
                     <h4><a href="https://simonwillison.net/tools/mp3-inspector-webassembly" target="_blank">MP3 Inspector Using WebAssembly</a></h4>
                     <div class="meta">Simon Willison · 11 hours ago</div>
@@ -278,25 +389,13 @@
                     <h4><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh" target="_blank">Building a Pint-sized Macintosh</a></h4>
                     <div class="meta">Jeff Geerling · 12 hours ago</div>
                 </div>
-                <div class="article-item">
-                    <h4><a href="https://www.jeffgeerling.com/blog/2026/pi-surveillance-frigate" target="_blank">Upgrading Pi Surveillance Server with Frigate</a></h4>
-                    <div class="meta">Jeff Geerling · 12 hours ago</div>
-                </div>
-                <div class="article-item">
-                    <h4><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h4>
-                    <div class="meta">iDiallo.com · 13 hours ago</div>
-                </div>
             </div>
             
             <div class="category">
-                <h3>📝 Other</h3>
+                <h3>📝 Opinion & Other</h3>
                 <div class="article-item">
-                    <h4><a href="https://krebsonsecurity.com/2026/03/kimwolf-botnet/" target="_blank">The Kimwolf Botnet Crisis</a></h4>
-                    <div class="meta">Krebs on Security · 8 hours ago</div>
-                </div>
-                <div class="article-item">
-                    <h4><a href="https://krebsonsecurity.com/2026/03/starkiller-phishing-service/" target="_blank">Starkiller Phishing Service Bypasses MFA</a></h4>
-                    <div class="meta">Krebs on Security · 8 hours ago</div>
+                    <h4><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h4>
+                    <div class="meta">iDiallo.com · 13 hours ago</div>
                 </div>
                 <div class="article-item">
                     <h4><a href="https://pluralistic.net/2026/03/03/cory-doctorow-twitter-departure" target="_blank">Cory Doctorow Announces Departure from Twitter</a></h4>
