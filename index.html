@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - 2026-03-06</title>
+    <title>AI Daily News - March 5, 2026</title>
+    <meta name="description" content="Daily AI news curated from top tech blogs - Qwen, Apple M5, MacBook Neo, Gemini Flash-Lite, LLM updates">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, Qwen, Apple M5, MacBook Neo, Gemini, Tech News, Simon Willison">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI Daily News - March 5, 2026">
+    <meta property="og:description" content="Daily AI news curated from top tech blogs">
+    <meta property="og:type" content="website">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -14,42 +20,67 @@
             min-height: 100vh;
         }
         .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; color: white; margin-bottom: 40px; }
+        header { text-align: center; color: white; margin-bottom: 30px; }
         header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         header .date { font-size: 1.2em; opacity: 0.9; }
-        .nav { text-align: center; margin-bottom: 30px; }
-        .nav a {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin: 0 10px;
+        
+        /* Date Selector */
+        .date-selector {
+            background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
-        }
-        .nav a:hover { background: rgba(255,255,255,0.3); }
-        .card {
-            background: white;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-        .card h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
-        .card .meta { color: #888; font-size: 0.9em; margin-bottom: 15px; }
-        .card a { color: #667eea; text-decoration: none; }
-        .card a:hover { text-decoration: underline; }
-        .top-3 { border: 3px solid #667eea; }
-        .top-3::before {
-            content: '🏆 今日必读';
-            display: inline-block;
-            background: #667eea;
+        .date-selector select {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+        }
+        .date-selector select:hover { background: #f5f5f5; }
+        
+        /* SEO Keywords */
+        .seo-keywords {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            text-align: center;
             color: white;
+        }
+        .seo-keywords span {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8em;
-            margin-bottom: 15px;
+            margin: 5px;
+            font-size: 0.9em;
         }
+        
+        /* AI Hot Topics */
+        .hot-topics {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .hot-topics h2 { color: #667eea; margin-bottom: 15px; font-size: 1.5em; }
+        .hot-topics ul { list-style: none; }
+        .hot-topics li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .hot-topics li:last-child { border-bottom: none; }
+        .hot-topics .trend { color: #e74c3c; font-weight: bold; margin-right: 10px; }
+        
+        /* Stats */
         .stats {
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
@@ -59,8 +90,31 @@
             margin-bottom: 30px;
         }
         .stats span { margin: 0 15px; font-size: 1.1em; }
-        footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
-        .article-list { margin-top: 30px; }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .card h2 { color: #667eea; margin-bottom: 20px; font-size: 1.5em; }
+        .card a { color: #667eea; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+        
+        /* Top 3 */
+        .top-3 { border: 3px solid #667eea; }
+        .top-3::before {
+            content: '🏆 Top Stories';
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
         .article-item {
             padding: 15px 0;
             border-bottom: 1px solid #eee;
@@ -68,81 +122,203 @@
         .article-item:last-child { border-bottom: none; }
         .article-item h3 { font-size: 1.1em; margin-bottom: 5px; }
         .article-item .meta { font-size: 0.85em; color: #888; }
-        .rank { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #667eea; color: white; margin-right: 10px; font-weight: bold; }
+        .rank {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            margin-right: 10px;
+            font-weight: bold;
+        }
         .rank.gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
         .rank.silver { background: linear-gradient(135deg, #C0C0C0, #808080); }
         .rank.bronze { background: linear-gradient(135deg, #CD7F32, #8B4513); }
+        
+        /* Category */
+        .category { margin-top: 20px; }
+        .category h3 {
+            color: #764ba2;
+            font-size: 1.2em;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        footer { text-align: center; color: rgba(255,255,255,0.7); margin-top: 40px; padding: 20px; }
+        footer a { color: rgba(255,255,255,0.7); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>📰 AI Daily News</h1>
-            <div class="date">2026-03-06</div>
+            <div class="date" id="current-date">March 5, 2026</div>
         </header>
         
-        <div class="nav">
-            <a href="../index.html">🏠 首页</a>
-            <a href="archives.html">📚 历史归档</a>
+        <!-- Date Selector (Last 7 Days) -->
+        <div class="date-selector">
+            <label for="date-select" style="color: white; margin-right: 15px; font-weight: bold;">📅 Select Date:</label>
+            <select id="date-select" onchange="location.href=this.value">
+                <option value="index.html" selected>March 5, 2026 (Today)</option>
+                <option value="2026-03-04.html">March 4, 2026</option>
+                <option value="2026-03-03.html">March 3, 2026</option>
+                <option value="2026-03-02.html">March 2, 2026</option>
+                <option value="2026-03-01.html">March 1, 2026</option>
+                <option value="2026-02-28.html">February 28, 2026</option>
+                <option value="2026-02-27.html">February 27, 2026</option>
+            </select>
         </div>
         
+        <!-- SEO Keywords -->
+        <div class="seo-keywords">
+            <strong>🔥 Trending:</strong>
+            <span>Qwen 3.5</span>
+            <span>Apple M5</span>
+            <span>MacBook Neo</span>
+            <span>Gemini Flash-Lite</span>
+            <span>LLM</span>
+            <span>AI Models</span>
+            <span>Simon Willison</span>
+            <span>Apple Event</span>
+        </div>
+        
+        <!-- AI Hot Topics -->
+        <div class="hot-topics">
+            <h2>🔥 AI Hot Topics</h2>
+            <ul>
+                <li><span class="trend">↑</span> <strong>Qwen Team Changes</strong> - Key departures from Alibaba's Qwen team after 3.5 release</li>
+                <li><span class="trend">↑</span> <strong>Apple M5 Chip Family</strong> - New MacBook lineup with M5, M5 Pro, M5 Max</li>
+                <li><span class="trend">→</span> <strong>Gemini Flash-Lite</strong> - Google's cost-effective model at $0.25/million input tokens</li>
+                <li><span class="trend">→</span> <strong>Agentic Engineering</strong> - Best practices and anti-patterns for AI agents</li>
+            </ul>
+        </div>
+        
+        <!-- Stats -->
         <div class="stats">
-            <span>📊  源</span>
-            <span>→  篇</span>
-            <span>→ 精选 15</span>
+            <span>📊 10 Sources</span>
+            <span>→ 28 Articles</span>
+            <span>→ 15 Selected</span>
         </div>
 
+        <!-- Top 3 Stories -->
         <div class="card top-3">
-            <h2>🏆 今日必读 Top 3</h2>
-            <div class="article-list">
-                <div class="article-item">
-                    <span class="rank gold">1</span>
-                    <h3><a href="https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/" target="_blank">Anti-patterns: things to avoid</a></h3>
-                    <div class="meta">simonwillison.net · 8 小时前</div>
-                </div>
-                <div class="article-item">
-                    <span class="rank silver">2</span>
-                    <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h3>
-                    <div class="meta">simonwillison.net · 10 小时前</div>
-                </div>
-                <div class="article-item">
-                    <span class="rank bronze">3</span>
-                    <h3><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h3>
-                    <div class="meta">simonwillison.net · 1 天前</div>
-                </div>
+            <h2>🏆 Top Stories</h2>
+            <div class="article-item">
+                <span class="rank gold">1</span>
+                <h3><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h3>
+                <div class="meta">simonwillison.net · 1 day ago · AI/LLM</div>
+                <p style="margin-top: 10px; color: #666;">Simon Willison reviews Qwen 3.5 family while noting high-profile departures from the team.</p>
+            </div>
+            <div class="article-item">
+                <span class="rank silver">2</span>
+                <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">Thoughts and Observations on the MacBook Neo</a></h3>
+                <div class="meta">daringfireball.net · 5 hours ago · Apple</div>
+                <p style="margin-top: 10px; color: #666;">John Gruber's deep dive on Apple's $599 MacBook Neo - Apple's first sub-$1000 Mac.</p>
+            </div>
+            <div class="article-item">
+                <span class="rank bronze">3</span>
+                <h3><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh-pico-micro-mac/" target="_blank">I built a pint-sized Macintosh</a></h3>
+                <div class="meta">jeffgeerling.com · 3 days ago · Projects</div>
+                <p style="margin-top: 10px; color: #666;">Jeff Geerling creates a miniature Macintosh replica using Raspberry Pi Pico.</p>
             </div>
         </div>
 
+        <!-- Full List -->
         <div class="card">
-            <h2>📝 完整列表</h2>
-            <div class="article-list">
+            <h2>📝 All Stories</h2>
+            
+            <div class="category">
+                <h3>🤖 AI / LLM</h3>
                 <div class="article-item">
-                    <h3><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h3>
-                    <div class="meta">simonwillison.net · 1 天前</div>
+                    <h4><a href="https://simonwillison.net/2026/Mar/4/qwen/" target="_blank">Something is afoot in the land of Qwen</a></h4>
+                    <div class="meta">simonwillison.net · 1 day ago</div>
                 </div>
                 <div class="article-item">
-                    <h3><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">★ Thoughts on MacBook Neo</a></h3>
-                    <div class="meta">daringfireball.net · 5 小时前</div>
+                    <h4><a href="https://simonwillison.net/2026/Mar/3/gemini-31-flash-lite/" target="_blank">Gemini 3.1 Flash-Lite</a></h4>
+                    <div class="meta">simonwillison.net · 2 days ago</div>
                 </div>
                 <div class="article-item">
-                    <h3><a href="https://www.apple.com/displays/" target="_blank">Studio Display vs. Studio Display XDR</a></h3>
-                    <div class="meta">Apple · 7 小时前</div>
+                    <h4><a href="https://simonwillison.net/2026/Mar/3/donald-knuth/" target="_blank">Quoting Donald Knuth</a></h4>
+                    <div class="meta">simonwillison.net · 2 days ago</div>
                 </div>
                 <div class="article-item">
-                    <h3><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h3>
-                    <div class="meta">idiallo.com · 13 小时前</div>
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/expert-beginners-and-lone-wolves-dominate-llm-era/" target="_blank">Expert Beginners and Lone Wolves in LLM Era</a></h4>
+                    <div class="meta">jeffgeerling.com · 4 days ago</div>
                 </div>
                 <div class="article-item">
-                    <h3><a href="https://pluralistic.net/2026/03/03/its-a-trap-2/" target="_blank">Supreme Court saves artists from AI</a></h3>
-                    <div class="meta">pluralistic.net · 1 天前</div>
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/ai-is-destroying-open-source/" target="_blank">AI is Destroying Open Source</a></h4>
+                    <div class="meta">jeffgeerling.com · 2 weeks ago</div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>🍎 Apple</h3>
+                <div class="article-item">
+                    <h4><a href="https://daringfireball.net/2026/03/599_not_a_piece_of_junk_macbook_neo" target="_blank">Thoughts on MacBook Neo</a></h4>
+                    <div class="meta">daringfireball.net · 5 hours ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/" target="_blank">New MacBook Air With M5</a></h4>
+                    <div class="meta">Apple Newsroom · 2 days ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/" target="_blank">MacBook Pro with M5 Pro/Max</a></h4>
+                    <div class="meta">Apple Newsroom · 2 days ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.apple.com/displays/" target="_blank">Studio Display vs. Studio Display XDR</a></h4>
+                    <div class="meta">Apple · 3 days ago</div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>🛠️ Projects & Tools</h3>
+                <div class="article-item">
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/pint-sized-macintosh-pico-micro-mac/" target="_blank">Pint-sized Macintosh</a></h4>
+                    <div class="meta">jeffgeerling.com · 3 days ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/" target="_blank">GIF Optimization with WebAssembly</a></h4>
+                    <div class="meta">simonwillison.net · 3 days ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://www.jeffgeerling.com/blog/2026/upgrading-my-open-source-pi-surveillance-server-frigate/" target="_blank">Pi Surveillance Server with Frigate</a></h4>
+                    <div class="meta">jeffgeerling.com · 6 days ago</div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>📝 Other</h3>
+                <div class="article-item">
+                    <h4><a href="https://idiallo.com/blog/interruption-driven-development" target="_blank">Interruption-Driven Development</a></h4>
+                    <div class="meta">idiallo.com · 1 day ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://pluralistic.net/2026/03/03/its-a-trap-2/" target="_blank">Supreme Court Saves Artists from AI</a></h4>
+                    <div class="meta">pluralistic.net · 2 days ago</div>
+                </div>
+                <div class="article-item">
+                    <h4><a href="https://github.com/sponsors/simonw/" target="_blank">February Sponsors Newsletter</a></h4>
+                    <div class="meta">simonwillison.net · 3 days ago</div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>Generated by OpenClaw | 数据保留 7 天</p>
-            <p><a href="https://github.com/Zaynxxii/ai-daily-news" style="color: rgba(255,255,255,0.7);">GitHub</a></p>
+            <p>Generated by OpenClaw | Data retained for 7 days</p>
+            <p><a href="https://github.com/Zaynxxii/ai-daily-news" target="_blank">GitHub</a></p>
         </footer>
     </div>
+    
+    <script>
+        // Set current date in selector
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', options);
+    </script>
 </body>
 </html>
