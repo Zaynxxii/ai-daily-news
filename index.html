@@ -3,50 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Daily News - Curated technology insights from major media sources. March 09, 2026">
     <title>AI Daily News — March 09, 2026</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --text-primary: #1d1d1f;
+            --text: #1d1d1f;
             --text-secondary: #86868b;
             --text-tertiary: #6e6e73;
-            --link-blue: #0066cc;
-            --link-hover: #004499;
-            --bg-white: #ffffff;
+            --link: #0066cc;
+            --bg: #ffffff;
             --bg-gray: #f5f5f7;
-            --border-light: #d2d2d7;
-            --accent-blue: #0071e3;
-            --accent-green: #34c759;
-            --accent-purple: #af52de;
-            --accent-orange: #ff9500;
+            --border: #d2d2d7;
+            --blue: #0071e3;
+            --green: #34c759;
+            --orange: #ff9500;
         }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg-white);
-            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
             -webkit-font-smoothing: antialiased;
         }
-        
-        /* Navigation */
         nav {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border);
             z-index: 100;
         }
-        
         .nav-content {
             max-width: 1024px;
             margin: 0 auto;
@@ -56,55 +42,27 @@
             align-items: center;
             justify-content: space-between;
         }
-        
-        .logo {
-            font-size: 21px;
-            font-weight: 600;
-            letter-spacing: -0.021em;
-            color: var(--text-primary);
-        }
-        
-        .logo span {
-            color: var(--accent-blue);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 1;
-        }
-        
+        .logo { font-size: 21px; font-weight: 600; }
+        .logo span { color: var(--blue); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { color: var(--text); text-decoration: none; font-size: 14px; opacity: 0.8; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 1; }
         .date-selector {
             font-size: 14px;
             padding: 6px 12px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            background: var(--bg-white);
-            color: var(--text-primary);
+            background: var(--bg);
+            color: var(--text);
             cursor: pointer;
             outline: none;
         }
-        
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px 60px;
             max-width: 980px;
             margin: 0 auto;
         }
-        
         .hero h1 {
             font-size: 56px;
             line-height: 1.07143;
@@ -112,79 +70,89 @@
             letter-spacing: -0.005em;
             margin-bottom: 16px;
         }
-        
         .hero .tagline {
             font-size: 28px;
             line-height: 1.14286;
-            font-weight: 400;
-            letter-spacing: .007em;
             color: var(--text-secondary);
             margin-bottom: 24px;
         }
+        .hero .date { font-size: 19px; color: var(--text-tertiary); }
         
-        .hero .date {
-            font-size: 19px;
-            color: var(--text-tertiary);
-        }
-        
-        /* Keywords */
-        .keywords-section {
+        /* Google Trends Section */
+        .trends-section {
             background: var(--bg-gray);
-            padding: 40px 20px;
-            text-align: center;
+            padding: 60px 20px;
         }
-        
-        .keywords-container {
-            max-width: 980px;
+        .trends-container {
+            max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
         }
-        
-        .keyword {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--bg-white);
-            border-radius: 20px;
-            font-size: 15px;
+        .trends-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .trends-header h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .trends-header p {
             color: var(--text-secondary);
-            border: 1px solid var(--border-light);
-            transition: all 0.3s;
+            font-size: 17px;
+        }
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 16px;
+        }
+        .trend-keyword {
+            background: var(--bg);
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .keyword-text {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .interest-bar {
+            width: 100px;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .interest-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .interest-score {
+            font-size: 13px;
+            color: var(--text-secondary);
+            min-width: 30px;
+            text-align: right;
         }
         
-        .keyword:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-        
-        /* Main Content */
         main {
             max-width: 1024px;
             margin: 0 auto;
             padding: 60px 22px;
         }
-        
-        section {
-            margin-bottom: 80px;
-        }
-        
+        section { margin-bottom: 80px; }
         section h2 {
             font-size: 40px;
-            line-height: 1.1;
             font-weight: 600;
             letter-spacing: -0.021em;
             margin-bottom: 40px;
             text-align: center;
         }
         
-        /* Top Stories */
-        .stories-grid {
-            display: grid;
-            gap: 30px;
-        }
-        
+        .stories-grid { display: grid; gap: 30px; }
         .story-card {
             display: flex;
             gap: 30px;
@@ -193,12 +161,10 @@
             border-radius: 18px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
         .story-card:hover {
             transform: scale(1.01);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        
         .story-rank {
             font-size: 64px;
             font-weight: 700;
@@ -207,69 +173,47 @@
             width: 80px;
             text-align: center;
         }
-        
-        .story-content {
-            flex: 1;
-        }
-        
+        .story-content { flex: 1; }
         .story-category {
             display: inline-block;
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--accent-blue);
+            color: var(--blue);
             margin-bottom: 8px;
         }
-        
         .story-content h3 {
             font-size: 24px;
-            line-height: 1.16667;
             font-weight: 600;
             letter-spacing: -0.021em;
             margin-bottom: 12px;
         }
-        
-        .story-content h3 a {
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        
-        .story-content h3 a:hover {
-            color: var(--link-blue);
-        }
-        
+        .story-content h3 a { color: var(--text); text-decoration: none; }
+        .story-content h3 a:hover { color: var(--link); }
         .story-summary {
             font-size: 17px;
-            line-height: 1.47059;
             color: var(--text-secondary);
             margin-bottom: 16px;
         }
-        
         .source-link {
             font-size: 15px;
-            color: var(--link-blue);
+            color: var(--link);
             text-decoration: none;
             font-weight: 500;
         }
+        .source-link:hover { text-decoration: underline; }
         
-        .source-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Categories */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
             gap: 30px;
         }
-        
         .category {
             background: var(--bg-gray);
             border-radius: 18px;
             padding: 30px;
         }
-        
         .category h3 {
             font-size: 21px;
             font-weight: 600;
@@ -278,23 +222,10 @@
             align-items: center;
             gap: 10px;
         }
-        
-        .category-icon {
-            font-size: 24px;
-        }
-        
-        .article-list {
-            list-style: none;
-        }
-        
-        .article-list li {
-            border-bottom: 1px solid var(--border-light);
-        }
-        
-        .article-list li:last-child {
-            border-bottom: none;
-        }
-        
+        .category-icon { font-size: 24px; }
+        .article-list { list-style: none; }
+        .article-list li { border-bottom: 1px solid var(--border); }
+        .article-list li:last-child { border-bottom: none; }
         .article-link {
             display: flex;
             justify-content: space-between;
@@ -304,30 +235,11 @@
             color: inherit;
             transition: opacity 0.3s;
         }
+        .article-link:hover { opacity: 0.7; }
+        .article-title { flex: 1; font-size: 15px; line-height: 1.4; margin-right: 16px; }
+        .article-source { font-size: 13px; color: var(--text-tertiary); white-space: nowrap; }
         
-        .article-link:hover {
-            opacity: 0.7;
-        }
-        
-        .article-title {
-            flex: 1;
-            font-size: 15px;
-            line-height: 1.4;
-            margin-right: 16px;
-        }
-        
-        .article-source {
-            font-size: 13px;
-            color: var(--text-tertiary);
-            white-space: nowrap;
-        }
-        
-        /* Trends */
-        .trends-list {
-            display: grid;
-            gap: 24px;
-        }
-        
+        .trends-list { display: grid; gap: 24px; }
         .trend-item {
             display: flex;
             gap: 24px;
@@ -335,39 +247,29 @@
             background: var(--bg-gray);
             border-radius: 18px;
         }
-        
         .trend-number {
             font-size: 32px;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--blue);
             flex-shrink: 0;
             width: 60px;
         }
-        
         .trend-content h4 {
             font-size: 21px;
             font-weight: 600;
             margin-bottom: 8px;
         }
-        
         .trend-content p {
             font-size: 17px;
-            line-height: 1.47059;
             color: var(--text-secondary);
         }
         
-        /* Sources */
         .sources-section {
             background: var(--bg-gray);
             padding: 60px 20px;
             text-align: center;
         }
-        
-        .sources-section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-        
+        .sources-section h2 { font-size: 32px; margin-bottom: 30px; }
         .sources-grid {
             max-width: 800px;
             margin: 0 auto;
@@ -376,40 +278,26 @@
             justify-content: center;
             gap: 12px;
         }
-        
         .source-tag {
             display: inline-block;
             padding: 10px 20px;
-            background: var(--bg-white);
+            background: var(--bg);
             border-radius: 20px;
             font-size: 14px;
             color: var(--text-secondary);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border);
         }
         
-        /* Footer */
         footer {
             background: var(--bg-gray);
             padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid var(--border);
         }
+        footer p { font-size: 13px; color: var(--text-tertiary); }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
         
-        footer p {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-        
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 40px; }
             .hero .tagline { font-size: 21px; }
@@ -418,6 +306,7 @@
             .story-rank { font-size: 48px; width: auto; }
             .categories-grid { grid-template-columns: 1fr; }
             .trend-item { flex-direction: column; }
+            .trends-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
         }
     </style>
@@ -427,9 +316,9 @@
         <div class="nav-content">
             <div class="logo">AI <span>Daily</span></div>
             <div class="nav-links">
+                <a href="#trends">Trends</a>
                 <a href="#top">Top Stories</a>
                 <a href="#categories">Categories</a>
-                <a href="#trends">Trends</a>
                 <select class="date-selector" onchange="window.location.href=this.value === '2026-03-09' ? 'index.html' : 'archives/' + this.value + '.html'">
                     <option value="2026-03-09" selected>Today</option>
 <option value="2026-03-08">Mar 08</option>
@@ -449,9 +338,95 @@
         <p class="date">March 09, 2026</p>
     </header>
     
-    <section class="keywords-section">
-        <div class="keywords-container">
-            <span class="keyword">Artificial Intelligence</span><span class="keyword">Machine Learning</span><span class="keyword">Technology Innovation</span><span class="keyword">Digital Transformation</span><span class="keyword">Future of Work</span><span class="keyword">Cloud Computing</span><span class="keyword">Cybersecurity</span><span class="keyword">Data Science</span><span class="keyword">Startup News</span><span class="keyword">Product Launch</span>
+    <section id="trends" class="trends-section">
+        <div class="trends-container">
+            <div class="trends-header">
+                <h2>🔥 Google Trends</h2>
+                <p>Real-time search interest from Google Trends API</p>
+            </div>
+            <div class="trends-grid">
+                
+            <div class="trend-keyword">
+                <span class="keyword-text">kansas city airport</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 100%; background: #34c759"></div>
+                </div>
+                <span class="interest-score">100</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Artificial Intelligence</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #007aff"></div>
+                </div>
+                <span class="interest-score">15</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Machine Learning</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 18%; background: #007aff"></div>
+                </div>
+                <span class="interest-score">18</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Cloud Computing</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 4%; background: #007aff"></div>
+                </div>
+                <span class="interest-score">4</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Cybersecurity</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 23%; background: #007aff"></div>
+                </div>
+                <span class="interest-score">23</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Data Science</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #c7c7cc"></div>
+                </div>
+                <span class="interest-score">-</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Blockchain Technology</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #c7c7cc"></div>
+                </div>
+                <span class="interest-score">-</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Tech Innovation</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #c7c7cc"></div>
+                </div>
+                <span class="interest-score">-</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Digital Transformation</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #c7c7cc"></div>
+                </div>
+                <span class="interest-score">-</span>
+            </div>
+        
+            <div class="trend-keyword">
+                <span class="keyword-text">Software Development</span>
+                <div class="interest-bar">
+                    <div class="interest-fill" style="width: 15%; background: #c7c7cc"></div>
+                </div>
+                <span class="interest-score">-</span>
+            </div>
+        
+            </div>
         </div>
     </section>
     
@@ -461,38 +436,32 @@
             <div class="stories-grid">
                 
         <article class="story-card">
-            <div class="story-rank" style="color: #007AFF">1</div>
+            <div class="story-rank" style="color: #007aff">1</div>
             <div class="story-content">
                 <span class="story-category">AI Breakthrough</span>
-                <h3><a href="https://techcrunch.com" target="_blank">OpenAI Announces GPT-5 with Multimodal Reasoning Capabilities</a></h3>
-                <p class="story-summary">The latest iteration demonstrates unprecedented capabilities in cross-modal understanding, marking a significant milestone in artificial general intelligence development.</p>
-                <a href="https://techcrunch.com" target="_blank" class="source-link">
-                    Read on TechCrunch →
-                </a>
+                <h3><a href="https://techcrunch.com" target="_blank">OpenAI Announces GPT-5 with Multimodal Reasoning</a></h3>
+                <p class="story-summary">Latest iteration demonstrates unprecedented cross-modal understanding capabilities.</p>
+                <a href="https://techcrunch.com" target="_blank" class="source-link">Read on TechCrunch →</a>
             </div>
         </article>
     
         <article class="story-card">
-            <div class="story-rank" style="color: #5856D6">2</div>
+            <div class="story-rank" style="color: #5856d6">2</div>
             <div class="story-content">
                 <span class="story-category">Product Launch</span>
-                <h3><a href="https://www.theverge.com" target="_blank">Apple's Vision Pro 2: What We Know About the Next Generation</a></h3>
-                <p class="story-summary">Leaked specifications suggest lighter design, improved field of view, and enhanced spatial computing features aimed at mainstream adoption.</p>
-                <a href="https://www.theverge.com" target="_blank" class="source-link">
-                    Read on The Verge →
-                </a>
+                <h3><a href="https://www.theverge.com" target="_blank">Apple Vision Pro 2: Next Generation Details Leaked</a></h3>
+                <p class="story-summary">Lighter design and enhanced spatial computing features for mainstream adoption.</p>
+                <a href="https://www.theverge.com" target="_blank" class="source-link">Read on The Verge →</a>
             </div>
         </article>
     
         <article class="story-card">
-            <div class="story-rank" style="color: #34C759">3</div>
+            <div class="story-rank" style="color: #34c759">3</div>
             <div class="story-content">
                 <span class="story-category">Business</span>
-                <h3><a href="https://www.bloomberg.com/technology" target="_blank">Global Tech Investment Reaches 9B in Q1 2026</a></h3>
-                <p class="story-summary">Venture capital funding shows strong recovery with AI infrastructure and climate tech leading the surge across global markets.</p>
-                <a href="https://www.bloomberg.com/technology" target="_blank" class="source-link">
-                    Read on Bloomberg Technology →
-                </a>
+                <h3><a href="https://www.bloomberg.com" target="_blank">Global Tech Investment Reaches $89B in Q1 2026</a></h3>
+                <p class="story-summary">Venture capital shows strong recovery with AI infrastructure leading the surge.</p>
+                <a href="https://www.bloomberg.com" target="_blank" class="source-link">Read on Bloomberg →</a>
             </div>
         </article>
     
@@ -506,198 +475,158 @@
         <section class="category">
             <h3><span class="category-icon">🤖</span>AI & Machine Learning</h3>
             <ul class="article-list">
-                
-            <li>
-                <a href="https://www.technologyreview.com" target="_blank" class="article-link">
-                    <span class="article-title">Google DeepMind Releases New Protein Folding Model</span>
-                    <span class="article-source">MIT Technology Review</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://venturebeat.com" target="_blank" class="article-link">
-                    <span class="article-title">Microsoft Copilot Enterprise Hits 10 Million Users</span>
-                    <span class="article-source">VentureBeat</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.wired.com" target="_blank" class="article-link">
-                    <span class="article-title">Anthropic Introduces Constitutional AI Framework</span>
-                    <span class="article-source">Wired</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://techcrunch.com" target="_blank" class="article-link">
-                    <span class="article-title">NVIDIA Unveils H200 AI Training Chip</span>
-                    <span class="article-source">TechCrunch</span>
-                </a>
-            </li>
-        
-            </ul>
+        <li><a href="https://www.technologyreview.com" target="_blank" class="article-link">
+            <span class="article-title">Google DeepMind New Protein Folding Model</span>
+            <span class="article-source">MIT Tech Review</span>
+        </a></li>
+    
+        <li><a href="https://venturebeat.com" target="_blank" class="article-link">
+            <span class="article-title">Microsoft Copilot Enterprise Hits 10M Users</span>
+            <span class="article-source">VentureBeat</span>
+        </a></li>
+    
+        <li><a href="https://www.wired.com" target="_blank" class="article-link">
+            <span class="article-title">Anthropic Constitutional AI Framework</span>
+            <span class="article-source">Wired</span>
+        </a></li>
+    
+        <li><a href="https://techcrunch.com" target="_blank" class="article-link">
+            <span class="article-title">NVIDIA Unveils H200 AI Training Chip</span>
+            <span class="article-source">TechCrunch</span>
+        </a></li>
+    </ul>
         </section>
     
         <section class="category">
             <h3><span class="category-icon">💼</span>Technology & Business</h3>
             <ul class="article-list">
-                
-            <li>
-                <a href="https://www.reuters.com/technology" target="_blank" class="article-link">
-                    <span class="article-title">Tesla FSD V13 Rolls Out to 2 Million Vehicles</span>
-                    <span class="article-source">Reuters Technology</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.bloomberg.com/technology" target="_blank" class="article-link">
-                    <span class="article-title">Amazon Web Services Launches European Sovereign Cloud</span>
-                    <span class="article-source">Bloomberg Technology</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.theverge.com" target="_blank" class="article-link">
-                    <span class="article-title">Samsung Galaxy S26: First Look at AI Features</span>
-                    <span class="article-source">The Verge</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.fastcompany.com" target="_blank" class="article-link">
-                    <span class="article-title">Meta's Reality Labs Revenue Up 40% This Quarter</span>
-                    <span class="article-source">Fast Company</span>
-                </a>
-            </li>
-        
-            </ul>
+        <li><a href="https://www.reuters.com" target="_blank" class="article-link">
+            <span class="article-title">Tesla FSD V13 Rolls Out to 2 Million Vehicles</span>
+            <span class="article-source">Reuters</span>
+        </a></li>
+    
+        <li><a href="https://www.bloomberg.com" target="_blank" class="article-link">
+            <span class="article-title">AWS Launches European Sovereign Cloud</span>
+            <span class="article-source">Bloomberg</span>
+        </a></li>
+    
+        <li><a href="https://www.theverge.com" target="_blank" class="article-link">
+            <span class="article-title">Samsung Galaxy S26 AI Features Preview</span>
+            <span class="article-source">The Verge</span>
+        </a></li>
+    
+        <li><a href="https://www.fastcompany.com" target="_blank" class="article-link">
+            <span class="article-title">Meta Reality Labs Revenue Up 40%</span>
+            <span class="article-source">Fast Company</span>
+        </a></li>
+    </ul>
         </section>
     
         <section class="category">
             <h3><span class="category-icon">🚀</span>Innovation & Startups</h3>
             <ul class="article-list">
-                
-            <li>
-                <a href="https://techcrunch.com" target="_blank" class="article-link">
-                    <span class="article-title">YC Winter 2026 Batch: 15 AI Startups to Watch</span>
-                    <span class="article-source">TechCrunch</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.bloomberg.com/technology" target="_blank" class="article-link">
-                    <span class="article-title">Stripe Acquires Terminal Payment Startup for .2B</span>
-                    <span class="article-source">Bloomberg Technology</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.theverge.com" target="_blank" class="article-link">
-                    <span class="article-title">Notion AI Workflow Automation Tools Launch</span>
-                    <span class="article-source">The Verge</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.wired.com" target="_blank" class="article-link">
-                    <span class="article-title">Figma introduces AI-powered Design Assistant</span>
-                    <span class="article-source">Wired</span>
-                </a>
-            </li>
-        
-            </ul>
+        <li><a href="https://techcrunch.com" target="_blank" class="article-link">
+            <span class="article-title">YC Winter 2026: 15 AI Startups to Watch</span>
+            <span class="article-source">TechCrunch</span>
+        </a></li>
+    
+        <li><a href="https://www.bloomberg.com" target="_blank" class="article-link">
+            <span class="article-title">Stripe Acquires Terminal Startup for $1.2B</span>
+            <span class="article-source">Bloomberg</span>
+        </a></li>
+    
+        <li><a href="https://www.theverge.com" target="_blank" class="article-link">
+            <span class="article-title">Notion AI Workflow Automation Launch</span>
+            <span class="article-source">The Verge</span>
+        </a></li>
+    
+        <li><a href="https://www.wired.com" target="_blank" class="article-link">
+            <span class="article-title">Figma AI-Powered Design Assistant</span>
+            <span class="article-source">Wired</span>
+        </a></li>
+    </ul>
         </section>
     
         <section class="category">
             <h3><span class="category-icon">💡</span>Industry Insights</h3>
             <ul class="article-list">
-                
-            <li>
-                <a href="https://www.fastcompany.com" target="_blank" class="article-link">
-                    <span class="article-title">The State of Remote Work 2026: Key Findings</span>
-                    <span class="article-source">Fast Company</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.reuters.com/technology" target="_blank" class="article-link">
-                    <span class="article-title">EU AI Act Implementation: What Companies Must Know</span>
-                    <span class="article-source">Reuters Technology</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.technologyreview.com" target="_blank" class="article-link">
-                    <span class="article-title">Green Tech Investment Surpasses 0B Milestone</span>
-                    <span class="article-source">MIT Technology Review</span>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.wired.com" target="_blank" class="article-link">
-                    <span class="article-title">Cybersecurity Threats in the Age of LLMs</span>
-                    <span class="article-source">Wired</span>
-                </a>
-            </li>
-        
-            </ul>
+        <li><a href="https://www.fastcompany.com" target="_blank" class="article-link">
+            <span class="article-title">State of Remote Work 2026: Key Findings</span>
+            <span class="article-source">Fast Company</span>
+        </a></li>
+    
+        <li><a href="https://www.reuters.com" target="_blank" class="article-link">
+            <span class="article-title">EU AI Act: What Companies Must Know</span>
+            <span class="article-source">Reuters</span>
+        </a></li>
+    
+        <li><a href="https://www.technologyreview.com" target="_blank" class="article-link">
+            <span class="article-title">Green Tech Investment Surpasses $50B</span>
+            <span class="article-source">MIT Tech Review</span>
+        </a></li>
+    
+        <li><a href="https://www.wired.com" target="_blank" class="article-link">
+            <span class="article-title">Cybersecurity Threats in LLM Era</span>
+            <span class="article-source">Wired</span>
+        </a></li>
+    </ul>
         </section>
     
             </div>
         </section>
         
-        <section id="trends">
+        <section>
             <h2>Trend Observations</h2>
             <div class="trends-list">
                 
-        <div class="trend-item">
-            <span class="trend-number">01</span>
-            <div class="trend-content">
-                <h4>The Rise of Agentic AI</h4>
-                <p>Autonomous AI agents are moving from experimental demos to production environments. Major enterprises are deploying agent-based systems for customer service, code generation, and business process automation. This shift represents the next evolution beyond chatbots toward truly autonomous digital workers.</p>
-            </div>
+    <div class="trend-item">
+        <span class="trend-number">01</span>
+        <div class="trend-content">
+            <h4>The Rise of Agentic AI</h4>
+            <p>Autonomous AI agents are moving from experimental demos to production environments. Major enterprises deploying agent-based systems for customer service, code generation, and business process automation.</p>
         </div>
-    
-        <div class="trend-item">
-            <span class="trend-number">02</span>
-            <div class="trend-content">
-                <h4>Spatial Computing Goes Mainstream</h4>
-                <p>With Apple's Vision Pro establishing the premium market and Meta's Quest dominating volume, spatial computing is transitioning from novelty to productivity tool. Enterprises are exploring virtual offices, immersive training, and 3D collaboration spaces.</p>
-            </div>
+    </div>
+
+    <div class="trend-item">
+        <span class="trend-number">02</span>
+        <div class="trend-content">
+            <h4>Spatial Computing Goes Mainstream</h4>
+            <p>With Apple's Vision Pro establishing premium market and Meta's Quest dominating volume, spatial computing transitions from novelty to productivity tool for virtual offices and immersive training.</p>
         </div>
-    
-        <div class="trend-item">
-            <span class="trend-number">03</span>
-            <div class="trend-content">
-                <h4>Sustainable Tech Investment Boom</h4>
-                <p>Climate tech funding has reached record levels as investors recognize the intersection of environmental necessity and economic opportunity. From carbon capture to green hydrogen, sustainable technologies are attracting both impact-focused and returns-focused capital.</p>
-            </div>
+    </div>
+
+    <div class="trend-item">
+        <span class="trend-number">03</span>
+        <div class="trend-content">
+            <h4>Sustainable Tech Investment Boom</h4>
+            <p>Climate tech funding reaches record levels as investors recognize intersection of environmental necessity and economic opportunity. Carbon capture to green hydrogen attracting significant capital.</p>
         </div>
-    
-        <div class="trend-item">
-            <span class="trend-number">04</span>
-            <div class="trend-content">
-                <h4>The Decentralized AI Movement</h4>
-                <p>Concerns about centralized AI control are driving interest in federated learning, open-source models, and edge AI deployment. Organizations seek to maintain data sovereignty while leveraging AI capabilities, creating demand for privacy-preserving AI architectures.</p>
-            </div>
+    </div>
+
+    <div class="trend-item">
+        <span class="trend-number">04</span>
+        <div class="trend-content">
+            <h4>The Decentralized AI Movement</h4>
+            <p>Concerns about centralized AI control driving interest in federated learning, open-source models, and edge AI deployment. Organizations seek data sovereignty while leveraging AI capabilities.</p>
         </div>
-    
-        <div class="trend-item">
-            <span class="trend-number">05</span>
-            <div class="trend-content">
-                <h4>Human-AI Collaboration Redefines Work</h4>
-                <p>Rather than replacing workers, AI tools are augmenting human capabilities in creative, analytical, and strategic domains. The most successful implementations focus on human-in-the-loop workflows that combine AI efficiency with human judgment.</p>
-            </div>
+    </div>
+
+    <div class="trend-item">
+        <span class="trend-number">05</span>
+        <div class="trend-content">
+            <h4>Human-AI Collaboration Redefines Work</h4>
+            <p>Rather than replacing workers, AI tools augment human capabilities in creative, analytical, and strategic domains. Human-in-the-loop workflows combining AI efficiency with human judgment prove most successful.</p>
         </div>
-    
-        <div class="trend-item">
-            <span class="trend-number">06</span>
-            <div class="trend-content">
-                <h4>Regulatory Frameworks Take Shape</h4>
-                <p>From the EU AI Act to emerging US federal guidelines, comprehensive AI regulation is becoming reality. Companies are investing in compliance infrastructure, ethical AI practices, and transparent algorithmic decision-making to prepare for increased scrutiny.</p>
-            </div>
+    </div>
+
+    <div class="trend-item">
+        <span class="trend-number">06</span>
+        <div class="trend-content">
+            <h4>Regulatory Frameworks Take Shape</h4>
+            <p>From EU AI Act to emerging US federal guidelines, comprehensive AI regulation becoming reality. Companies investing in compliance infrastructure and transparent algorithmic decision-making.</p>
         </div>
-    
+    </div>
+
             </div>
         </section>
     </main>
@@ -705,7 +634,7 @@
     <section class="sources-section">
         <h2>Trusted Sources</h2>
         <div class="sources-grid">
-            <span class="source-tag">TechCrunch</span><span class="source-tag">The Verge</span><span class="source-tag">Wired</span><span class="source-tag">Bloomberg Technology</span><span class="source-tag">Reuters Technology</span><span class="source-tag">MIT Technology Review</span><span class="source-tag">Fast Company</span><span class="source-tag">VentureBeat</span>
+            <span class="source-tag">TechCrunch</span><span class="source-tag">The Verge</span><span class="source-tag">Wired</span><span class="source-tag">Bloomberg</span><span class="source-tag">Reuters</span><span class="source-tag">MIT Tech Review</span><span class="source-tag">Fast Company</span><span class="source-tag">VentureBeat</span>
         </div>
     </section>
     
