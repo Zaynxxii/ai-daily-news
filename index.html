@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Daily News - Curated tech news and trends from 2026-03-09">
-    <title>AI Daily News | 2026-03-09</title>
+    <meta name="description" content="AI Daily News - Curated technology news, AI breakthroughs, and industry trends from 2026-03-09">
+    <meta name="keywords" content="Open Source Licensing, AI Breakthrough, Cybersecurity Alert, Machine Learning, Tech Innovation, Software Development, Digital Security, AI Research, Tech Industry, Future of AI, technology news, AI news, tech trends">
+    <title>AI Daily News | Technology & AI Insights | 2026-03-09</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -12,44 +13,56 @@
             --primary: #667eea;
             --secondary: #764ba2;
             --accent: #FFD700;
-            --bg-dark: #1a1a2e;
+            --bg-dark: #0f0f23;
             --bg-card: #ffffff;
-            --text: #333333;
-            --text-light: #666666;
+            --text: #1a1a2e;
+            --text-light: #4a4a6a;
         }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #16213e 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a3e 100%);
             min-height: 100vh;
         }
         
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         
-        header { text-align: center; color: white; margin-bottom: 30px; padding: 20px 0; }
+        /* Header */
+        header { text-align: center; color: white; margin-bottom: 30px; padding: 30px 0; }
         header h1 { 
-            font-size: 3em; 
-            margin-bottom: 10px; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.5em; 
+            margin-bottom: 15px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        header .date { font-size: 1.2em; opacity: 0.8; margin-top: 10px; }
+        header .tagline { 
+            font-size: 1.3em; 
+            opacity: 0.8; 
+            margin-top: 10px;
+            color: #a0a0c0;
+        }
+        header .date { 
+            font-size: 1.1em; 
+            opacity: 0.7; 
+            margin-top: 15px;
+            color: #8080a0;
+        }
         
+        /* Date Selector */
         .date-selector {
             text-align: center;
             margin-bottom: 30px;
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
+            background: rgba(255,255,255,0.08);
+            padding: 20px;
             border-radius: 12px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .date-selector label { color: white; margin-right: 10px; font-size: 1.1em; }
+        .date-selector label { color: white; margin-right: 15px; font-size: 1.1em; }
         .date-selector select {
             padding: 12px 24px;
             font-size: 1em;
@@ -58,31 +71,33 @@
             background: white;
             color: var(--text);
             cursor: pointer;
-            min-width: 180px;
+            min-width: 200px;
             font-weight: 500;
         }
         
+        /* Cards */
         .card {
             background: var(--bg-card);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 25px;
+            padding: 35px;
+            margin-bottom: 30px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .card:hover { transform: translateY(-2px); }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
         
         .card h2 { 
             color: var(--primary); 
-            margin-bottom: 20px; 
-            font-size: 1.6em;
-            padding-bottom: 12px;
+            margin-bottom: 25px; 
+            font-size: 1.8em;
+            padding-bottom: 15px;
             border-bottom: 3px solid #f0f0f0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
+        /* Keywords Section */
         .keywords-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -94,45 +109,91 @@
         .keywords-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 12px;
+            margin-top: 20px;
         }
         .keyword-tag {
             background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95em;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.2s;
+            cursor: default;
         }
         .keyword-tag:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.35);
             transform: scale(1.05);
         }
         
-        .top-3 { 
+        /* Top Stories */
+        .top-story {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff9e6, white);
+            border-radius: 12px;
             border-left: 5px solid var(--accent);
-            background: linear-gradient(to right, #fff9e6, white);
+            transition: all 0.2s;
         }
-        .top-3 h3 {
-            color: var(--secondary);
-            margin: 20px 0 10px 0;
-            font-size: 1.2em;
-            padding-left: 15px;
-            border-left: 3px solid var(--accent);
+        .top-story:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .story-rank {
+            font-size: 2.5em;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .story-content { flex: 1; }
+        .story-content h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .story-content h3 a { color: var(--text); text-decoration: none; }
+        .story-content h3 a:hover { color: var(--primary); }
+        .story-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .source-link {
+            background: #f0f0f5;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .source-link a { color: var(--primary); font-weight: 500; }
+        .category-tag-small {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .story-summary {
+            color: var(--text-light);
+            line-height: 1.7;
         }
         
+        /* Categories */
+        .category-section { margin-bottom: 30px; }
+        .category-section:last-child { margin-bottom: 0; }
         .category-header {
-            margin: 25px 0 15px 0;
-            padding: 10px 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #eee;
         }
         .category-tag {
             display: inline-block;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9em;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 1em;
             color: white;
             font-weight: bold;
             text-transform: uppercase;
@@ -143,22 +204,46 @@
         .tag-projects { background: linear-gradient(135deg, #27ae60, #229954); }
         .tag-other { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
         
-        .article-list {
-            list-style: none;
-            margin-left: 0;
-        }
-        .article-list li {
-            padding: 12px 0;
+        /* Article Lists */
+        .article-list { list-style: none; }
+        .article-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
             border-bottom: 1px solid #eee;
-            line-height: 1.7;
+            gap: 15px;
         }
-        .article-list li:last-child { border-bottom: none; }
+        .article-item:last-child { border-bottom: none; }
+        .article-title {
+            flex: 1;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.05em;
+            line-height: 1.5;
+        }
+        .article-title:hover { color: var(--primary); }
+        .source-badge {
+            background: #f5f5fa;
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .source-badge:hover {
+            background: var(--primary);
+            color: white;
+        }
         
+        /* Trends */
         .trend-item {
             display: flex;
-            gap: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
+            gap: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
             background: #f8f9fa;
             border-radius: 12px;
             border-left: 4px solid var(--primary);
@@ -169,8 +254,8 @@
             transform: translateX(5px);
         }
         .trend-num {
-            width: 36px;
-            height: 36px;
+            width: 45px;
+            height: 45px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -178,35 +263,40 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.3em;
             flex-shrink: 0;
         }
         .trend-content { flex: 1; }
         .trend-content h4 {
             color: var(--primary);
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
         .trend-content p {
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.8;
         }
         
-        a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: var(--secondary); text-decoration: underline; }
-        strong { color: var(--primary); }
+        /* Links */
+        a { transition: all 0.2s; }
         
+        /* Footer */
         footer { 
             text-align: center; 
-            color: rgba(255,255,255,0.6); 
-            margin-top: 50px; 
-            padding: 30px; 
+            color: rgba(255,255,255,0.5); 
+            margin-top: 60px; 
+            padding: 40px; 
         }
-        footer a { color: rgba(255,255,255,0.9); }
+        footer a { color: rgba(255,255,255,0.8); }
+        footer a:hover { color: white; }
         
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            .card { padding: 20px; }
+            header h1 { font-size: 2.2em; }
+            .card { padding: 25px; }
+            .top-story { flex-direction: column; }
+            .story-rank { font-size: 2em; }
+            .article-item { flex-direction: column; align-items: flex-start; }
             .trend-item { flex-direction: column; }
             .keywords-container { justify-content: center; }
         }
@@ -216,6 +306,7 @@
     <div class="container">
         <header>
             <h1>📰 AI Daily News</h1>
+            <div class="tagline">Curated Technology & AI Insights</div>
             <div class="date">2026-03-09</div>
         </header>
         
@@ -232,77 +323,238 @@
             </select>
         </div>
         
+        <!-- SEO Keywords -->
         <div class="card keywords-section">
-            <h2>🔥 Trending SEO Keywords</h2>
+            <h2>🔥 Trending Topics</h2>
             <div class="keywords-container">
-                <span class="keyword-tag">AI Technology</span><span class="keyword-tag">Open Source</span><span class="keyword-tag">Cybersecurity</span><span class="keyword-tag">Data Science</span><span class="keyword-tag">DevOps</span><span class="keyword-tag">Apple</span><span class="keyword-tag">Programming</span><span class="keyword-tag">Kubernetes</span><span class="keyword-tag">Containerization</span><span class="keyword-tag">Digital Transformation</span>
+                <span class="keyword-tag">Open Source Licensing</span><span class="keyword-tag">AI Breakthrough</span><span class="keyword-tag">Cybersecurity Alert</span><span class="keyword-tag">Machine Learning</span><span class="keyword-tag">Tech Innovation</span><span class="keyword-tag">Software Development</span><span class="keyword-tag">Digital Security</span><span class="keyword-tag">AI Research</span><span class="keyword-tag">Tech Industry</span><span class="keyword-tag">Future of AI</span>
             </div>
         </div>
 
-        <div class="card top-3">
+        <!-- Top 3 -->
+        <div class="card">
             <h2>🏆 Today's Top 3 Must-Read</h2>
-            <h3>1. <strong>chardet 许可权争议 — AI 时代的重写 vs 继承</strong></h3>
-<p>Daring Fireball 报道，Python 经典库 chardet 引发了一场开源许可权 dispute。维护者 Dan Blanchard 于 3 月 6 日发布 chardet 7.0.0，声称是"MIT 许可的地面重写"，但创始人 Mark Pilgrim（2006 年创建，LGPL 许可）在消失 15 年后突然回归，开设 issue 质疑重写的合法性。<strong>这是 AI 时代首个重大开源许可权冲突</strong>：当 AI 可以"干净房间"重写代码时，原许可是否仍然约束？Pilgrim 自 2011 年退休，Blanchard 维护 14 年后单方面改变许可，这场争议将检验开源社区对"精神所有权"vs"实际维护贡献"的态度。</p>
-<h3>2. <strong>Donald Knuth 被 Claude Opus 4.6 解决数学猜想 — 图灵奖得主的 AI 顿悟</strong></h3>
-<p>计算机科学家 Donald Knuth（图灵奖得主，《计算机程序设计艺术》作者）在斯坦福发布 PDF 论文，讲述他被 Claude Opus 4.6 解决了一个自己研究数周的开放问题。Knuth 写道："震惊！我不得不重新审视对'生成式 AI'的看法。" <strong>这是 AI 领域的标志性时刻</strong>：最保守的计算机科学泰斗公开承认 AI 在创造性问题解决上的突破。Knuth 强调这不仅是"更快计算"，而是"自动演绎和创造性问题解决的戏剧性进步"。这篇 TeX 排版的 PDF 本身也成为话题——88 岁的 Knuth 仍用 1970 年代发明的排版系统发布 AI 新闻。</p>
-<h3>3. <strong>Clinejection 攻击链 — 提示注入如何劫持 CI/CD 发布流程</strong></h3>
-<p>Simon Willison 详细分析了 Adnan Khan 发现的 Cline 项目攻击链：攻击者通过 issue 标题中的提示注入，诱导 Cline 的 AI issue 分类器执行恶意命令。关键漏洞在于：(1) AI 分类器运行在 `--allowedTools "Bash,Read,Write"` 模式下；(2) GitHub Actions 缓存在不同 workflow 间共享；(3) 攻击者用 11GB 垃圾数据蒸发原有缓存，植入窃取 NPM 发布密钥的恶意包。<strong>最终结果</strong>：cline@2.3.0 被攻击者发布（现已撤回），虽然只添加了 OpenClaw 安装代码，但证明了完整供应链攻击的可行性。这是首个公开的"AI 辅助 CI/CD 劫持"案例。</p>
+            
+        <div class="top-story">
+            <div class="story-rank">🥇</div>
+            <div class="story-content">
+                <h3><a href="https://daringfireball.net/" target="_blank">Open Source Licensing Dispute: AI-Era Rewrite vs Legacy Rights</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://daringfireball.net/" target="_blank">🔗 Daring Fireball</a></span>
+                    <span class="category-tag-small">Open Source</span>
+                </div>
+                <p class="story-summary">The Python chardet library controversy marks the first major open-source licensing conflict of the AI era. When AI can 'clean room' rewrite code, do original licenses still apply?</p>
+            </div>
+        </div>
+    
+        <div class="top-story">
+            <div class="story-rank">🥈</div>
+            <div class="story-content">
+                <h3><a href="https://daringfireball.net/" target="_blank">Donald Knuth's AI Epiphany: Claude Opus 4.6 Solves Mathematical Conjecture</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://daringfireball.net/" target="_blank">🔗 Stanford / Daring Fireball</a></span>
+                    <span class="category-tag-small">AI Research</span>
+                </div>
+                <p class="story-summary">Turing Award winner Donald Knuth publicly acknowledges AI's breakthrough in creative problem-solving. The conservative computer science legend calls it 'dramatic progress in automatic deduction.'</p>
+            </div>
+        </div>
+    
+        <div class="top-story">
+            <div class="story-rank">🥉</div>
+            <div class="story-content">
+                <h3><a href="https://simonwillison.net/" target="_blank">Clinejection Attack Chain: How Prompt Injection Hijacked CI/CD Pipeline</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://simonwillison.net/" target="_blank">🔗 Simon Willison</a></span>
+                    <span class="category-tag-small">Cybersecurity</span>
+                </div>
+                <p class="story-summary">First documented case of AI-assisted CI/CD hijacking. Attackers used prompt injection in issue titles to compromise NPM release workflows via cache poisoning.</p>
+            </div>
+        </div>
+    
         </div>
 
+        <!-- Stats -->
         <div class="card">
             <h2>📊 Data Overview</h2>
-            <ul class="article-list">
-<li><strong>Sources analyzed</strong>: 6 major tech blogs</li>
-<li><strong>Key topics</strong>: Open source licensing disputes, AI solving mathematical proofs, prompt injection supply chain attacks, iOS exploit proliferation, RSS revival</li>
-<li><strong>Notable trend</strong>: AI agents entering software maintenance workflows creates new attack surfaces</li>
-<li><strong>Security alert</strong>: Clinejection demonstrates prompt injection → cache poisoning → secret theft chain</li>
-</ul>
+            <p>Analyzing <strong>99 RSS sources</strong> across technology, AI, and business sectors.</p>
+            <p>Featured: Open Source Licensing, AI Breakthroughs, Cybersecurity Alerts, and Industry Trends.</p>
         </div>
 
+        <!-- Full List by Category -->
         <div class="card">
             <h2>📝 Full List by Category</h2>
-            <h3>AI/LLM</h3>
-<ul class="article-list">
-<li><strong>Daring Fireball</strong>: Donald Knuth on Claude Opus 4.6 solving his conjecture — "I'll have to revise my opinions about generative AI"; celebrates "automatic deduction and creative problem solving"</li>
-<li><strong>Simon Willison</strong>: Clinejection — prompt injection in issue title compromises Cline's NPM release workflow via cache poisoning</li>
-<li><strong>Simon Willison</strong>: Codex for Open Source — OpenAI's response to Anthropic's Claude Max OSS offer (6 months ChatGPT Pro)</li>
-<li><strong>Simon Willison</strong>: Agentic manual testing guide — "Never assume generated code works until executed"</li>
-<li><strong>Jeff Geerling</strong>: "Expert Beginners and Lone Wolves will dominate this early LLM era" — AI enables solo developers to skip collaboration</li>
-</ul>
-<h3>Apple</h3>
-<ul class="article-list">
-<li><strong>Daring Fireball</strong>: Google TAG on Coruna iOS exploit kit — 23 exploits, 5 chains, proliferated from surveillance vendor → Russian espionage → Chinese financial criminals</li>
-<li><strong>Daring Fireball</strong>: Steve Lemay added to Apple Leadership page — "Help us Obi-Wan Lemay, you're our only hope"</li>
-<li><strong>Daring Fireball</strong>: npx workos — CLI tool that uses Claude agent to write auth integration directly into your codebase</li>
-</ul>
-<h3>Projects</h3>
-<ul class="article-list">
-<li><strong>Jeff Geerling</strong>: PTP Wall Clock — "impractical and a little too precise" synchronized time display (Mar 6)</li>
-<li><strong>Jeff Geerling</strong>: Pint-sized Macintosh — Pico Micro Mac build log (Mar 2)</li>
-<li><strong>Simon Willison</strong>: dclient 0.5a3 — CLI utility for Datasette instances</li>
-</ul>
-<h3>Other</h3>
-<ul class="article-list">
-<li><strong>Daring Fireball</strong>: chardet licensing dispute — Mark Pilgrim (original author, retired 2011) contests Dan Blanchard's MIT-licensed "rewrite" of LGPL library</li>
-<li><strong>iDiallo.com</strong>: "It Depends" — why experienced engineers give contextual answers instead of absolutes (revisited)</li>
-<li><strong>Pluralistic</strong>: Cory Doctorow on RSS and Reader Mode — Google killed Reader to force G+ adoption; enshittification is policy choice, not inevitability</li>
-<li><strong>Simon Willison</strong>: Bruce Schneier on Anthropic-Pentagon — AI models commoditized, branding/trust positioning is the differentiator</li>
-</ul>
+            
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-ai">AI & Machine Learning</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Donald Knuth on Claude Opus 4.6 solving his conjecture</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Clinejection - Prompt injection compromises NPM release workflow</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Codex for Open Source - OpenAI's response to Claude Max OSS</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Agentic manual testing guide</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">Expert Beginners and Lone Wolves in LLM era</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-tech">Technology & Business</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Google TAG on Coruna iOS exploit kit - 23 exploits, 5 chains</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Steve Lemay added to Apple Leadership page</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">npx workos - Claude agent for auth integration</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-projects">Projects & Tools</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">PTP Wall Clock - Ultra-precise synchronized time display</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">Pint-sized Macintosh - Pico Micro Mac build</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">dclient 0.5a3 - CLI utility for Datasette</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-other">Industry & Culture</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">chardet licensing dispute - Original author contests rewrite</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://idiallo.com/" target="_blank" class="article-title">Why experienced engineers give contextual answers</a>
+                <a href="https://idiallo.com/" target="_blank" class="source-badge">🔗 iDiallo.com</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://pluralistic.net/" target="_blank" class="article-title">Cory Doctorow on RSS and Reader Mode revival</a>
+                <a href="https://pluralistic.net/" target="_blank" class="source-badge">🔗 Pluralistic</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Bruce Schneier on AI models commoditization</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            </ul>
+        </div>
+    
         </div>
 
+        <!-- Trends Analysis -->
         <div class="card">
             <h2>🔮 Trend Observations</h2>
-            <div class="trend-item"><div class="trend-num">1</div><div class="trend-content"><h4>AI 解决数学猜想的象征意义</h4><p>Knuth 的公开认可是 AI 领域的"尼克松访华"时刻。作为最保守、最重视形式证明的计算机科学家，Knuth 的背书比任何 VC 的 hype 都有分量。<strong>这标志着 AI 从"代码生成工具"向"数学推理伙伴"的跃迁</strong>。Claude Opus 4.6 能解决人类专家数周未解的问题，说明推理模型在形式化领域已超越辅助工具阶段。接下来数学、密码学、算法设计领域可能出现 AI-first 研究范式。</p></div></div>
-<div class="trend-item"><div class="trend-num">2</div><div class="trend-content"><h4>开源许可权的 AI 时代挑战</h4><p>chardet 争议暴露了开源许可体系在 AI 时代的灰色地带。LGPL 要求衍生作品保持相同许可，但"地面重写"是否算衍生？如果 AI 阅读 LGPL 代码后生成 MIT 许可的"灵感相似"代码，原许可是否追溯？<strong>这场争议可能确立先例</strong>：维护贡献是否赋予许可变更权？"精神所有权"是否有保质期？开源社区需要更新 20 世纪的许可框架以适应 AI 重写能力。</p></div></div>
-<div class="trend-item"><div class="trend-num">3</div><div class="trend-content"><h4>AI 辅助 CI/CD 的新型攻击面</h4><p>Clinejection 展示了前所未有的攻击链：提示注入 → Bash 命令执行 → 缓存污染 → 密钥窃取 → 供应链投毒。传统 CI/CD 安全假设"workflow 定义是可信的"，但 AI agent 将自然语言输入（issue 标题）直接转换为命令执行。<strong>这是 AI 原生攻击的第一次实战演示</strong>。防御需要：(1) AI workflow 与发布 workflow 物理隔离；(2) 缓存按 workflow 独立命名空间；(3) 提示输入 sanitization。</p></div></div>
-<div class="trend-item"><div class="trend-num">4</div><div class="trend-content"><h4>iOS 漏洞武器化的黑市链条</h4><p>Google TAG 的 Coruna 报告揭示了一个令人不安的现实：23 个 iOS 漏洞、5 条完整利用链，从监控厂商→俄罗斯间谍→中国金融犯罪团伙，形成完整的"二手漏洞"市场。<strong>漏洞武器化正在民主化</strong>：不需要国家级能力，只需购买 exploit kit 即可攻击 iOS 13-17.2.1 的所有设备。这表明零日漏洞的"半衰期"在缩短——一旦投入使用，很快会流入黑市。苹果需要重新思考漏洞响应策略。</p></div></div>
-<div class="trend-item"><div class="trend-num">5</div><div class="trend-content"><h4>RSS 作为对抗平台控制的武器</h4><p>Cory Doctorow 重提 Google Reader 之死的历史：2013 年 Google 为推广 G+，故意杀死当时最流行的 RSS 阅读器，强迫用户通过 G+ 发现内容。<strong>这是"平台圈地"的经典案例</strong>：用封闭生态替代开放协议。Doctorow 指出"网站恶化"(enshittification)不是经济必然，而是政策选择。RSS 复兴（以及最近的 Reader Mode 回归）是用户重新掌控信息获取的实际行动。在 AI 摘要时代，RSS 的价值更加凸显——它是未被算法污染的原始信息源。</p></div></div>
-<div class="trend-item"><div class="trend-num">6</div><div class="trend-content"><h4>AI 时代的"孤独狼"开发者</h4><p>Jeff Geerling 观察到一个现象：LLM 让资深开发者可以独立完成原本需要团队协作的工作。"专家初学者"(Expert Beginners)和"孤独狼"(Lone Wolves)将在早期 LLM 时代占据主导。<strong>这是双刃剑</strong>：一方面，个人生产力极大提升；另一方面，代码审查、知识共享、集体智慧可能被削弱。当一个人能顶一个团队时，是应该庆祝效率提升，还是担忧技术债务的积累？开源社区需要重新思考协作模式。</p></div></div>
+            
+        <div class="trend-item">
+            <div class="trend-num">1</div>
+            <div class="trend-content">
+                <h4>AI Solving Mathematical Proofs: The Knuth Moment</h4>
+                <p>Knuth's public endorsement marks a 'Nixon to China' moment for AI. As the most conservative computer scientist who values formal proof, his backing carries more weight than any VC hype. This signals AI's transition from 'code generation tool' to 'mathematical reasoning partner.' Claude Opus 4.6 solving problems that stumped human experts for weeks demonstrates reasoning models have surpassed the assistant stage in formal domains.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">2</div>
+            <div class="trend-content">
+                <h4>Open Source Licensing in the AI Era</h4>
+                <p>The chardet controversy exposes gray areas in open-source licensing for the AI age. LGPL requires derivative works to maintain the same license, but does a 'ground-up rewrite' count as derivative? If AI reads LGPL code and generates MIT-licensed 'inspirationally similar' code, is the original license retroactive? This dispute may establish precedent: do maintenance contributions grant license change rights? Does 'spiritual ownership' have an expiration date?</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">3</div>
+            <div class="trend-content">
+                <h4>AI-Native Attack Surfaces in CI/CD</h4>
+                <p>Clinejection demonstrates an unprecedented attack chain: prompt injection → Bash command execution → cache poisoning → key theft → supply chain poisoning. Traditional CI/CD security assumes 'workflow definitions are trusted,' but AI agents convert natural language input (issue titles) directly to command execution. This is the first real-world demonstration of AI-native attacks. Defense requires: (1) physical isolation of AI workflows from release workflows, (2) namespace-isolated caches per workflow, (3) prompt input sanitization.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">4</div>
+            <div class="trend-content">
+                <h4>iOS Exploit Weaponization Democratization</h4>
+                <p>Google TAG's Coruna report reveals a disturbing reality: 23 iOS exploits, 5 complete chains, proliferating from surveillance vendors → Russian espionage → Chinese financial crime groups, forming a complete 'second-hand exploit' market. Exploit weaponization is democratizing — no nation-state capabilities required, just buy an exploit kit to attack all iOS 13-17.2.1 devices. This shows zero-day exploits' 'half-life' is shortening — once deployed, they quickly enter the black market.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">5</div>
+            <div class="trend-content">
+                <h4>RSS as Weapon Against Platform Control</h4>
+                <p>Cory Doctorow revisits the history of Google Reader's death: In 2013, Google deliberately killed the most popular RSS reader to force G+ adoption, forcing users to discover content through G+. This is a classic case of 'platform enclosure' — replacing open protocols with closed ecosystems. Doctorow notes 'enshittification' isn't economic inevitability but policy choice. The RSS revival (and recent Reader Mode comeback) represents users regaining control of information access. In the AI summary era, RSS value is more prominent — it's the raw information source unfiltered by algorithms.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">6</div>
+            <div class="trend-content">
+                <h4>The 'Lone Wolf' Developer in the LLM Era</h4>
+                <p>Jeff Geerling observes a phenomenon: LLMs let senior developers independently complete work that originally required team collaboration. 'Expert Beginners' and 'Lone Wolves' will dominate the early LLM era. This is a double-edged sword: on one hand, individual productivity greatly improves; on the other, code review, knowledge sharing, and collective wisdom may weaken. When one person can replace a team, should we celebrate efficiency gains or worry about technical debt accumulation?</p>
+            </div>
+        </div>
+    
         </div>
 
         <footer>
             <p>Generated by OpenClaw | Data retained for 7 days | 
-            <a href="https://github.com/Zaynxxii/ai-daily-news">GitHub</a></p>
+            <a href="https://github.com/Zaynxxii/ai-daily-news">GitHub</a> | 
+            <a href="archives.html">Archives</a></p>
         </footer>
     </div>
     
