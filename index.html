@@ -3,352 +3,615 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - March 10, 2026</title>
-    <meta name="description" content="Daily AI and tech news with Google Trends data - Yann LeCun AI, Nvidia Agent Platform, Anthropic Pentagon, Microsoft Claude Copilot, Qualcomm Arduino, Samsung 3D Displays">
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, Yann LeCun, Nvidia, Anthropic, Microsoft Copilot, Claude, Qualcomm Arduino, Samsung 3D, Google Pixel, OpenAI, ByteDance, Tech News, Google Trends">
+    <title>AI Daily News</title>
+    <meta name="description" content="Daily AI and tech news with Google Trends data - Your source for artificial intelligence news">
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLM, Tech News, Google Trends">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="AI Daily News - March 10, 2026">
-    <meta property="og:description" content="Daily AI and tech news with Google Trends data">
-    <meta property="og:type" content="website">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    
+    <!-- Apple Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #1d1d1f;
+            --bg-tertiary: #2d2d2f;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --accent-blue: #2997ff;
+            --accent-purple: #a855f7;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-hover: rgba(255, 255, 255, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a2e;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
             min-height: 100vh;
-        }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        
-        /* Header */
-        header { text-align: center; color: white; margin-bottom: 40px; }
-        header h1 { 
-            font-size: 2.8em; 
-            margin-bottom: 10px; 
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        header .date { 
-            font-size: 1.1em; 
-            opacity: 0.9;
-            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Date Selector */
-        .date-selector {
-            background: rgba(255,255,255,0.95);
+        /* Background Effect */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 80% 60% at 50% -20%, rgba(88, 28, 135, 0.25) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 50% at 100% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 40% at 0% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                var(--bg-primary);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 20px 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        .date-selector label {
-            color: #667eea;
-            margin-right: 15px;
-            font-weight: 600;
-            font-size: 1em;
-        }
-        .date-selector select {
-            padding: 12px 25px;
-            font-size: 1em;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            background: white;
-            color: #333;
-            cursor: pointer;
-            outline: none;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        .date-selector select:hover { 
-            border-color: #667eea;
-            transform: translateY(-1px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            padding: 12px 0;
         }
         
-        /* Trending Keywords with Google Trends */
-        .trending-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        .trending-section h3 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-            color: #667eea;
-            font-weight: 600;
-        }
-        .trending-note {
-            text-align: center;
-            font-size: 0.85em;
-            color: #888;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        .keywords-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        .keyword-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 0.95em;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .keyword-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102,126,234,0.4);
-        }
-        .trend-score {
-            background: rgba(255,255,255,0.2);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85em;
+        
+        .nav-logo {
+            font-size: 21px;
             font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
         }
-        .trend-score.high { background: #4ade80; color: #166534; }
-        .trend-score.medium { background: #fbbf24; color: #92400e; }
-        .trend-score.low { background: #f87171; color: #991b1b; }
         
-        .loading {
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Header */
+        header {
             text-align: center;
-            padding: 20px;
-            color: #666;
-        }
-        .loading::after {
-            content: '';
-            animation: dots 1.5s infinite;
-        }
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
+            padding: 80px 0 60px;
         }
         
-        /* News Sections */
-        .news-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        header h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 0%, #a8a8a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
         }
-        .news-section h2 {
-            font-size: 1.5em;
-            color: #1a1a2e;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+        
+        header .date {
+            color: var(--text-secondary);
+            font-size: 21px;
+            font-weight: 400;
+        }
+        
+        /* Time Filter */
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .filter-btn:hover {
+            background: var(--glass-hover);
+            color: var(--text-primary);
+        }
+        
+        .filter-btn.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+        }
+        
+        /* Glass Card */
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
+        
+        .section-title i {
+            color: var(--accent-blue);
+        }
+        
+        /* Keywords Grid */
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        
+        .keyword-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .keyword-item:hover {
+            background: var(--bg-secondary);
+            transform: translateX(4px);
+        }
+        
+        .keyword-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .keyword-score {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .score-bar {
+            width: 60px;
+            height: 6px;
+            background: var(--bg-primary);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .score-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        .score-fill.high { background: linear-gradient(90deg, #34d399, #10b981); }
+        .score-fill.medium { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+        .score-fill.low { background: linear-gradient(90deg, #f87171, #ef4444); }
+        
+        /* News List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
         .news-item {
             display: flex;
             gap: 20px;
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.2s;
+            padding: 24px;
+            background: var(--bg-secondary);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
-        .news-item:last-child { border-bottom: none; }
+        
+        .news-item:first-child {
+            border-radius: 16px 16px 0 0;
+        }
+        
+        .news-item:last-child {
+            border-radius: 0 0 16px 16px;
+        }
+        
         .news-item:hover {
-            padding-left: 10px;
-            background: rgba(102,126,234,0.03);
-            border-radius: 10px;
+            background: var(--bg-tertiary);
         }
+        
         .news-rank {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
-            color: white;
-            border-radius: 10px;
+            width: 32px;
+            height: 32px;
+            background: var(--glass-bg);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.1em;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
             flex-shrink: 0;
         }
+        
         .news-rank.top3 {
-            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
-            color: #333;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #000;
         }
-        .news-content { flex: 1; }
+        
+        .news-content {
+            flex: 1;
+        }
+        
         .news-content h3 {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            color: #1a1a2e;
-            line-height: 1.4;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--text-primary);
         }
+        
         .news-content h3 a {
             color: inherit;
             text-decoration: none;
+            transition: color 0.2s;
         }
-        .news-content h3 a:hover { color: #667eea; }
+        
+        .news-content h3 a:hover {
+            color: var(--accent-blue);
+        }
+        
         .news-content p {
-            color: #666;
-            font-size: 0.95em;
+            font-size: 14px;
+            color: var(--text-secondary);
             line-height: 1.5;
+            margin-bottom: 10px;
         }
+        
         .news-meta {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
         }
-        .news-tag {
-            background: rgba(102,126,234,0.1);
-            color: #667eea;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 500;
-        }
-        .news-source { color: #999; font-size: 0.85em; }
         
-        /* Category Sections */
+        .news-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .news-source:hover {
+            opacity: 0.8;
+        }
+        
+        .news-source i {
+            font-size: 10px;
+        }
+        
+        .news-tag {
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: var(--glass-bg);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        
+        /* Category Grid */
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
         }
+        
         .category-card {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             border-radius: 16px;
-            padding: 25px;
-            transition: all 0.3s;
-            border-left: 4px solid #667eea;
+            padding: 24px;
+            transition: all 0.3s ease;
+            border-left: 3px solid var(--accent-blue);
         }
+        
         .category-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
+        
         .category-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #1a1a2e;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .category-card ul { list-style: none; }
-        .category-card li {
-            padding: 8px 0;
-            color: #555;
-            font-size: 0.95em;
-            border-bottom: 1px solid #eee;
+        
+        .category-card ul {
+            list-style: none;
         }
-        .category-card li:last-child { border-bottom: none; }
+        
+        .category-card li {
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .category-card li:last-child {
+            border-bottom: none;
+        }
+        
         .category-card li::before {
-            content: "→";
-            color: #667eea;
+            content: "\f061";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-blue);
             margin-right: 10px;
+            font-size: 10px;
+        }
+        
+        /* Trend Items */
+        .trend-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trend-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .trend-content h4 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        
+        .trend-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
         }
         
         /* Footer */
         footer {
             text-align: center;
-            color: rgba(255,255,255,0.8);
-            padding: 30px 0;
-            font-size: 0.9em;
+            padding: 60px 0;
+            color: var(--text-secondary);
+            font-size: 12px;
         }
         
-        @media (max-width: 600px) {
-            header h1 { font-size: 2em; }
-            .news-item { flex-direction: column; gap: 10px; }
-            .news-rank { width: 32px; height: 32px; font-size: 0.9em; }
-            .keywords-grid { grid-template-columns: 1fr; }
-            .category-grid { grid-template-columns: 1fr; }
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
         }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .news-item {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .news-rank {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .keywords-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glass-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .glass-card:nth-child(2) { animation-delay: 0.1s; }
+        .glass-card:nth-child(3) { animation-delay: 0.2s; }
+        .glass-card:nth-child 4) { animation-delay: 0.3s; }
+        .glass-card:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
+    <div class="bg-gradient"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo">AI Daily News</a>
+            <div class="nav-links">
+                <a href="#">Trends</a>
+                <a href="#">News</a>
+                <a href="#">Categories</a>
+                <a href="#">Insights</a>
+            </div>
+        Apple-style navigation
+        </div>
+    </nav>
+    
     <div class="container">
+        <!-- Header -->
         <header>
-            <h1>🤖 AI Daily News</h1>
-            <div class="date">March 10, 2026</div>
+            <h1>AI Daily News</h1>
+            <p class="date">Tuesday, March 10, 2026</p>
         </header>
         
-        <!-- Date Selector -->
-        <div class="date-selector">
-            <label for="date-select">View Archive:</label>
-            <select id="date-select" onchange="window.location.href=this.value">
-                <option value="index.html">March 10, 2026</option>
-                <option value="2026-03-09.html">March 09, 2026</option>
-                <option value="2026-03-08.html">March 08, 2026</option>
-            </select>
+        <!-- Time Filter -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-range="7">Past 7 Days</button>
+            <button class="filter-btn" data-range="30">Past 30 Days</button>
+            <button class="filter-btn" data-range="90">Past 90 Days</button>
         </div>
         
-        <!-- Google Trends SEO Keywords -->
-        <div class="trending-section">
-            <h3>📊 Google Trends - Top 10 SEO Keywords</h3>
-            <p class="trending-note">Real-time search interest data from Google Trends (Past 7 days)</p>
-            <div id="keywords-container" class="keywords-grid">
-                <div class="loading">Loading Google Trends data</div>
+        <!-- Google Trends Keywords -->
+        <div class="glass-card">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Trending Keywords
+            </h2>
+            <div class="keywords-grid" id="keywords-container">
+                <!-- Keywords will be populated by JavaScript -->
             </div>
         </div>
         
-        <!-- Today's Top 3 -->
-        <div class="news-section">
-            <h2>🔥 Today's Top 3</h2>
-            
-            <div class="news-item">
-                <div class="news-rank top3">1</div>
-                <div class="news-content">
-                    <h3><a href="https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/" target="_blank">Yann LeCun Raises $1 Billion to Build AI That Understands the Physical World</a></h3>
-                    <p>Meta's AI chief launches new venture to develop AI systems that can truly understand and interact with the physical world.</p>
-                    <div class="news-meta">
-                        <span class="news-tag">AI Funding</span>
-                        <span class="news-source">Wired</span>
+        <!-- Today's Top News -->
+        <div class="glass-card">
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i>
+                Top Stories
+            </h2>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-rank top3">1</div>
+                    <div class="news-content">
+                        <h3><a href="https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/" target="_blank">Yann LeCun Raises $1 Billion to Build AI That Understands the Physical World</a></h3>
+                        <p>Meta's AI chief launches new venture to develop AI systems that can truly understand and interact with the physical world.</p>
+                        <div class="news-meta">
+                            <a href="https://www.wired.com" class="news-source" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Wired
+                            </a>
+                            <span class="news-tag">AI Funding</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="news-item">
-                <div class="news-rank top3">2</div>
-                <div class="news-content">
-                    <h3><a href="https://www.wired.com/story/nvidia-planning-ai-agent-platform-launch-open-source/" target="_blank">Nvidia Planning to Launch Open-Source AI Agent Platform</a></h3>
-                    <p>Nvidia announces plans to release an open-source AI agent platform, potentially disrupting the current AI assistant market.</p>
-                    <div class="news-meta">
-                        <span class="news-tag">AI Agents</span>
-                        <span class="news-source">Wired</span>
+                
+                <div class="news-item">
+                    <div class="news-rank top3">2</div>
+                    <div class="news-content">
+                        <h3><a href="https://www.wired.com/story/nvidia-planning-ai-agent-platform-launch-open-source/" target="_blank">Nvidia Planning to Launch Open-Source AI Agent Platform</a></h3>
+                        <p>Nvidia announces plans to release an open-source AI agent platform, potentially disrupting the current AI assistant market.</p>
+                        <div class="news-meta">
+                            <a href="https://www.wired.com" class="news-source" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Wired
+                            </a>
+                            <span class="news-tag">AI Agents</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="news-item">
-                <div class="news-rank top3">3</div>
-                <div class="news-content">
-                    <h3><a href="https://www.wired.com/story/anthropic-sues-department-of-defense-over-supply-chain-risk-designation/" target="_blank">Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation</a></h3>
-                    <p>Anthropic files lawsuit against the Pentagon over supply chain risk designation that could cost billions in contracts.</p>
-                    <div class="news-meta">
-                        <span class="news-tag">AI Policy</span>
-                        <span class="news-source">Wired</span>
+                
+                <div class="news-item">
+                    <div class="news-rank top3">3</div>
+                    <div class="news-content">
+                        <h3><a href="https://www.wired.com/story/anthropic-sues-department-of-defense-over-supply-chain-risk-designation/" target="_blank">Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation</a></h3>
+                        <p>Anthropic files lawsuit against the Pentagon over supply chain risk designation that could cost billions in contracts.</p>
+                        <div class="news-meta">
+                            <a href="https://www.wired.com" class="news-source" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Wired
+                            </a>
+                            <span class="news-tag">AI Policy</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- News by Category -->
-        <div class="news-section">
-            <h2>📰 News by Category</h2>
+        <div class="glass-card">
+            <h2 class="section-title">
+                <i class="fas fa-th-large"></i>
+                News by Category
+            </h2>
             <div class="category-grid">
                 <div class="category-card">
-                    <h3>🤖 AI & Machine Learning</h3>
+                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
                     <ul>
                         <li>Microsoft bringing Claude Cowork to Copilot</li>
                         <li>OpenAI tested Pentagon models through Microsoft</li>
@@ -357,7 +620,7 @@
                     </ul>
                 </div>
                 <div class="category-card">
-                    <h3>💻 Technology & Hardware</h3>
+                    <h3><i class="fas fa-microchip"></i> Technology & Hardware</h3>
                     <ul>
                         <li>Qualcomm announces Arduino Ventuno Q for AI</li>
                         <li>Samsung: 120+ games for glasses-free 3D</li>
@@ -366,7 +629,7 @@
                     </ul>
                 </div>
                 <div class="category-card">
-                    <h3>🏢 Business & Industry</h3>
+                    <h3><i class="fas fa-building"></i> Business & Industry</h3>
                     <ul>
                         <li>Big Tech signs data center pledge</li>
                         <li>Data centers in Arctic Circle</li>
@@ -375,7 +638,7 @@
                     </ul>
                 </div>
                 <div class="category-card">
-                    <h3>🔐 Security & Ethics</h3>
+                    <h3><i class="fas fa-shield-alt"></i> Security & Ethics</h3>
                     <ul>
                         <li>New jammer blocks AI wearables</li>
                         <li>Grammarly AI reviews from dead authors</li>
@@ -387,118 +650,108 @@
         </div>
         
         <!-- Trend Observations -->
-        <div class="news-section">
-            <h2>📈 Trend Observations</h2>
-            
-            <div class="news-item">
-                <div class="news-rank">01</div>
-                <div class="news-content">
-                    <h3>The Rise of Open-Source AI Agents</h3>
+        <div class="glass-card">
+            <h2 class="section-title">
+                <i class="fas fa-chart-area"></i>
+                Trend Observations
+            </h2>
+            <div class="trend-item">
+                <div class="trend-number">01</div>
+                <div class="trend-content">
+                    <h4>The Rise of Open-Source AI Agents</h4>
                     <p>Nvidia's open-source AI agent platform signals major shift, potentially democratizing advanced AI capabilities.</p>
                 </div>
             </div>
-            
-            <div class="news-item">
-                <div class="news-rank">02</div>
-                <div class="news-content">
-                    <h3>AI Regulation Heats Up</h3>
+            <div class="trend-item">
+                <div class="trend-number">02</div>
+                <div class="trend-content">
+                    <h4>AI Regulation Heats Up</h4>
                     <p>Anthropic's Pentagon lawsuit highlights growing tensions over supply chain security designations.</p>
                 </div>
             </div>
-            
-            <div class="news-item">
-                <div class="news-rank">03</div>
-                <div class="news-content">
-                    <h3>Hardware Innovation Continues</h3>
+            <div class="trend-item">
+                <div class="trend-number">03</div>
+                <div class="trend-content">
+                    <h4>Hardware Innovation Continues</h4>
                     <p>From Qualcomm's AI Arduino to Samsung's 3D displays, hardware pushes AI integration boundaries.</p>
                 </div>
             </div>
-            
-            <div class="news-item">
-                <div class="news-rank">04</div>
-                <div class="news-content">
-                    <h3>Data Center Expansion</h3>
+            <div class="trend-item">
+                <div class="trend-number">04</div>
+                <div class="trend-content">
+                    <h4>Data Center Expansion</h4>
                     <p>Tech companies building data centers in extreme locations like Arctic to meet AI demands.</p>
                 </div>
             </div>
-            
-            <div class="news-item">
-                <div class="news-rank">05</div>
-                <div class="news-content">
-                    <h3>AI in Everyday Devices</h3>
+            <div class="trend-item">
+                <div class="trend-number">05</div>
+                <div class="trend-content">
+                    <h4>AI in Everyday Devices</h4>
                     <p>New products bring AI directly into consumers' daily lives through phones and wearables.</p>
                 </div>
             </div>
         </div>
         
+        <!-- Footer -->
         <footer>
-            <p>AI Daily News | Updated: March 10, 2026</p>
-            <p style="margin-top: 10px;">Data sources: Wired, The Verge, TechCrunch, Google Trends | Generated with 🤖</p>
+            <p>AI Daily News &copy; 2026</p>
+            <p style="margin-top: 8px;">Data sources: <a href="https://www.wired.com">Wired</a>, <a href="https://www.theverge.com">The Verge</a>, <a href="https://techcrunch.com">TechCrunch</a> | Google Trends Data</p>
         </footer>
     </div>
 
     <script>
-    // Google Trends Data - Updated with real-time data
-    // Using Google Trends API through client-side fetching
-    
-    const trendsKeywords = [
-        { keyword: "Yann LeCun AI", query: "Yann LeCun AI", score: 92 },
-        { keyword: "Nvidia Agent Platform", query: "Nvidia AI agent platform", score: 88 },
-        { keyword: "Anthropic Pentagon", query: "Anthropic Pentagon lawsuit", score: 85 },
-        { keyword: "Microsoft Claude Copilot", query: "Microsoft Claude Copilot", score: 82 },
-        { keyword: "Qualcomm Arduino AI", query: "Qualcomm Arduino AI", score: 78 },
-        { keyword: "Samsung 3D Gaming", query: "Samsung 3D gaming displays", score: 75 },
-        { keyword: "Google Pixel 11 Fold", query: "Google Pixel 11 Pro Fold", score: 73 },
-        { keyword: "OpenAI Military Use", query: "OpenAI military use", score: 70 },
-        { keyword: "ByteDance AI", query: "ByteDance AI", score: 68 },
-        { keyword: "Data Center Arctic", query: "Arctic data center AI", score: 65 }
-    ];
+        // Google Trends Keywords Data (from SerpAPI)
+        const keywordsData = [
+            { keyword: "Yann LeCun AI", query: "Yann+LeCun+AI", score: 100 },
+            { keyword: "Nvidia AI Agent", query: "Nvidia+AI+agent", score: 100 },
+            { keyword: "Anthropic Pentagon", query: "Anthropic+Pentagon", score: 100 },
+            { keyword: "Claude Copilot", query: "Claude+Copilot", score: 100 },
+            { keyword: "Qualcomm Arduino AI", query: "Qualcomm+Arduino+AI", score: 100 },
+            { keyword: "Samsung 3D Gaming", query: "Samsung+3D+gaming", score: 85 },
+            { keyword: "Google Pixel Fold", query: "Google+Pixel+Fold", score: 100 },
+            { keyword: "OpenAI Military", query: "OpenAI+military", score: 100 },
+            { keyword: "ByteDance AI", query: "ByteDance+AI", score: 100 },
+            { keyword: "Arctic Data Center", query: "Arctic+data+center", score: 100 }
+        ];
 
-    function getScoreClass(score) {
-        if (score >= 80) return 'high';
-        if (score >= 60) return 'medium';
-        return 'low';
-    }
-
-    function renderKeywords() {
-        const container = document.getElementById('keywords-container');
-        let html = '';
-        trendsKeywords.forEach(item => {
-            const scoreClass = getScoreClass(item.score);
-            html += `
-                <div class="keyword-item">
-                    <span>${item.keyword}</span>
-                    <span class="trend-score ${scoreClass}">${item.score}/100</span>
-                </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
-
-    // Fetch live data from Google Trends using gtrends SDK
-    async function fetchGoogleTrends() {
-        // Note: In production, you would use a backend API to fetch Google Trends data
-        // This is a demonstration with pre-collected data
-        // To get real-time data, you would need:
-        // 1. A server-side component with pytrends or
-        // 2. Google Trends API integration
-        
-        // For now, we'll use the sample data above
-        // In production, replace this with actual API calls
-        
-        try {
-            // Attempt to fetch from a Google Trends proxy (if available)
-            // This is placeholder - actual implementation would use backend
-            console.log('Google Trends data loaded:', trendsKeywords.length, 'keywords');
-        } catch (error) {
-            console.log('Using cached trend data');
+        function getScoreClass(score) {
+            if (score >= 80) return 'high';
+            if (score >= 60) return 'medium';
+            return 'low';
         }
-        
-        renderKeywords();
-    }
 
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', fetchGoogleTrends);
+        function renderKeywords() {
+            const container = document.getElementById('keywords-container');
+            let html = '';
+            keywordsData.forEach(item => {
+                const scoreClass = getScoreClass(item.score);
+                html += `
+                    <div class="keyword-item">
+                        <span class="keyword-name">${item.keyword}</span>
+                        <div class="keyword-score">
+                            <div class="score-bar">
+                                <div class="score-fill ${scoreClass}" style="width: ${item.score}%"></div>
+                            </div>
+                            ${item.score}
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Filter button functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In production, this would fetch new data based on the selected range
+                console.log('Selected range:', this.dataset.range, 'days');
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', renderKeywords);
     </script>
 </body>
 </html>
