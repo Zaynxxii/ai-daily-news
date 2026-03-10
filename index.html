@@ -1,565 +1,365 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News — March 09, 2026</title>
+    <title>AI Daily News — March 10, 2026</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --text: #1d1d1f;
-            --text-secondary: #86868b;
-            --text-tertiary: #6e6e73;
-            --link: #0066cc;
-            --bg: #ffffff;
-            --bg-gray: #f5f5f7;
-            --border: #d2d2d7;
-            --blue: #0071e3;
-            --green: #34c759;
-            --orange: #ff9500;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.47059;
-            -webkit-font-smoothing: antialiased;
-        }
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
-        }
-        .nav-content {
-            max-width: 1024px;
-            margin: 0 auto;
-            padding: 0 22px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo { font-size: 21px; font-weight: 600; }
-        .logo span { color: var(--blue); }
-        .nav-links { display: flex; gap: 28px; align-items: center; }
-        .nav-links a { color: var(--text); text-decoration: none; font-size: 14px; opacity: 0.8; transition: opacity 0.3s; }
-        .nav-links a:hover { opacity: 1; }
-        .date-selector {
-            font-size: 14px;
-            padding: 6px 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--bg);
-            color: var(--text);
-            cursor: pointer;
-            outline: none;
-        }
-        .hero {
-            text-align: center;
-            padding: 80px 20px 60px;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 56px;
-            line-height: 1.07143;
-            font-weight: 600;
-            letter-spacing: -0.005em;
-            margin-bottom: 16px;
-        }
-        .hero .tagline {
-            font-size: 28px;
-            line-height: 1.14286;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-        .hero .date { font-size: 19px; color: var(--text-tertiary); }
-        
-        /* Google Trends Section */
-        .trends-section {
-            background: var(--bg-gray);
-            padding: 60px 20px;
-        }
-        .trends-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .trends-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .trends-header h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .trends-header p {
-            color: var(--text-secondary);
-            font-size: 17px;
-        }
-        .trends-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 16px;
-        }
-        .trend-keyword {
-            background: var(--bg);
-            padding: 16px 20px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .keyword-text {
-            flex: 1;
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .interest-bar {
-            width: 100px;
-            height: 6px;
-            background: var(--border);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .interest-fill {
-            height: 100%;
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-        .interest-score {
-            font-size: 13px;
-            color: var(--text-secondary);
-            min-width: 30px;
-            text-align: right;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
         }
         
-        main {
-            max-width: 1024px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 60px 22px;
-        }
-        section { margin-bottom: 80px; }
-        section h2 {
-            font-size: 40px;
-            font-weight: 600;
-            letter-spacing: -0.021em;
-            margin-bottom: 40px;
-            text-align: center;
+            padding: 40px 20px;
         }
         
-        .stories-grid { display: grid; gap: 30px; }
-        .story-card {
-            display: flex;
-            gap: 30px;
-            padding: 30px;
-            background: var(--bg-gray);
-            border-radius: 18px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .story-card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .story-rank {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1;
-            flex-shrink: 0;
-            width: 80px;
+        header {
             text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
         }
-        .story-content { flex: 1; }
-        .story-category {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--blue);
-            margin-bottom: 8px;
-        }
-        .story-content h3 {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.021em;
-            margin-bottom: 12px;
-        }
-        .story-content h3 a { color: var(--text); text-decoration: none; }
-        .story-content h3 a:hover { color: var(--link); }
-        .story-summary {
-            font-size: 17px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-        .source-link {
-            font-size: 15px;
-            color: var(--link);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .source-link:hover { text-decoration: underline; }
         
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-            gap: 30px;
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .category {
-            background: var(--bg-gray);
-            border-radius: 18px;
-            padding: 30px;
+        
+        header .date {
+            color: #888;
+            font-size: 1.1em;
         }
-        .category h3 {
-            font-size: 21px;
-            font-weight: 600;
-            margin-bottom: 20px;
+        
+        .top-news {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .category-icon { font-size: 24px; }
-        .article-list { list-style: none; }
-        .article-list li { border-bottom: 1px solid var(--border); }
-        .article-list li:last-child { border-bottom: none; }
-        .article-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            text-decoration: none;
-            color: inherit;
-            transition: opacity 0.3s;
-        }
-        .article-link:hover { opacity: 0.7; }
-        .article-title { flex: 1; font-size: 15px; line-height: 1.4; margin-right: 16px; }
-        .article-source { font-size: 13px; color: var(--text-tertiary); white-space: nowrap; }
         
-        .trends-list { display: grid; gap: 24px; }
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .news-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .news-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .news-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-right: 12px;
+            font-size: 0.9em;
+        }
+        
+        .news-rank.top3 {
+            background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+            color: #333;
+        }
+        
+        .news-title {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-title a {
+            color: #fff;
+            text-decoration: none;
+            flex: 1;
+        }
+        
+        .news-title a:hover {
+            color: #667eea;
+        }
+        
+        .news-desc {
+            color: #aaa;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-left: 44px;
+        }
+        
+        .hot-index {
+            display: inline-block;
+            background: rgba(255,107,107,0.2);
+            color: #ff6b6b;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 12px;
+            margin-left: 44px;
+        }
+        
+        .category-section {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 1.2em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .category-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .category-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-left-color: #667eea;
+        }
+        
+        .trend-section {
+            margin-top: 50px;
+        }
+        
         .trend-item {
             display: flex;
-            gap: 24px;
-            padding: 30px;
-            background: var(--bg-gray);
-            border-radius: 18px;
-        }
-        .trend-number {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--blue);
-            flex-shrink: 0;
-            width: 60px;
-        }
-        .trend-content h4 {
-            font-size: 21px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .trend-content p {
-            font-size: 17px;
-            color: var(--text-secondary);
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
         }
         
-        .sources-section {
-            background: var(--bg-gray);
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .sources-section h2 { font-size: 32px; margin-bottom: 30px; }
-        .sources-grid {
-            max-width: 800px;
-            margin: 0 auto;
+        .trend-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            flex-shrink: 0;
         }
-        .source-tag {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--bg);
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
+        
+        .trend-content h3 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .trend-content p {
+            color: #888;
+            font-size: 0.9em;
         }
         
         footer {
-            background: var(--bg-gray);
-            padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
         }
-        footer p { font-size: 13px; color: var(--text-tertiary); }
-        footer a { color: var(--text-secondary); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
         
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 40px; }
-            .hero .tagline { font-size: 21px; }
-            section h2 { font-size: 32px; }
-            .story-card { flex-direction: column; }
-            .story-rank { font-size: 48px; width: auto; }
-            .categories-grid { grid-template-columns: 1fr; }
-            .trend-item { flex-direction: column; }
-            .trends-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+        .tag {
+            display: inline-block;
+            background: rgba(102,126,234,0.2);
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .news-title {
+                font-size: 1em;
+            }
+            .news-desc, .hot-index {
+                margin-left: 0;
+            }
+            .trend-item {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">AI <span>Daily</span></div>
-            <div class="nav-links">
-                <a href="#trends">Trends</a>
-                <a href="#top">Top Stories</a>
-                <a href="#categories">Categories</a>
-                <select class="date-selector" onchange="window.location.href=this.value === '2026-03-09' ? 'index.html' : 'archives/' + this.value + '.html'">
-                    <option value="2026-03-09" selected>Today</option>
-<option value="2026-03-08">Mar 08</option>
-<option value="2026-03-07">Mar 07</option>
-<option value="2026-03-06">Mar 06</option>
-<option value="2026-03-05">Mar 05</option>
-<option value="2026-03-04">Mar 04</option>
-<option value="2026-03-03">Mar 03</option>
-                </select>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Daily News</h1>
+            <div class="date">March 10, 2026</div>
+        </header>
+        
+        <section class="top-news">
+            <h2 class="section-title">🔥 Today's Top 3</h2>
+            
+            <div class="news-card">
+                <div class="news-title">
+                    <span class="news-rank top3">1</span>
+                    <a href="https://www.baidu.com/s?wd=加快建设宜居宜业和美乡村" target="_blank">加快建设宜居宜业和美乡村</a>
+                </div>
+                <div class="news-desc">
+                    习近平总书记在参加江苏代表团审议时听得仔细、问得详细。加快建设宜居宜业和美乡村，亿万农民将拥有更多获得感与幸福感。
+                </div>
+                <div class="hot-index">🔥 7.9M+ searches</div>
             </div>
-        </div>
-    </nav>
-    
-    <header class="hero">
-        <h1>AI Daily News</h1>
-        <p class="tagline">Curated technology insights from trusted sources</p>
-        <p class="date">March 09, 2026</p>
-    </header>
-    
-    <section id="trends" class="trends-section">
-        <div class="trends-container">
-            <div class="trends-header">
-                <h2>🔥 Google Trends</h2>
-                <p>Real-time search interest from Google Trends API</p>
+            
+            <div class="news-card">
+                <div class="news-title">
+                    <span class="news-rank top3">2</span>
+                    <a href="https://www.baidu.com/s?wd=化橘红火了" target="_blank">"化橘红"火了 这个小果子有啥用</a>
+                </div>
+                <div class="news-desc">
+                    近日，"化橘红"因华春莹在两会现场连吃润喉糖走红网络。化橘红是广东化州道地中药材，有"南方人参"之称，可理气宽中、燥湿化痰。
+                </div>
+                <div class="hot-index">🔥 7.8M+ searches</div>
             </div>
-            <div class="trends-grid">
-                
-            </div>
-        </div>
-    </section>
-    
-    <main>
-        <section id="top">
-            <h2>Today's Top 3</h2>
-            <div class="stories-grid">
-                
-        <article class="story-card">
-            <div class="story-rank" style="color: #007aff">1</div>
-            <div class="story-content">
-                <span class="story-category">AI Breakthrough</span>
-                <h3><a href="https://techcrunch.com" target="_blank">OpenAI Announces GPT-5 with Multimodal Reasoning</a></h3>
-                <p class="story-summary">Latest iteration demonstrates unprecedented cross-modal understanding capabilities.</p>
-                <a href="https://techcrunch.com" target="_blank" class="source-link">Read on TechCrunch →</a>
-            </div>
-        </article>
-    
-        <article class="story-card">
-            <div class="story-rank" style="color: #5856d6">2</div>
-            <div class="story-content">
-                <span class="story-category">Product Launch</span>
-                <h3><a href="https://www.theverge.com" target="_blank">Apple Vision Pro 2: Next Generation Details Leaked</a></h3>
-                <p class="story-summary">Lighter design and enhanced spatial computing features for mainstream adoption.</p>
-                <a href="https://www.theverge.com" target="_blank" class="source-link">Read on The Verge →</a>
-            </div>
-        </article>
-    
-        <article class="story-card">
-            <div class="story-rank" style="color: #34c759">3</div>
-            <div class="story-content">
-                <span class="story-category">Business</span>
-                <h3><a href="https://www.bloomberg.com" target="_blank">Global Tech Investment Reaches $89B in Q1 2026</a></h3>
-                <p class="story-summary">Venture capital shows strong recovery with AI infrastructure leading the surge.</p>
-                <a href="https://www.bloomberg.com" target="_blank" class="source-link">Read on Bloomberg →</a>
-            </div>
-        </article>
-    
+            
+            <div class="news-card">
+                <div class="news-title">
+                    <span class="news-rank top3">3</span>
+                    <a href="https://www.baidu.com/s?wd=两高工作报告十大看点" target="_blank">"两高"工作报告十大看点</a>
+                </div>
+                <div class="news-desc">
+                    3月9日，最高人民法院工作报告、最高人民检察院工作报告提请十四届全国人大四次会议审议。报告回顾过去一年推进法治中国建设的情况。
+                </div>
+                <div class="hot-index">🔥 7.6M+ searches</div>
             </div>
         </section>
         
-        <section id="categories">
-            <h2>News by Category</h2>
-            <div class="categories-grid">
-                
-        <section class="category">
-            <h3><span class="category-icon">🤖</span>AI & Machine Learning</h3>
-            <ul class="article-list">
-        <li><a href="https://www.technologyreview.com" target="_blank" class="article-link">
-            <span class="article-title">Google DeepMind New Protein Folding Model</span>
-            <span class="article-source">MIT Tech Review</span>
-        </a></li>
-    
-        <li><a href="https://venturebeat.com" target="_blank" class="article-link">
-            <span class="article-title">Microsoft Copilot Enterprise Hits 10M Users</span>
-            <span class="article-source">VentureBeat</span>
-        </a></li>
-    
-        <li><a href="https://www.wired.com" target="_blank" class="article-link">
-            <span class="article-title">Anthropic Constitutional AI Framework</span>
-            <span class="article-source">Wired</span>
-        </a></li>
-    
-        <li><a href="https://techcrunch.com" target="_blank" class="article-link">
-            <span class="article-title">NVIDIA Unveils H200 AI Training Chip</span>
-            <span class="article-source">TechCrunch</span>
-        </a></li>
-    </ul>
-        </section>
-    
-        <section class="category">
-            <h3><span class="category-icon">💼</span>Technology & Business</h3>
-            <ul class="article-list">
-        <li><a href="https://www.reuters.com" target="_blank" class="article-link">
-            <span class="article-title">Tesla FSD V13 Rolls Out to 2 Million Vehicles</span>
-            <span class="article-source">Reuters</span>
-        </a></li>
-    
-        <li><a href="https://www.bloomberg.com" target="_blank" class="article-link">
-            <span class="article-title">AWS Launches European Sovereign Cloud</span>
-            <span class="article-source">Bloomberg</span>
-        </a></li>
-    
-        <li><a href="https://www.theverge.com" target="_blank" class="article-link">
-            <span class="article-title">Samsung Galaxy S26 AI Features Preview</span>
-            <span class="article-source">The Verge</span>
-        </a></li>
-    
-        <li><a href="https://www.fastcompany.com" target="_blank" class="article-link">
-            <span class="article-title">Meta Reality Labs Revenue Up 40%</span>
-            <span class="article-source">Fast Company</span>
-        </a></li>
-    </ul>
-        </section>
-    
-        <section class="category">
-            <h3><span class="category-icon">🚀</span>Innovation & Startups</h3>
-            <ul class="article-list">
-        <li><a href="https://techcrunch.com" target="_blank" class="article-link">
-            <span class="article-title">YC Winter 2026: 15 AI Startups to Watch</span>
-            <span class="article-source">TechCrunch</span>
-        </a></li>
-    
-        <li><a href="https://www.bloomberg.com" target="_blank" class="article-link">
-            <span class="article-title">Stripe Acquires Terminal Startup for $1.2B</span>
-            <span class="article-source">Bloomberg</span>
-        </a></li>
-    
-        <li><a href="https://www.theverge.com" target="_blank" class="article-link">
-            <span class="article-title">Notion AI Workflow Automation Launch</span>
-            <span class="article-source">The Verge</span>
-        </a></li>
-    
-        <li><a href="https://www.wired.com" target="_blank" class="article-link">
-            <span class="article-title">Figma AI-Powered Design Assistant</span>
-            <span class="article-source">Wired</span>
-        </a></li>
-    </ul>
-        </section>
-    
-        <section class="category">
-            <h3><span class="category-icon">💡</span>Industry Insights</h3>
-            <ul class="article-list">
-        <li><a href="https://www.fastcompany.com" target="_blank" class="article-link">
-            <span class="article-title">State of Remote Work 2026: Key Findings</span>
-            <span class="article-source">Fast Company</span>
-        </a></li>
-    
-        <li><a href="https://www.reuters.com" target="_blank" class="article-link">
-            <span class="article-title">EU AI Act: What Companies Must Know</span>
-            <span class="article-source">Reuters</span>
-        </a></li>
-    
-        <li><a href="https://www.technologyreview.com" target="_blank" class="article-link">
-            <span class="article-title">Green Tech Investment Surpasses $50B</span>
-            <span class="article-source">MIT Tech Review</span>
-        </a></li>
-    
-        <li><a href="https://www.wired.com" target="_blank" class="article-link">
-            <span class="article-title">Cybersecurity Threats in LLM Era</span>
-            <span class="article-source">Wired</span>
-        </a></li>
-    </ul>
-        </section>
-    
+        <section class="category-section">
+            <h2 class="section-title">📰 News by Category</h2>
+            
+            <div class="category-title">🏛️ Politics & Policy</div>
+            <div class="category-item">
+                <strong>这位人大代表太飒了</strong><br>
+                <span style="color: #888; font-size: 0.9em;">海军辽宁舰某中队教导员朱悦萌在全国人大会议上发言受到关注</span>
+                <span class="hot-index" style="margin-left: 0; margin-top: 8px;">🔥 7.5M+ searches</span>
+            </div>
+            
+            <div class="category-title">🏥 Health & Medicine</div>
+            <div class="category-item">
+                <strong>化橘红中药材走红</strong><br>
+                <span style="color: #888; font-size: 0.9em;">传统中药材因两会期间意外走红，引发网友关注和讨论</span>
+            </div>
+            
+            <div class="category-title">💼 Business & Economy</div>
+            <div class="category-item">
+                <strong>乡村振兴按下加速键</strong><br>
+                <span style="color: #888; font-size: 0.9em;">和美乡村建设成为两会热议话题，产业发展迎来新机遇</span>
             </div>
         </section>
         
-        <section>
-            <h2>Trend Observations</h2>
-            <div class="trends-list">
-                
-    <div class="trend-item">
-        <span class="trend-number">01</span>
-        <div class="trend-content">
-            <h4>The Rise of Agentic AI</h4>
-            <p>Autonomous AI agents are moving from experimental demos to production environments. Major enterprises deploying agent-based systems for customer service, code generation, and business process automation.</p>
-        </div>
-    </div>
-
-    <div class="trend-item">
-        <span class="trend-number">02</span>
-        <div class="trend-content">
-            <h4>Spatial Computing Goes Mainstream</h4>
-            <p>With Apple's Vision Pro establishing premium market and Meta's Quest dominating volume, spatial computing transitions from novelty to productivity tool for virtual offices and immersive training.</p>
-        </div>
-    </div>
-
-    <div class="trend-item">
-        <span class="trend-number">03</span>
-        <div class="trend-content">
-            <h4>Sustainable Tech Investment Boom</h4>
-            <p>Climate tech funding reaches record levels as investors recognize intersection of environmental necessity and economic opportunity. Carbon capture to green hydrogen attracting significant capital.</p>
-        </div>
-    </div>
-
-    <div class="trend-item">
-        <span class="trend-number">04</span>
-        <div class="trend-content">
-            <h4>The Decentralized AI Movement</h4>
-            <p>Concerns about centralized AI control driving interest in federated learning, open-source models, and edge AI deployment. Organizations seek data sovereignty while leveraging AI capabilities.</p>
-        </div>
-    </div>
-
-    <div class="trend-item">
-        <span class="trend-number">05</span>
-        <div class="trend-content">
-            <h4>Human-AI Collaboration Redefines Work</h4>
-            <p>Rather than replacing workers, AI tools augment human capabilities in creative, analytical, and strategic domains. Human-in-the-loop workflows combining AI efficiency with human judgment prove most successful.</p>
-        </div>
-    </div>
-
-    <div class="trend-item">
-        <span class="trend-number">06</span>
-        <div class="trend-content">
-            <h4>Regulatory Frameworks Take Shape</h4>
-            <p>From EU AI Act to emerging US federal guidelines, comprehensive AI regulation becoming reality. Companies investing in compliance infrastructure and transparent algorithmic decision-making.</p>
-        </div>
-    </div>
-
+        <section class="trend-section">
+            <h2 class="section-title">📈 Trend Observations</h2>
+            
+            <div class="trend-item">
+                <div class="trend-number">01</div>
+                <div class="trend-content">
+                    <h3>乡村振兴受关注</h3>
+                    <p>从因地制宜发展产业到和美乡村建设，两会期间乡村振兴成为重要议题，宜居宜业和美乡村建设按下加速键。</p>
+                </div>
+            </div>
+            
+            <div class="trend-item">
+                <div class="trend-number">02</div>
+                <div class="trend-content">
+                    <h3>传统文化焕发新生</h3>
+                    <p>化橘红等传统中药材因两会期间的意外关注而走红网络，传统文化的现代传播引发热议。</p>
+                </div>
+            </div>
+            
+            <div class="trend-item">
+                <div class="trend-number">03</div>
+                <div class="trend-content">
+                    <h3>法治建设成果丰硕</h3>
+                    <p>"两高"工作报告提请审议，过去一年扫黑除恶、反腐惩贪等成果显著，法治中国建设稳步推进。</p>
+                </div>
+            </div>
+            
+            <div class="trend-item">
+                <div class="trend-number">04</div>
+                <div class="trend-content">
+                    <h3>女性代表展风采</h3>
+                    <p>海军辽宁舰女军官朱悦萌在全国人大会议上的发言受到广泛关注，展现新时代女性力量。</p>
+                </div>
+            </div>
+            
+            <div class="trend-item">
+                <div class="trend-number">05</div>
+                <div class="trend-content">
+                    <h3>两会热点持续发酵</h3>
+                    <p>全国两会期间，各项民生政策和发展规划引发广泛讨论，热度持续攀升。</p>
+                </div>
             </div>
         </section>
-    </main>
-    
-    <section class="sources-section">
-        <h2>Trusted Sources</h2>
-        <div class="sources-grid">
-            <span class="source-tag">TechCrunch</span><span class="source-tag">The Verge</span><span class="source-tag">Wired</span><span class="source-tag">Bloomberg</span><span class="source-tag">Reuters</span><span class="source-tag">MIT Tech Review</span><span class="source-tag">Fast Company</span><span class="source-tag">VentureBeat</span>
-        </div>
-    </section>
-    
-    <footer>
-        <p>Generated by OpenClaw • Data retained for 7 days • <a href="archives.html">View Archives</a> • <a href="https://github.com/Zaynxxii/ai-daily-news">GitHub</a></p>
-    </footer>
+        
+        <footer>
+            <p>AI Daily News | Updated: March 10, 2026</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Data source: Baidu Hot Search &bull; Generated with 🤖</p>
+        </footer>
+    </div>
 </body>
 </html>
