@@ -3,480 +3,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News</title>
-    <meta name="description" content="Daily AI and tech news with Google Trends data">
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Tech News, Google Trends">
-    <meta name="robots" content="index, follow">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <meta name="description" content="AI Daily News - Curated technology news, AI breakthroughs, and industry trends from 2026-03-11">
+    <meta name="keywords" content="Open Source Licensing, AI Breakthrough, Cybersecurity Alert, Machine Learning, Tech Innovation, Software Development, Digital Security, AI Research, Tech Industry, Future of AI, technology news, AI news, tech trends">
+    <title>AI Daily News | Technology & AI Insights | 2026-03-11</title>
     <style>
-        :root {
-            --bg-primary: #000000;
-            --bg-secondary: #1d1d1f;
-            --bg-tertiary: #2d2d2f;
-            --text-primary: #f5f5f7;
-            --text-secondary: #86868b;
-            --accent-blue: #2997ff;
-            --accent-purple: #a855f7;
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-hover: rgba(255, 255, 255, 0.12);
-        }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #FFD700;
+            --bg-dark: #0f0f23;
+            --bg-card: #ffffff;
+            --text: #1a1a2e;
+            --text-light: #4a4a6a;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a3e 100%);
             min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
         }
         
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse 80% 60% at 50% -20%, rgba(88, 28, 135, 0.25) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 50% at 100% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 40% at 0% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-                var(--bg-primary);
-            z-index: -1;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         
-        .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
-        
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            z-index: 1000;
-            padding: 12px 0;
-        }
-        
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        
-        .nav-logo {
-            font-size: 21px;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-        
-        .nav-links { display: flex; gap: 32px; }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 12px;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover { color: var(--text-primary); }
-        
-        header { text-align: center; padding: 80px 0 60px; }
-        
-        header h1 {
-            font-size: 56px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #fff 0%, #a8a8a8 100%);
+        /* Header */
+        header { text-align: center; color: white; margin-bottom: 30px; padding: 30px 0; }
+        header h1 { 
+            font-size: 3.5em; 
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
+        }
+        header .tagline { 
+            font-size: 1.3em; 
+            opacity: 0.8; 
+            margin-top: 10px;
+            color: #a0a0c0;
+        }
+        header .date { 
+            font-size: 1.1em; 
+            opacity: 0.7; 
+            margin-top: 15px;
+            color: #8080a0;
         }
         
-        header .date { color: var(--text-secondary); font-size: 21px; font-weight: 400; }
-        
-        .filter-section { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; }
-        
-        .date-select {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 14px;
-            cursor: pointer;
-            font-family: inherit;
-            min-width: 200px;
-        }
-        
-        .filter-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-secondary);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-        
-        .filter-btn:hover { background: var(--glass-hover); color: var(--text-primary); }
-        
-        .filter-btn.active { background: var(--text-primary); color: var(--bg-primary); border-color: var(--text-primary); }
-        
-        .glass-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+        /* Date Selector */
+        .date-selector {
+            text-align: center;
             margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .date-selector label { color: white; margin-right: 15px; font-size: 1.1em; }
+        .date-selector select {
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: var(--text);
+            cursor: pointer;
+            min-width: 200px;
+            font-weight: 500;
         }
         
-        .glass-card:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
         
-        .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 16px;
+        .card h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8em;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
-        .section-title i { color: var(--accent-blue); }
+        /* Keywords Section */
+        .keywords-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        .keywords-section h2 { 
+            color: white; 
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        .keywords-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .keyword-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .keyword-tag:hover {
+            background: rgba(255,255,255,0.35);
+            transform: scale(1.05);
+        }
         
-        .section-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
+        /* Top Stories */
+        .top-story {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
             margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff9e6, white);
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            transition: all 0.2s;
+        }
+        .top-story:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .story-rank {
+            font-size: 2.5em;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .story-content { flex: 1; }
+        .story-content h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .story-content h3 a { color: var(--text); text-decoration: none; }
+        .story-content h3 a:hover { color: var(--primary); }
+        .story-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .source-link {
+            background: #f0f0f5;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .source-link a { color: var(--primary); font-weight: 500; }
+        .category-tag-small {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .story-summary {
+            color: var(--text-light);
+            line-height: 1.7;
         }
         
-        .keywords-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+        /* Categories */
+        .category-section { margin-bottom: 30px; }
+        .category-section:last-child { margin-bottom: 0; }
+        .category-header {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 1em;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-ai { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .tag-tech { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .tag-projects { background: linear-gradient(135deg, #27ae60, #229954); }
+        .tag-other { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
         
-        .keyword-item {
+        /* Article Lists */
+        .article-list { list-style: none; }
+        .article-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
-            background: var(--bg-tertiary);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            gap: 15px;
+        }
+        .article-item:last-child { border-bottom: none; }
+        .article-title {
+            flex: 1;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.05em;
+            line-height: 1.5;
+        }
+        .article-title:hover { color: var(--primary); }
+        .source-badge {
+            background: #f5f5fa;
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .source-badge:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Trends */
+        .trend-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
             border-radius: 12px;
-            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+            transition: all 0.2s;
+        }
+        .trend-item:hover {
+            background: #f0f2f5;
+            transform: translateX(5px);
+        }
+        .trend-num {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        .trend-content { flex: 1; }
+        .trend-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .trend-content p {
+            color: var(--text-light);
+            line-height: 1.8;
         }
         
-        .keyword-item:hover { background: var(--bg-secondary); transform: translateX(4px); }
+        /* Links */
+        a { transition: all 0.2s; }
         
-        .keyword-name { font-size: 14px; font-weight: 500; }
+        /* Footer */
+        footer { 
+            text-align: center; 
+            color: rgba(255,255,255,0.5); 
+            margin-top: 60px; 
+            padding: 40px; 
+        }
+        footer a { color: rgba(255,255,255,0.8); }
+        footer a:hover { color: white; }
         
-        .keyword-score { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
-        
-        .score-bar { width: 60px; height: 6px; background: var(--bg-primary); border-radius: 3px; overflow: hidden; }
-        
-        .score-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
-        .score-fill.high { background: linear-gradient(90deg, #34d399, #10b981); }
-        .score-fill.medium { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
-        .score-fill.low { background: linear-gradient(90deg, #f87171, #ef4444); }
-        
-        .news-list { display: flex; flex-direction: column; gap: 1px; background: var(--glass-border); border-radius: 16px; overflow: hidden; }
-        
-        .news-item { display: flex; gap: 20px; padding: 24px; background: var(--bg-secondary); transition: all 0.3s ease; cursor: pointer; }
-        .news-item:first-child { border-radius: 16px 16px 0 0; }
-        .news-item:last-child { border-radius: 0 0 16px 16px; }
-        .news-item:hover { background: var(--bg-tertiary); }
-        
-        .news-rank { width: 32px; height: 32px; background: var(--glass-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: var(--text-secondary); flex-shrink: 0; }
-        .news-rank.top3 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #000; }
-        
-        .news-content { flex: 1; }
-        .news-content h3 { font-size: 17px; font-weight: 500; margin-bottom: 6px; color: var(--text-primary); }
-        .news-content h3 a { color: inherit; text-decoration: none; transition: color 0.2s; }
-        .news-content h3 a:hover { color: var(--accent-blue); }
-        .news-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 10px; }
-        
-        .news-meta { display: flex; align-items: center; gap: 12px; }
-        .news-source { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent-blue); text-decoration: none; }
-        .news-source:hover { opacity: 0.8; }
-        .news-source i { font-size: 10px; }
-        .news-tag { font-size: 12px; color: var(--text-secondary); background: var(--glass-bg); padding: 4px 10px; border-radius: 12px; }
-        
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-        
-        .category-card { background: var(--bg-secondary); border-radius: 16px; padding: 24px; transition: all 0.3s ease; border-left: 3px solid var(--accent-blue); }
-        .category-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3); }
-        .category-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-        .category-card ul { list-style: none; }
-        .category-card li { padding: 10px 0; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--glass-border); }
-        .category-card li:last-child { border-bottom: none; }
-        .category-card li::before { content: "\f061"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--accent-blue); margin-right: 10px; font-size: 10px; }
-        
-        .trend-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--glass-border); }
-        .trend-item:last-child { border-bottom: none; }
-        .trend-number { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; flex-shrink: 0; }
-        .trend-content h4 { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
-        .trend-content p { font-size: 14px; color: var(--text-secondary); }
-        
-        footer { text-align: center; padding: 60px 0; color: var(--text-secondary); font-size: 12px; }
-        footer a { color: var(--accent-blue); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 40px; }
-            .nav-links { display: none; }
-            .news-item { flex-direction: column; gap: 12px; }
-            .keywords-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2em; }
+            .card { padding: 25px; }
+            .top-story { flex-direction: column; }
+            .story-rank { font-size: 2em; }
+            .article-item { flex-direction: column; align-items: flex-start; }
+            .trend-item { flex-direction: column; }
+            .keywords-container { justify-content: center; }
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .glass-card { animation: fadeIn 0.5s ease forwards; }
-        .glass-card:nth-child(2) { animation-delay: 0.1s; }
-        .glass-card:nth-child(3) { animation-delay: 0.2s; }
-        .glass-card:nth-child(4) { animation-delay: 0.3s; }
-        .glass-card:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-    
-    <nav>
-        <div class="container">
-            <a href="/" class="nav-logo">AI Daily News</a>
-            <div class="nav-links">
-                <a href="#">Trends</a>
-                <a href="#">News</a>
-                <a href="#">Categories</a>
-                <a href="#">Insights</a>
-            </div>
-        </div>
-    </nav>
-    
     <div class="container">
         <header>
-            <h1>AI Daily News</h1>
-            <p class="date">Tuesday, March 10, 2026</p>
+            <h1>📰 AI Daily News</h1>
+            <div class="tagline">Curated Technology & AI Insights</div>
+            <div class="date">2026-03-11</div>
         </header>
         
-        <!-- Time Filter -->
-        <!-- Date Selector -->
-        <div class="filter-section">
-            <select id="date-select" class="date-select" onchange="window.location.href=this.value">
-                <option value="index.html">Today - March 10, 2026</option>
-                <option value="2026-03-09.html">March 09, 2026</option>
-                <option value="2026-03-08.html">March 08, 2026</option>
-                <option value="2026-03-07.html">March 07, 2026</option>
-                <option value="2026-03-06.html">March 06, 2026</option>
-                <option value="2026-03-05.html">March 05, 2026</option>
-                <option value="2026-03-04.html">March 04, 2026</option>
+        <div class="date-selector">
+            <label for="date-select">📅 Select Date:</label>
+            <select id="date-select" onchange="changeDate(this.value)">
+                <option value="2026-03-11" selected>Today (Mar 11)</option>
+<option value="2026-03-10">Mar 10</option>
+<option value="2026-03-09">Mar 09</option>
+<option value="2026-03-08">Mar 08</option>
+<option value="2026-03-07">Mar 07</option>
+<option value="2026-03-06">Mar 06</option>
+<option value="2026-03-05">Mar 05</option>
             </select>
         </div>
         
-        <!-- Google Trends Keywords -->
-        <div class="glass-card">
-            <h2 class="section-title"><i class="fas fa-chart-line"></i> Trending Keywords</h2>
-            <p class="section-desc">Data source: Google Trends (Past 7 days search interest, 0-100 scale)</p>
-            <div class="keywords-grid" id="keywords-container"></div>
+        <!-- SEO Keywords -->
+        <div class="card keywords-section">
+            <h2>🔥 Trending Topics</h2>
+            <div class="keywords-container">
+                <span class="keyword-tag">Open Source Licensing</span><span class="keyword-tag">AI Breakthrough</span><span class="keyword-tag">Cybersecurity Alert</span><span class="keyword-tag">Machine Learning</span><span class="keyword-tag">Tech Innovation</span><span class="keyword-tag">Software Development</span><span class="keyword-tag">Digital Security</span><span class="keyword-tag">AI Research</span><span class="keyword-tag">Tech Industry</span><span class="keyword-tag">Future of AI</span>
+            </div>
         </div>
-        
-        <!-- Top Stories -->
-        <div class="glass-card">
-            <h2 class="section-title"><i class="fas fa-fire"></i> Top Stories</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <div class="news-rank top3">1</div>
-                    <div class="news-content">
-                        <h3><a href="https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/" target="_blank">Yann LeCun Raises $1 Billion to Build AI That Understands the Physical World</a></h3>
-                        <p>Meta's AI chief launches new venture to develop AI systems that can truly understand and interact with the physical world.</p>
-                        <div class="news-meta">
-                            <a href="https://www.wired.com" class="news-source" target="_blank"><i class="fas fa-external-link-alt"></i> Wired</a>
-                            <span class="news-tag">AI Funding</span>
-                        </div>
-                    </div>
+
+        <!-- Top 3 -->
+        <div class="card">
+            <h2>🏆 Today's Top 3 Must-Read</h2>
+            
+        <div class="top-story">
+            <div class="story-rank">🥇</div>
+            <div class="story-content">
+                <h3><a href="https://daringfireball.net/" target="_blank">Open Source Licensing Dispute: AI-Era Rewrite vs Legacy Rights</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://daringfireball.net/" target="_blank">🔗 Daring Fireball</a></span>
+                    <span class="category-tag-small">Open Source</span>
                 </div>
+                <p class="story-summary">The Python chardet library controversy marks the first major open-source licensing conflict of the AI era. When AI can 'clean room' rewrite code, do original licenses still apply?</p>
+            </div>
+        </div>
+    
+        <div class="top-story">
+            <div class="story-rank">🥈</div>
+            <div class="story-content">
+                <h3><a href="https://daringfireball.net/" target="_blank">Donald Knuth's AI Epiphany: Claude Opus 4.6 Solves Mathematical Conjecture</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://daringfireball.net/" target="_blank">🔗 Stanford / Daring Fireball</a></span>
+                    <span class="category-tag-small">AI Research</span>
+                </div>
+                <p class="story-summary">Turing Award winner Donald Knuth publicly acknowledges AI's breakthrough in creative problem-solving. The conservative computer science legend calls it 'dramatic progress in automatic deduction.'</p>
+            </div>
+        </div>
+    
+        <div class="top-story">
+            <div class="story-rank">🥉</div>
+            <div class="story-content">
+                <h3><a href="https://simonwillison.net/" target="_blank">Clinejection Attack Chain: How Prompt Injection Hijacked CI/CD Pipeline</a></h3>
+                <div class="story-meta">
+                    <span class="source-link"><a href="https://simonwillison.net/" target="_blank">🔗 Simon Willison</a></span>
+                    <span class="category-tag-small">Cybersecurity</span>
+                </div>
+                <p class="story-summary">First documented case of AI-assisted CI/CD hijacking. Attackers used prompt injection in issue titles to compromise NPM release workflows via cache poisoning.</p>
+            </div>
+        </div>
+    
+        </div>
+
+        <!-- Stats -->
+        <div class="card">
+            <h2>📊 Data Overview</h2>
+            <p>Analyzing <strong>99 RSS sources</strong> across technology, AI, and business sectors.</p>
+            <p>Featured: Open Source Licensing, AI Breakthroughs, Cybersecurity Alerts, and Industry Trends.</p>
+        </div>
+
+        <!-- Full List by Category -->
+        <div class="card">
+            <h2>📝 Full List by Category</h2>
+            
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-ai">AI & Machine Learning</span>
+            </div>
+            <ul class="article-list">
                 
-                <div class="news-item">
-                    <div class="news-rank top3">2</div>
-                    <div class="news-content">
-                        <h3><a href="https://www.wired.com/story/nvidia-planning-ai-agent-platform-launch-open-source/" target="_blank">Nvidia Planning to Launch Open-Source AI Agent Platform</a></h3>
-                        <p>Nvidia announces plans to release an open-source AI agent platform, potentially disrupting the current AI assistant market.</p>
-                        <div class="news-meta">
-                            <a href="https://www.wired.com" class="news-source" target="_blank"><i class="fas fa-external-link-alt"></i> Wired</a>
-                            <span class="news-tag">AI Agents</span>
-                        </div>
-                    </div>
-                </div>
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Donald Knuth on Claude Opus 4.6 solving his conjecture</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Clinejection - Prompt injection compromises NPM release workflow</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Codex for Open Source - OpenAI's response to Claude Max OSS</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Agentic manual testing guide</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">Expert Beginners and Lone Wolves in LLM era</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-tech">Technology & Business</span>
+            </div>
+            <ul class="article-list">
                 
-                <div class="news-item">
-                    <div class="news-rank top3">3</div>
-                    <div class="news-content">
-                        <h3><a href="https://www.wired.com/story/anthropic-sues-department-of-defense-over-supply-chain-risk-designation/" target="_blank">Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation</a></h3>
-                        <p>Anthropic files lawsuit against the Pentagon over supply chain risk designation that could cost billions in contracts.</p>
-                        <div class="news-meta">
-                            <a href="https://www.wired.com" class="news-source" target="_blank"><i class="fas fa-external-link-alt"></i> Wired</a>
-                            <span class="news-tag">AI Policy</span>
-                        </div>
-                    </div>
-                </div>
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Google TAG on Coruna iOS exploit kit - 23 exploits, 5 chains</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">Steve Lemay added to Apple Leadership page</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">npx workos - Claude agent for auth integration</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-projects">Projects & Tools</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">PTP Wall Clock - Ultra-precise synchronized time display</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="article-title">Pint-sized Macintosh - Pico Micro Mac build</a>
+                <a href="https://www.jeffgeerling.com/" target="_blank" class="source-badge">🔗 Jeff Geerling</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">dclient 0.5a3 - CLI utility for Datasette</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-tag tag-other">Industry & Culture</span>
+            </div>
+            <ul class="article-list">
+                
+            <li class="article-item">
+                <a href="https://daringfireball.net/" target="_blank" class="article-title">chardet licensing dispute - Original author contests rewrite</a>
+                <a href="https://daringfireball.net/" target="_blank" class="source-badge">🔗 Daring Fireball</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://idiallo.com/" target="_blank" class="article-title">Why experienced engineers give contextual answers</a>
+                <a href="https://idiallo.com/" target="_blank" class="source-badge">🔗 iDiallo.com</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://pluralistic.net/" target="_blank" class="article-title">Cory Doctorow on RSS and Reader Mode revival</a>
+                <a href="https://pluralistic.net/" target="_blank" class="source-badge">🔗 Pluralistic</a>
+            </li>
+        
+            <li class="article-item">
+                <a href="https://simonwillison.net/" target="_blank" class="article-title">Bruce Schneier on AI models commoditization</a>
+                <a href="https://simonwillison.net/" target="_blank" class="source-badge">🔗 Simon Willison</a>
+            </li>
+        
+            </ul>
+        </div>
+    
+        </div>
+
+        <!-- Trends Analysis -->
+        <div class="card">
+            <h2>🔮 Trend Observations</h2>
+            
+        <div class="trend-item">
+            <div class="trend-num">1</div>
+            <div class="trend-content">
+                <h4>AI Solving Mathematical Proofs: The Knuth Moment</h4>
+                <p>Knuth's public endorsement marks a 'Nixon to China' moment for AI. As the most conservative computer scientist who values formal proof, his backing carries more weight than any VC hype. This signals AI's transition from 'code generation tool' to 'mathematical reasoning partner.' Claude Opus 4.6 solving problems that stumped human experts for weeks demonstrates reasoning models have surpassed the assistant stage in formal domains.</p>
             </div>
         </div>
-        
-        <!-- News by Category -->
-        <div class="glass-card">
-            <h2 class="section-title"><i class="fas fa-th-large"></i> News by Category</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
-                    <ul>
-                        <li>Microsoft bringing Claude Cowork to Copilot</li>
-                        <li>OpenAI tested Pentagon models through Microsoft</li>
-                        <li>ByteDance's AI ambitions hampered by compute</li>
-                        <li>Amazon Alexa+ faces criticism</li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <h3><i class="fas fa-microchip"></i> Technology & Hardware</h3>
-                    <ul>
-                        <li>Qualcomm announces Arduino Ventuno Q for AI</li>
-                        <li>Samsung: 120+ games for glasses-free 3D</li>
-                        <li>Google Pixel 11 Pro Fold leaked</li>
-                        <li>Apple adds 9 new emoji including Bigfoot</li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <h3><i class="fas fa-building"></i> Business & Industry</h3>
-                    <ul>
-                        <li>Big Tech signs data center pledge</li>
-                        <li>Data centers in Arctic Circle</li>
-                        <li>Jack Dorsey explains Block layoffs</li>
-                        <li>Live Nation DOJ settlement talks</li>
-                    </ul>
-                </div>
-                <div class="category-card">
-                    <h3><i class="fas fa-shield-alt"></i> Security & Ethics</h3>
-                    <ul>
-                        <li>New jammer blocks AI wearables</li>
-                        <li>Grammarly AI reviews from dead authors</li>
-                        <li>AI models for military use</li>
-                        <li>Iran War in AI Era podcast</li>
-                    </ul>
-                </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">2</div>
+            <div class="trend-content">
+                <h4>Open Source Licensing in the AI Era</h4>
+                <p>The chardet controversy exposes gray areas in open-source licensing for the AI age. LGPL requires derivative works to maintain the same license, but does a 'ground-up rewrite' count as derivative? If AI reads LGPL code and generates MIT-licensed 'inspirationally similar' code, is the original license retroactive? This dispute may establish precedent: do maintenance contributions grant license change rights? Does 'spiritual ownership' have an expiration date?</p>
             </div>
         </div>
-        
-        <!-- Trend Observations -->
-        <div class="glass-card">
-            <h2 class="section-title"><i class="fas fa-chart-area"></i> Trend Observations</h2>
-            <div class="trend-item">
-                <div class="trend-number">01</div>
-                <div class="trend-content">
-                    <h4>The Rise of Open-Source AI Agents</h4>
-                    <p>Nvidia's open-source AI agent platform signals major shift, potentially democratizing advanced AI capabilities.</p>
-                </div>
-            </div>
-            <div class="trend-item">
-                <div class="trend-number">02</div>
-                <div class="trend-content">
-                    <h4>AI Regulation Heats Up</h4>
-                    <p>Anthropic's Pentagon lawsuit highlights growing tensions over supply chain security designations.</p>
-                </div>
-            </div>
-            <div class="trend-item">
-                <div class="trend-number">03</div>
-                <div class="trend-content">
-                    <h4>Hardware Innovation Continues</h4>
-                    <p>From Qualcomm's AI Arduino to Samsung's 3D displays, hardware pushes AI integration boundaries.</p>
-                </div>
-            </div>
-            <div class="trend-item">
-                <div class="trend-number">04</div>
-                <div class="trend-content">
-                    <h4>Data Center Expansion</h4>
-                    <p>Tech companies building data centers in extreme locations like Arctic to meet AI demands.</p>
-                </div>
-            </div>
-            <div class="trend-item">
-                <div class="trend-number">05</div>
-                <div class="trend-content">
-                    <h4>AI in Everyday Devices</h4>
-                    <p>New products bring AI directly into consumers' daily lives through phones and wearables.</p>
-                </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">3</div>
+            <div class="trend-content">
+                <h4>AI-Native Attack Surfaces in CI/CD</h4>
+                <p>Clinejection demonstrates an unprecedented attack chain: prompt injection → Bash command execution → cache poisoning → key theft → supply chain poisoning. Traditional CI/CD security assumes 'workflow definitions are trusted,' but AI agents convert natural language input (issue titles) directly to command execution. This is the first real-world demonstration of AI-native attacks. Defense requires: (1) physical isolation of AI workflows from release workflows, (2) namespace-isolated caches per workflow, (3) prompt input sanitization.</p>
             </div>
         </div>
-        
+    
+        <div class="trend-item">
+            <div class="trend-num">4</div>
+            <div class="trend-content">
+                <h4>iOS Exploit Weaponization Democratization</h4>
+                <p>Google TAG's Coruna report reveals a disturbing reality: 23 iOS exploits, 5 complete chains, proliferating from surveillance vendors → Russian espionage → Chinese financial crime groups, forming a complete 'second-hand exploit' market. Exploit weaponization is democratizing — no nation-state capabilities required, just buy an exploit kit to attack all iOS 13-17.2.1 devices. This shows zero-day exploits' 'half-life' is shortening — once deployed, they quickly enter the black market.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">5</div>
+            <div class="trend-content">
+                <h4>RSS as Weapon Against Platform Control</h4>
+                <p>Cory Doctorow revisits the history of Google Reader's death: In 2013, Google deliberately killed the most popular RSS reader to force G+ adoption, forcing users to discover content through G+. This is a classic case of 'platform enclosure' — replacing open protocols with closed ecosystems. Doctorow notes 'enshittification' isn't economic inevitability but policy choice. The RSS revival (and recent Reader Mode comeback) represents users regaining control of information access. In the AI summary era, RSS value is more prominent — it's the raw information source unfiltered by algorithms.</p>
+            </div>
+        </div>
+    
+        <div class="trend-item">
+            <div class="trend-num">6</div>
+            <div class="trend-content">
+                <h4>The 'Lone Wolf' Developer in the LLM Era</h4>
+                <p>Jeff Geerling observes a phenomenon: LLMs let senior developers independently complete work that originally required team collaboration. 'Expert Beginners' and 'Lone Wolves' will dominate the early LLM era. This is a double-edged sword: on one hand, individual productivity greatly improves; on the other, code review, knowledge sharing, and collective wisdom may weaken. When one person can replace a team, should we celebrate efficiency gains or worry about technical debt accumulation?</p>
+            </div>
+        </div>
+    
+        </div>
+
         <footer>
-            <p>AI Daily News &copy; 2026</p>
-            <p style="margin-top: 8px;">Data sources: <a href="https://www.wired.com">Wired</a>, <a href="https://www.theverge.com">The Verge</a>, <a href="https://techcrunch.com">TechCrunch</a> | Google Trends Data</p>
+            <p>Generated by OpenClaw | Data retained for 7 days | 
+            <a href="https://github.com/Zaynxxii/ai-daily-news">GitHub</a> | 
+            <a href="archives.html">Archives</a></p>
         </footer>
     </div>
-
+    
     <script>
-        // Google Trends Keywords Data (from SerpAPI Google Trends)
-        // Score = Peak search interest in past 7 days (0-100 scale)
-        const keywordsData = [
-            { keyword: "Yann LeCun AI", query: "Yann+LeCun+AI", score: 100 },
-            { keyword: "Nvidia AI Agent", query: "Nvidia+AI+agent", score: 100 },
-            { keyword: "Anthropic Pentagon", query: "Anthropic+Pentagon", score: 100 },
-            { keyword: "Claude Copilot", query: "Claude+Copilot", score: 100 },
-            { keyword: "Qualcomm Arduino AI", query: "Qualcomm+Arduino+AI", score: 100 },
-            { keyword: "Samsung 3D Gaming", query: "Samsung+3D+gaming", score: 85 },
-            { keyword: "Google Pixel Fold", query: "Google+Pixel+Fold", score: 100 },
-            { keyword: "OpenAI Military", query: "OpenAI+military", score: 100 },
-            { keyword: "ByteDance AI", query: "ByteDance+AI", score: 100 },
-            { keyword: "Arctic Data Center", query: "Arctic+data+center", score: 100 }
-        ];
-
-        function getScoreClass(score) {
-            if (score >= 80) return 'high';
-            if (score >= 60) return 'medium';
-            return 'low';
+        function changeDate(date) {
+            if (date === '2026-03-11') {
+                window.location.href = '../index.html';
+            } else {
+                window.location.href = date + '.html';
+            }
         }
-
-        function renderKeywords() {
-            const container = document.getElementById('keywords-container');
-            let html = '';
-            keywordsData.forEach(item => {
-                const scoreClass = getScoreClass(item.score);
-                html += `
-                    <div class="keyword-item">
-                        <span class="keyword-name">${item.keyword}</span>
-                        <div class="keyword-score">
-                            <div class="score-bar">
-                                <div class="score-fill ${scoreClass}" style="width: ${item.score}%"></div>
-                            </div>
-                            ${item.score}
-                        </div>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-        }
-
-        // Time filter functionality
-        function filterByTime(days) {
-            // Update button states
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.range == days) btn.classList.add('active');
-            });
-            
-            console.log('Filtering by time range:', days, 'days');
-            // In production: fetch new Google Trends data based on selected range
-            alert('Time range updated to: Past ' + days + ' Days\n\n(In production, this would fetch new Google Trends data via SerpAPI)');
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', renderKeywords);
     </script>
 </body>
 </html>
