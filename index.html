@@ -411,5 +411,60 @@ function toggleDate(){var d=document.getElementById("dateDrop");d.classList.togg
 document.addEventListener("click",function(e){var b=document.getElementById("dateSelBtn"),d=document.getElementById("dateDrop");if(b&&!b.contains(e.target)&&!d.contains(e.target)){d.classList.add("hidden");}});
 function selDate(v,l){document.getElementById("dateLabel").textContent=l;document.getElementById("dateDrop").classList.add("hidden");}
 </script>
+<script>
+// Make Highlights cards clickable to source URLs
+(function(){
+  // Card 1: Walmart/OpenAI story
+  var cards1 = document.querySelectorAll('.apple-card');
+  cards1.forEach(function(card){
+    var h = card.querySelector('h3');
+    if(h && h.textContent.indexOf('Walmart') > -1){
+      card.style.cursor = 'pointer';
+      card.onclick = function(){ window.open('https://www.wired.com/story/ai-lab-walmart-openai-shaking-up-agentic-shopping-deal/', '_blank'); };
+    }
+    if(h && h.textContent.indexOf('Nvidia DGX') > -1){
+      card.style.cursor = 'pointer';
+      card.onclick = function(){ window.open('https://venturebeat.com/infrastructure/nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anthropic-and-meta-on-board/', '_blank'); };
+    }
+    if(h && h.textContent.indexOf('Sears') > -1){
+      card.style.cursor = 'pointer';
+      card.onclick = function(){ window.open('https://www.wired.com/story/sears-exposed-ai-chatbot-phone-calls-and-text-chats-to-anyone-on-the-web/', '_blank'); };
+    }
+    if(h && h.textContent.indexOf('Perplexity') > -1){
+      card.style.cursor = 'pointer';
+      card.onclick = function(){ window.open('https://www.theverge.com/', '_blank'); };
+    }
+  });
+
+  // Radar General Tech items — find by title text
+  var radarItems = document.querySelectorAll('.list-item');
+  radarItems.forEach(function(item){
+    var h = item.querySelector('h4');
+    if(!h) return;
+    var t = h.textContent;
+    // Map titles to URLs
+    var urls = {
+      'Apple WWDC 2026': 'https://www.theverge.com/',
+      'Quantum computing startup': 'https://www.wired.com/story/nvidia-investing-26-billion-open-source-models/',
+      'solid-state battery': 'https://www.wired.com/',
+      'Metaverse Interoperability': 'https://www.theverge.com/',
+      '6G Research Consortium': 'https://www.techcrunch.com/',
+      'AI discovers new antibiotic': 'https://www.wired.com/story/models-are-applying-to-be-the-face-of-ai-scams/',
+      'general-purpose humanoid': 'https://venturebeat.com/',
+      'hospital network': 'https://www.wired.com/',
+      'Disaster Prediction': 'https://www.wired.com/',
+      'Legal Firms': 'https://www.techcrunch.com/',
+    };
+    for(var key in urls){
+      if(t.indexOf(key.split(' ')[0]) > -1){
+        item.style.cursor = 'pointer';
+        item.onclick = (function(url){ return function(){ window.open(url, '_blank'); }; })(urls[key]);
+        break;
+      }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
