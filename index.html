@@ -91,10 +91,22 @@
             </div>
             
             <div class="relative group">
-                <button class="text-sm font-medium text-appleGray flex items-center py-2 px-4 rounded-full bg-appleLight group-hover:bg-gray-100 transition-colors">
-                    Past 7 Days
+                <button id="dateSelectorBtn" onclick="toggleDateDropdown()" class="text-sm font-medium text-appleGray flex items-center py-2 px-4 rounded-full bg-appleLight group-hover:bg-gray-100 transition-colors">
+                    <span id="selectedDateLabel">March 19, 2026</span>
                     <svg class="w-4 h-4 ml-1.5 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
+                <div id="dateDropdown" class="hidden absolute right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-56 z-50 overflow-hidden">
+                    <div class="px-4 py-2 text-xs font-bold text-appleGray uppercase tracking-wider border-b border-gray-100">Past 7 Days</div>
+                    <button onclick="selectDate('2026-03-19', 'March 19, 2026')" data-date="2026-03-19" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm font-medium transition-colors flex items-center justify-between">
+                        <span>March 19, 2026</span><span class="text-appleBlue text-xs font-bold">Today</span>
+                    </button>
+                    <button onclick="selectDate('2026-03-18', 'March 18, 2026')" data-date="2026-03-18" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 18, 2026</button>
+                    <button onclick="selectDate('2026-03-17', 'March 17, 2026')" data-date="2026-03-17" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 17, 2026</button>
+                    <button onclick="selectDate('2026-03-16', 'March 16, 2026')" data-date="2026-03-16" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 16, 2026</button>
+                    <button onclick="selectDate('2026-03-15', 'March 15, 2026')" data-date="2026-03-15" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 15, 2026</button>
+                    <button onclick="selectDate('2026-03-14', 'March 14, 2026')" data-date="2026-03-14" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 14, 2026</button>
+                    <button onclick="selectDate('2026-03-13', 'March 13, 2026')" data-date="2026-03-13" class="date-option w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors">March 13, 2026</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -113,6 +125,7 @@
             </div>
             
             <div class="flex flex-wrap gap-4">
+
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
                     #Nvidia Vera Rubin
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
@@ -122,6 +135,108 @@
                         </svg>
                         <span class="text-green-500 text-xs font-bold mt-2">▲ +314.3% WoW</span>
                     </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #OpenAI GPT-5
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,28.0 20.0,25.0 40.0,22.0 60.0,18.0 80.0,14.0 100.0,10.0 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +180.5% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #Claude Opus 4.6
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,17.6 20.0,4.0 40.0,15.2 60.0,20.7 80.0,20.0 100.0,25.8 120.0,26.4" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-red-500 text-xs font-bold mt-2">▼ -5.6% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #AI Agent
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,22.0 20.0,20.0 40.0,18.0 60.0,14.0 80.0,10.0 100.0,8.0 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +95.2% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #Nvidia DGX Station
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,27.5 20.0,27.8 40.0,27.8 60.0,30.9 80.0,26.4 100.0,30.5 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +354.5% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #Perplexity Browser
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,12.9 20.0,9.9 40.0,8.4 60.0,4.0 80.0,8.4 100.0,20.3 120.0,18.8" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +8.3% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #AI Security Breach
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,38.0 20.0,38.0 40.0,38.0 60.0,38.0 80.0,26.4 100.0,19.3 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +81.8% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #Google Stitch
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,15.8 20.0,18.3 40.0,4.0 60.0,7.0 80.0,14.3 100.0,21.2 120.0,12.4" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +52.9% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #arXiv AI Paper
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,14.5 20.0,21.3 40.0,16.2 60.0,4.0 80.0,8.4 100.0,14.5 120.0,12.2" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +10.1% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    #LLM Inference
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends (7d)</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="0.0,20.0 20.0,18.0 40.0,22.0 60.0,18.0 80.0,14.0 100.0,10.0 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">▲ +120.0% WoW</span>
+                    </div>
+                </div>
+
+            </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
@@ -493,6 +608,43 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+    // Date dropdown toggle
+    function toggleDateDropdown() {
+        const dropdown = document.getElementById('dateDropdown');
+        dropdown.classList.toggle('hidden');
+    }
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        const btn = document.getElementById('dateSelectorBtn');
+        const dropdown = document.getElementById('dateDropdown');
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+    // Date selection handler
+    function selectDate(dateVal, label) {
+        document.getElementById('selectedDateLabel').textContent = label;
+        document.getElementById('dateDropdown').classList.add('hidden');
+        // Highlight selected
+        document.querySelectorAll('.date-option').forEach(function(opt) {
+            opt.classList.remove('bg-appleLight', 'text-appleBlue', 'font-bold');
+            if (opt.dataset.date === dateVal) {
+                opt.classList.add('bg-appleLight', 'text-appleBlue', 'font-bold');
+            }
+        });
+        // Trigger content reload for selected date
+        if (typeof loadNewsForDate === 'function') {
+            loadNewsForDate(dateVal);
+        } else {
+            alert('Archive for ' + label + ' is being prepared. Daily archives are auto-generated each day.');
+        }
+    }
+    // Highlight today by default
+    document.querySelectorAll('.date-option')[0].classList.add('bg-appleLight', 'text-appleBlue', 'font-bold');
+    </script>
 
 </body>
 </html>
