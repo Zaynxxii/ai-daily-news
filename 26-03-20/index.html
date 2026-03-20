@@ -382,7 +382,7 @@
 <script>
 function toggleDate(){var d=document.getElementById("dateDrop");d.classList.toggle("hidden");}
 document.addEventListener("click",function(e){var b=document.getElementById("dateSelBtn"),d=document.getElementById("dateDrop");if(b&&!b.contains(e.target)&&!d.contains(e.target)){d.classList.add("hidden");}});
-function selDate(v,l){document.getElementById("dateLabel").textContent=l;document.getElementById("dateDrop").classList.add("hidden");}
+function selDate(v,l){document.getElementById("dateLabel").textContent=l;document.getElementById("dateDrop").classList.add("hidden");window.location.href='https://zaynxxii.github.io/ai-daily-news/'+v+'/';}
 </script>
 <script>
 // Make Highlights cards clickable to source URLs
