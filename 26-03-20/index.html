@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pulse | March 19, 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        appleDark: '#1D1D1F',
+                        appleGray: '#86868B',
+                        appleLight: '#F5F5F7',
+                        appleBlue: '#0066CC',
+                        appleCard: '#FFFFFF' // 定义一个白色
+                    },
+                    borderRadius: {
+                        '3xl': '28px',
+                    },
+                    boxShadow: {
+                        'apple-default': '0 4px 24px rgba(0, 0, 0, 0.02)',
+                        'apple-hover': '0 20px 40px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 核心动效与样式 */
+        body { background-color: #FAFAFA; -webkit-font-smoothing: antialiased; }
+        
+        /* 毛玻璃导航栏 */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* 渐变文字 */
+        .text-gradient {
+            background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 卡片高级悬停效果 (Apple 风格的平滑弹簧感) */
+        .apple-card {
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .apple-card:hover {
+            transform: translateY(-6px) scale(1.005);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 关键词标签的悬停图表展示 */
+        .trend-tooltip {
+            opacity: 0;
+            transform: translateY(10px) translateX(-50%);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+        .keyword-pill:hover .trend-tooltip {
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+        }
+
+        /* 列表项悬停效果 */
+        .list-item { transition: background-color 0.3s ease; }
+        .list-item:hover { background-color: #F5F5F7; }
+        .list-arrow { transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0; transform: translateX(-10px); }
+        .list-item:hover .list-arrow { opacity: 1; transform: translateX(0); }
+    </style>
+</head>
+<body class="text-appleDark selection:bg-appleBlue selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tight flex items-center">
+                <span class="text-2xl font-black mr-2">WPS</span> <span class="font-bold text-xl tracking-tight">AI Pulse.</span>
+            </div>
+            
+            <div class="relative group">
+                <button id="dateSelBtn" onclick="toggleDate()" class="text-sm font-medium text-appleGray flex items-center py-2 px-4 rounded-full bg-appleLight group-hover:bg-gray-100 transition-colors">
+                    <span id="dateLabel">March 19, 2026</span>
+                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="dateDrop" class="hidden absolute right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-56 z-50"><div class="px-4 py-2 text-xs font-bold text-appleGray uppercase tracking-wider border-b border-gray-100">Select Date</div><button onclick="selDate('26-03-20','March 20, 2026 — Today')" class="date-btn w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors  ">March 20, 2026 — Today</button>
+<button onclick="selDate('26-03-19','March 19, 2026')" class="date-btn w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors font-semibold text-appleBlue rounded-b-2xl">March 19, 2026</button>
+</div>
+        </div>
+    </nav>
+
+<script>
+function toggleDate(){var d=document.getElementById("dateDrop");d.classList.toggle("hidden");}
+document.addEventListener("click",function(e){var b=document.getElementById("dateSelBtn"),d=document.getElementById("dateDrop");if(b&&!b.contains(e.target)&&!d.contains(e.target)){d.classList.add("hidden");}});
+function selDate(v,l){document.getElementById("dateLabel").textContent=l;document.getElementById("dateDrop").classList.add("hidden");window.location.href='https://zaynxxii.github.io/ai-daily-news/'+v+'/';}
+</script>
+
+    <header class="pt-40 pb-20 px-6 text-center">
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4">Today in AI.</h1>
+        <p class="text-2xl md:text-3xl font-semibold text-gradient inline-block">Curated Intelligence.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32 space-y-32">
+
+        <section>
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold tracking-tight">Trending Signals</h2>
+                <p class="text-appleGray mt-1">Top 10 keywords moving the market today.</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-4">
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # Meta
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,34.4 20.0,28.2 40.0,32.9 60.0,36.0 80.0,26.7 100.0,28.2 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">-6.4% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # Google
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,34.5 40.0,10.9 60.0,10.9 80.0,8.0 100.0,15.4 120.0,19.8" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-red-500 text-xs font-bold mt-2">-2.2% WoW</span>
+                    </div>
+                </div>
+                
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # OpenAI
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,28.3 30.2,36.0 32.1,29.2 20.6,36.0 34.4 42.9,40.0,28.2" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+20.5% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    AI Safety 4.6
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,8.0 20.0,24.0 40.0,36.0 60.0,20.0 80.0,8.0 100.0,24.0 120.0,20.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">-5.6% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # AI Agent 2026
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,23.8 20.0,32.3 40.0,36.0 60.0,27.5 80.0,23.8 100.0,25.0 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-appleGray text-xs mt-2">+95.0% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # AI Agent
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,22.0 20.0,20.0 40.0,18.0 60.0,14.0 80.0,10.0 100.0,8.0 120.0,4.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+95.0% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # LLM Inference
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,28.3 30.2,36.0 32.1,29.2 20.6,36.0 34.4 42.9,40.0,28.2" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-appleGray text-xs mt-2">+24.0% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # AI Robotics
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,23.8 32.3,41.0 48.0,50.0 56.0,47.0 64.0,36.0 72.0,50.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+42.9% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # AI Safety
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,28.3 30.2,36.0 32.1,29.2 20.6,36.0 34.4 42.9,40.0,28.2" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+30.8% WoW</span>
+                    </div>
+                </div>
+
+                <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
+                    # AI Keyword 10
+                    <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
+                        <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,34.4 20.0,28.2 40.0,32.9 60.0,36.0 80.0,26.7 100.0,28.2 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+50.0% WoW</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="mb-10 flex items-end justify-between">
+                <div>
+                    <h2 class="text-4xl font-bold tracking-tight mb-2">The Highlights.</h2>
+                    <p class="text-xl text-appleGray font-medium">Top stories curated for you.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="apple-card p-10 md:col-span-2 flex flex-col justify-between group cursor-pointer"  onclick="window.open('https://www.wired.com/story/ai-lab-walmart-openai-shaking-up-agentic-shopping-deal/','_blank')">
+                    <div>
+                        <div class="text-xs font-bold tracking-widest text-appleBlue uppercase mb-4">Must Read</div>
+                        <h3 class="text-3xl font-bold leading-tight mb-4 group-hover:text-appleBlue transition-colors">Walmart and OpenAI Are Shaking Up Their Agentic Shopping Deal</h3>
+                        <p class="text-lg text-appleGray leading-relaxed mb-8">
+                            Major restructuring of the Walmart–OpenAI partnership signals AI agents are going live in real-world retail at scale. The agentic shopping integration is expanding beyond pilot phase.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-appleDark font-semibold group-hover:text-appleBlue transition-colors">
+                        Read Original Article 
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+
+                <div class="apple-card p-10 flex flex-col justify-between group cursor-pointer" onclick="window.open('https://venturebeat.com/infrastructure/nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anthropic-and-meta-on-board/','_blank')">
+                    <div>
+                        <div class="text-xs font-bold tracking-widest text-appleGray uppercase mb-4">Hardware</div>
+                        <h3 class="text-2xl font-bold leading-tight mb-4">Nvidia Vera Rubin: 7-Chip AI Platform with OpenAI, Anthropic & Meta</h3>
+                        <p class="text-base text-appleGray leading-relaxed mb-8 line-clamp-4">
+                            Unveiled at GTC 2026: Vera Rubin claims 10x inference throughput per watt, 1/10 cost per token vs Blackwell. Jensen: "greatest infrastructure buildout in history." AWS, Google Cloud, Azure & Oracle all signed.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-appleBlue font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                        Read ↗
+                    </div>
+                </div>
+
+                <div class="apple-card p-10 flex flex-col justify-between group cursor-pointer" onclick="window.open('https://www.wired.com/story/sears-exposed-ai-chatbot-phone-calls-and-text-chats-to-anyone-on-the-web/','_blank')">
+                    <div>
+                        <div class="text-xs font-bold tracking-widest text-appleGray uppercase mb-4">Security</div>
+                        <h3 class="text-2xl font-bold leading-tight mb-4">Sears Exposes AI Chatbot Data to the Open Web</h3>
+                        <p class="text-base text-appleGray leading-relaxed mb-8 line-clamp-4">
+                            Critical security flaw: Sears left AI chatbot calls and text conversations publicly accessible. A cautionary tale for enterprise AI deployment at scale.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-appleBlue font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                        Read ↗
+                    </div>
+                </div>
+
+                <div class="apple-card p-10 md:col-span-2 lg:col-span-2 flex flex-col justify-between group cursor-pointer" onclick="window.open('https://www.theverge.com/','_blank')">
+                    <div>
+                        <div class="text-xs font-bold tracking-widest text-appleGray uppercase mb-4">Product Update</div>
+                        <h3 class="text-2xl font-bold leading-tight mb-4">Perplexity Launches “Comet” Browser on iOS</h3>
+                        <p class="text-base text-appleGray leading-relaxed mb-8 line-clamp-2">
+                            Perplexity expands beyond search with a full iOS browser — an AI-native browsing play putting it in direct competition with Safari and Chrome.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-appleBlue font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                        Read ↗
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold tracking-tight mb-2">The Radar.</h2>
+                <p class="text-lg text-appleGray font-medium">More news indexed across the web.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-appleGray border-b border-gray-200 pb-3 mb-2">General Tech</h3>
+                    <ul class="flex flex-col">
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Apple announces WWDC 2026 dates</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Google AI Overviews frequently direct users back to Google properties rather than original sources, raising concerns about traffic diversion for publishers. baked into Siri and core apps.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Quantum computing startup secures $500M</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Nvidia confirms it will spend $26 billion to develop open-weight AI models, filings show — the largest AI infrastructure investment outside major cloud providers., targeting commercial advantage over classical supercomputers.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                         <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">New solid-state battery tech hits production</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Google says it is not ruling out ads in Gemini, as the AI search race intensifies and revenue models remain under pressure., promising 2x range and 10-minute full charges for next-gen EVs.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">EU Finalizes Metaverse Interoperability Standards</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Sony R&D is training a 'Protective AI' model specifically designed to prevent AI systems from generating content that mimics Studio Ghibli's distinctive art style. to support cross-platform avatar and asset transfer, a first-of-its-kind regulation.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Global 6G Research Consortium Forms</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Meta AI glasses (Ray-Ban Smart Glasses) now available in 3 new colors, with expanded AI assistant capabilities rolling out globally., with commercial deployment targeting 2030.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-appleGray border-b border-gray-200 pb-3 mb-2">Applied AI</h3>
+                    <ul class="flex flex-col">
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">AI discovers new antibiotic class</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Models are actively applying to be the face of AI scam operations — "100 video calls per day" — highlighting the emerging threat of AI-generated identity fraud. effective against drug-resistant bacteria, validated in mouse trials.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Robotics firm demonstrates general-purpose humanoid</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">OpenAI is in a frantic race to catch up to Anthropic's Claude Code, accelerating its own coding agent development according to Wired. using a VLA model — a breakthrough toward general-purpose home robots.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Major hospital network deploys AI diagnostician</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Google Maps is getting a new Gemini-powered conversational interface, letting users ask questions in natural language about locations and directions., reducing radiology misdiagnosis rates by 15% in the first month.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">AI-Powered Disaster Prediction System Operational</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">China's aggressive OpenClaw adoption is creating a boom for local AI companies, with significant investment flowing into AI infrastructure and applications., river sensors and historical data to predict floods with 90% accuracy up to 72 hours ahead.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
+                            <div class="pr-6">
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Generative AI adopted by 80% of Legal Firms</h4>
+                                <p class="text-sm text-appleGray line-clamp-1">Grammarly is facing a class action lawsuit over its AI "Expert Review" feature that summarizes and evaluates users' writing without consent. and initial case analysis, with average cost savings of 35%.</p>
+                            </div>
+                            <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    </body>
+</html>
