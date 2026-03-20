@@ -101,6 +101,12 @@
         </div>
     </nav>
 
+<script>
+function toggleDate(){var d=document.getElementById("dateDrop");d.classList.toggle("hidden");}
+document.addEventListener("click",function(e){var b=document.getElementById("dateSelBtn"),d=document.getElementById("dateDrop");if(b&&!b.contains(e.target)&&!d.contains(e.target)){d.classList.add("hidden");}});
+function selDate(v,l){document.getElementById("dateLabel").textContent=l;document.getElementById("dateDrop").classList.add("hidden");window.location.href='https://zaynxxii.github.io/ai-daily-news/'+v+'/';}
+</script>
+
     <header class="pt-40 pb-20 px-6 text-center">
         <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4">Today in AI.</h1>
         <p class="text-2xl md:text-3xl font-semibold text-gradient inline-block">Curated Intelligence.</p>
