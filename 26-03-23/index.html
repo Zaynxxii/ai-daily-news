@@ -90,15 +90,7 @@
                 <span class="text-2xl font-black mr-2">WPS</span> <span class="font-bold text-xl tracking-tight">AI Pulse.</span>
             </div>
             
-            <div class="relative group">
-                <button id="dateSelBtn" onclick="toggleDate()" class="text-sm font-medium text-appleGray flex items-center py-2 px-4 rounded-full bg-appleLight group-hover:bg-gray-100 transition-colors">
-                    <span id="dateLabel">March 23, 2026</span>
-                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="dateDrop" class="hidden absolute right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-56 z-50"><div class="px-4 py-2 text-xs font-bold text-appleGray uppercase tracking-wider border-b border-gray-100">Select Date</div><button onclick="selDate('26-03-20','March 20, 2026 — Today')" class="date-btn w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors  ">March 20, 2026 — Today</button>
-<button onclick="selDate('26-03-19','March 19, 2026')" class="date-btn w-full text-left px-4 py-3 hover:bg-appleLight text-sm transition-colors font-semibold text-appleBlue rounded-b-2xl">March 19, 2026</button>
-</div>
-        </div>
+            <span id="dateLabel" class="text-sm font-medium text-appleGray">DATE_PLACEHOLDER</span>
     </nav>
 
 <script>
@@ -122,29 +114,29 @@ function selDate(v,l){document.getElementById("dateLabel").textContent=l;documen
             
             <div class="flex flex-wrap gap-4">
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # Meta
+                    # Street Journal
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,9.8 20.0,13.2 40.0,8.0 60.0,13.2 80.0,25.5 100.0,36.0 120.0,23.8" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+17.9% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # Google
+                    # Wall Street
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-red-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,31.3 20.0,31.3 40.0,8.0 60.0,36.0 80.0,22.0 100.0,31.3 120.0,26.7" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-red-500 text-xs font-bold mt-2">+1.4% WoW</span>
                     </div>
                 </div>
                 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # OpenAI
+                    # Mark Zuckerberg
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,33.8 20.0,33.8 40.0,8.0 60.0,8.0 80.0,12.3 100.0,36.0 120.0,27.4" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+6.5% WoW</span>
                     </div>
                 </div>
 
@@ -152,62 +144,62 @@ function selDate(v,l){document.getElementById("dateLabel").textContent=l;documen
                     Nvidia
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,32.1 20.0,20.9 40.0,8.0 60.0,17.5 80.0,29.8 100.0,36.0 120.0,30.4" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+34.5% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # Microsoft
+                    # Internal AI Tools
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-appleGray text-xs mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,21.1 20.0,22.9 40.0,28.5 60.0,24.8 80.0,32.3 100.0,36.0 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-appleGray text-xs mt-2">+88.2% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # AI Agent 2026
+                    # AI Data Centers
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,8.0 20.0,18.5 40.0,15.0 60.0,22.0 80.0,29.0 100.0,36.0 120.0,15.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+25.0% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # LLM Inference
+                    # Optical Interconnects
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-appleGray text-xs mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,10.8 20.0,24.8 40.0,22.0 60.0,33.2 80.0,22.0 100.0,36.0 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-appleGray text-xs mt-2">+52.6% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # AI Robotics
+                    # Photonic Chips
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,25.7 20.0,21.3 40.0,22.7 60.0,12.4 80.0,36.0 100.0,21.3 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+32.1% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # AI Safety
+                    # Claude Code
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,11.1 20.0,15.3 40.0,14.2 60.0,20.4 80.0,32.9 100.0,36.0 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+44.3% WoW</span>
                     </div>
                 </div>
 
                 <div class="keyword-pill relative cursor-pointer bg-white border border-gray-200 px-6 py-3 rounded-full text-sm font-semibold hover:border-appleBlue hover:text-appleBlue transition-colors shadow-sm">
-                    # AI Keyword 10
+                    # AI Gig Work
                     <div class="trend-tooltip absolute left-1/2 -translate-x-1/2 top-full mt-3 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 w-48 z-10 flex flex-col items-center">
                         <span class="text-xs text-appleGray mb-2">Google Trends · Global · 7d</span>
-                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,36.0 20.0,36.0 40.0,36.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                        <span class="text-green-500 text-xs font-bold mt-2">+0.0% WoW</span>
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0.0,28.0 20.0,36.0 40.0,28.0 60.0,20.0 80.0,24.0 100.0,28.0 120.0,8.0" stroke="#0066CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span class="text-green-500 text-xs font-bold mt-2">+29.4% WoW</span>
                     </div>
                 </div>
             </div>
@@ -307,7 +299,7 @@ function selDate(v,l){document.getElementById("dateLabel").textContent=l;documen
                         <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
                             <div class="pr-6">
                                 <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Global 6G Research Consortium Forms</h4>
-                                <p class="text-sm text-appleGray line-clamp-1">Meta AI glasses (Ray-Ban Smart Glasses) now available in 3 new colors, with expanded AI assistant capabilities rolling out globally., with commercial deployment targeting 2030.</p onclick="window.open('https://arxiv.org/abs/2603.19429','_blank')">
+                                <p class="text-sm text-appleGray line-clamp-1">Meta AI glasses (Ray-Ban Smart Glasses) now available in 3 new colors, with expanded AI assistant capabilities rolling out globally., with commercial deployment targeting 2030.</p>
                             </div>
                             <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
                         </li>
@@ -319,26 +311,26 @@ function selDate(v,l){document.getElementById("dateLabel").textContent=l;documen
                     <ul class="flex flex-col">
                         <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
                             <div class="pr-6">
-                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors" onclick="window.open('https://arxiv.org/abs/2603.19461','_blank')">AI discovers new antibiotic class</h4>
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">AI discovers new antibiotic class</h4>
                                 <p class="text-sm text-appleGray line-clamp-1">Models are actively applying to be the face of AI scam operations — "100 video calls per day" — highlighting the emerging threat of AI-generated identity fraud. effective against drug-resistant bacteria, validated in mouse trials.</p>
                             </div>
                             <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
                         </li>
                         <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
                             <div class="pr-6">
-                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors" onclick="window.open('https://arxiv.org/abs/2603.19500','_blank')">Robotics firm demonstrates general-purpose humanoid</h4>
+                                <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Robotics firm demonstrates general-purpose humanoid</h4>
                                 <p class="text-sm text-appleGray line-clamp-1">OpenAI is in a frantic race to catch up to Anthropic's Claude Code, accelerating its own coding agent development according to Wired. using a VLA model — a breakthrough toward general-purpose home robots.</p>
                             </div>
                             <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
                         </li>
                         <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
-                            <div class="pr-6" onclick="window.open('https://arxiv.org/abs/2603.19514','_blank')">
+                            <div class="pr-6">
                                 <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">Major hospital network deploys AI diagnostician</h4>
                                 <p class="text-sm text-appleGray line-clamp-1">Google Maps is getting a new Gemini-powered conversational interface, letting users ask questions in natural language about locations and directions., reducing radiology misdiagnosis rates by 15% in the first month.</p>
                             </div>
                             <span class="list-arrow text-appleBlue font-bold text-xl">↗</span>
                         </li>
-                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between" onclick="window.open('https://arxiv.org/abs/2603.19515','_blank')">
+                        <li class="list-item border-b border-gray-100 py-5 px-3 -mx-3 rounded-xl cursor-pointer group flex items-center justify-between">
                             <div class="pr-6">
                                 <h4 class="font-semibold text-lg mb-1 group-hover:text-appleBlue transition-colors">AI-Powered Disaster Prediction System Operational</h4>
                                 <p class="text-sm text-appleGray line-clamp-1">China's aggressive OpenClaw adoption is creating a boom for local AI companies, with significant investment flowing into AI infrastructure and applications., river sensors and historical data to predict floods with 90% accuracy up to 72 hours ahead.</p>
